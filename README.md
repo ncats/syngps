@@ -65,7 +65,7 @@ Code and data required to reproduce the case studies is stored under subdirector
 Run the workflow in Jupyter Notebook in JupyterLab using the above created `syngps` [Conda environment](#create-the-required-python-environment-via-conda):
 
 ```bash
-use_case_3_syngps_from_file.ipynb
+src/use_case_3_syngps_from_file.ipynb
 ```
 
 ## Post Publication Notes
@@ -87,7 +87,7 @@ We welcome contributions to the SynGPS and BOYA algorithms! Here's how you can c
 
 3. **Submit a Pull Request**:
 
-   - Once your code is complete and tested, create a pull request (PR) from your feature branch to the `feature` branch of the HCASE repository.
+   - Once your code is complete and tested, create a pull request (PR) from your feature branch to the `feature` branch of the SynGPS repository.
 
 4. **Approval and Merge**:
    - Approved features will be merged into the `main` branch.
@@ -100,42 +100,40 @@ This repository contains source code, Jupyter notebook, data and results files w
 
 - Source code subdirectories
 
-`src/`
+    `src/`
 
 - Data and results subdirectory
 
-`data/`
+    `data/`
 
 - Worklows
 
-The workflow to reproduce Case Study 3 in the form of Jupyter Notebook can be found at `src/use_case_3_syngps_from_file.ipynb`.
+    The workflow to reproduce Case Study 3 in the form of Jupyter Notebook can be found at `src/use_case_3_syngps_from_file.ipynb`.
 
 - Source Code License of SynGPS Repository
 
-The applicable license to source code can be found under filename: [src/LICENSE](src/LICENSE) (license type: [MIT License](https://opensource.org/licenses/MIT)). This license is applicable to all files recursively in the source code subdirectories as defined above. The files [src/NOTES](src/NOTES) list source code modules that were utilized and their respective licenses. These modules have their own licenses which might be different from the Source Code License of this repository, and they need to be respected accordingly.
+    The applicable license to source code can be found under filename: [src/LICENSE](src/LICENSE) (license type: [MIT License](https://opensource.org/licenses/MIT)). This license is applicable to all files recursively in the source code subdirectories as defined above. The files [src/NOTES](src/NOTES) list source code modules that were utilized and their respective licenses. These modules have their own licenses which might be different from the Source Code License of this repository, and they need to be respected accordingly.
 
 - Data License of SynGPS Repository
 
-The applicable license to data and results can be found under: [data/LICENSE](data/LICENSE) that is a [Creative Commons Attribution 4.0 International Public License](https://creativecommons.org/licenses/by/4.0/legalcode.txt). This license is applicable to all files recursively in the data and results subdirectory as defined above. The files listed in [data/NOTES](data/NOTES) and [plots/NOTES](plots/NOTES) lists input files and resources utilized to perform the experiments and are considered as derivative work of those resources. These input files and resources have their own licenses which might be different from the Data License of this repository, and they need to be respected accordingly. In the same file we also list which results files can be considered as derivative works, and we also list the the respective ascendent data source(s).
+    The applicable license to data and results can be found under: [data/LICENSE](data/LICENSE) that is a [Creative Commons Attribution 4.0 International Public License](https://creativecommons.org/licenses/by/4.0/legalcode.txt). This license is applicable to all files recursively in the data and results subdirectory as defined above. The files listed in [data/NOTES](data/NOTES) and [plots/NOTES](plots/NOTES) lists input files and resources utilized to perform the experiments and are considered as derivative work of those resources. These input files and resources have their own licenses which might be different from the Data License of this repository, and they need to be respected accordingly. In the same file we also list which results files can be considered as derivative works, and we also list the the respective ascendent data source(s).
 
-- Jupyter Notebook License of HCASE Repository
+- Jupyter Notebook License of SynGPS Repository
 
-Jupyter Notebboks are special in the sense that they are comprised of source code, but they can also contain embedded data and plot (graph) sections. This duality is resolved via dual-licensing as follows. The code sections of Jupter Notebooks fall under the same license as source codes, i.e. the MIT License [src/LICENSE](src/LICENSE)whereas data and plot sections embedded into the Jupyter Notebooks fall under the same license as data and result files, i.e. Creative Commons Attribution 4.0 International Public License CC-BY 4.0 International License [data/LICENSE](data/LICENSE). Remarks enclosed in the [src/NOTES](src/NOTES) file are also valid for code section of the Jupyter Notebooks. Remarks enclosed in the [data/NOTES](data/NOTES) files are also valid for the embedded data and plots of the Jupyter Notebook files.
+    Jupyter Notebboks are special in the sense that they are comprised of source code, but they can also contain embedded data and plot (graph) sections. This duality is resolved via dual-licensing as follows. The code sections of Jupter Notebooks fall under the same license as source codes, i.e. the MIT License [src/LICENSE](src/LICENSE)whereas data and plot sections embedded into the Jupyter Notebooks fall under the same license as data and result files, i.e. Creative Commons Attribution 4.0 International Public License CC-BY 4.0 International License [data/LICENSE](data/LICENSE). Remarks enclosed in the [src/NOTES](src/NOTES) file are also valid for code section of the Jupyter Notebooks. Remarks enclosed in the [data/NOTES](data/NOTES) files are also valid for the embedded data and plots of the Jupyter Notebook files.
 
 - Links to licenses
 
-- MIT License: [https://opensource.org/licenses/MIT](https://opensource.org/licenses/MIT)
+  - MIT License: [https://opensource.org/licenses/MIT](https://opensource.org/licenses/MIT)
 
-- Creative Commons Attribution 4.0 International Public License (CC-BY 4.0 International): [https://creativecommons.org/licenses/by/4.0/legalcode.txt](https://creativecommons.org/licenses/by/4.0/legalcode.txt)
+  - Creative Commons Attribution 4.0 International Public License (CC-BY 4.0 International): [https://creativecommons.org/licenses/by/4.0/legalcode.txt](https://creativecommons.org/licenses/by/4.0/legalcode.txt)
 
-- Creative Commons Attribution-ShareAlike 3.0 Unported License: [https://creativecommons.org/licenses/by-sa/3.0/](https://creativecommons.org/licenses/by-sa/3.0/)
+  - Creative Commons Attribution-ShareAlike 3.0 Unported License: [https://creativecommons.org/licenses/by-sa/3.0/](https://creativecommons.org/licenses/by-sa/3.0/)
 
-- GPL-2 License: [https://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html](https://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html)
+  - GPL-2 License: [https://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html](https://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html)
 
-- GPL-3 License: [https://www.gnu.org/licenses/gpl-3.0.en.html](https://www.gnu.org/licenses/gpl-3.0.en.html)
+  - GPL-3 License: [https://www.gnu.org/licenses/gpl-3.0.en.html](https://www.gnu.org/licenses/gpl-3.0.en.html)
 
-- Apache License 2.0: [https://www.apache.org/licenses/LICENSE-2.0](https://www.apache.org/licenses/LICENSE-2.0)
+  - Apache License 2.0: [https://www.apache.org/licenses/LICENSE-2.0](https://www.apache.org/licenses/LICENSE-2.0)
 
-- 3-Clause BSD license: [https://opensource.org/licenses/BSD-3-Clause](https://opensource.org/licenses/BSD-3-Clause), [https://github.com/scikit-learn/scikit-learn/blob/master/COPYING](https://github.com/scikit-learn/scikit-learn/blob/master/COPYING)
-
-- KNIME: KNIME License Terms and Conditions [https://www.knime.com/downloads/full-license](https://www.knime.com/downloads/full-license)
+  - 3-Clause BSD license: [https://opensource.org/licenses/BSD-3-Clause](https://opensource.org/licenses/BSD-3-Clause), [https://github.com/scikit-learn/scikit-learn/blob/master/COPYING](https://github.com/scikit-learn/scikit-learn/blob/master/COPYING)
