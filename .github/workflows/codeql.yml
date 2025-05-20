@@ -1,0 +1,62 @@
+# Define the name of the workflow
+name: "CodeQL-Advanced"
+
+# Define when the workflow should be triggered (on push to a specific branch and pull requests to the master branch)
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+# Define the jobs that will be executed as part of the workflow
+jobs:
+  analyze:
+    name: Analyze
+    runs-on:
+      group: ncats-awsci-runners
+    permissions:
+      actions: read
+      contents: read
+      security-events: write
+      issues: write
+
+    # Define the matrix strategy for parallel runs with different languages
+    strategy:
+      fail-fast: false
+      matrix:
+        language: ["python"]
+
+    steps:
+      # Step 1: Checkout repository
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      # Step 2: Initialize CodeQL for scanning
+      - name: Initialize CodeQL
+        uses: github/codeql-action/init@v3
+        with:
+          languages: ${{ matrix.language }}
+
+      # Step 3: Autobuild the code.
+      - name: Autobuild
+        uses: github/codeql-action/autobuild@v3
+
+      # Step 4: Analyzes the code using CodeQL, with the analysis category based on the matrix language.
+      - name: Perform CodeQL Analysis
+        uses: github/codeql-action/analyze@v3
+        with:
+          category: "/language:${{matrix.language}}"
+
+      # Step 5: Generate Security Report
+      - name: Generate Security Report
+        uses: rsdmike/github-security-report-action@v3.0.4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      # Step 6: Uploads artifacts (PDF reports) generated during the workflow to download.
+      - name: Upload Artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: codeql-reports
+          path: ./*.pdf
