@@ -3,17 +3,18 @@ from typing import Any, Dict, List, Optional, Set
 
 import pandas as pd
 from networkx import DiGraph, all_simple_paths
-from src.aicplib.adapters import AbstractDataAdapter
-from src.aicplib.errors import (
+from adapters import AbstractDataAdapter
+from errors import (
     CsvLoadError,
     GraphLoadError,
     InchikeyNotFoundError,
     MultipleInchikeyFoundError,
     ReactionNotFoundError,
 )
-from src.aicplib.models import SynthGraph, SynthGraphSearch
-from src.logging_config import logger
+from models import SynthGraph, SynthGraphSearch
+import logging
 
+logger = logging.getLogger(__name__)
 
 class DefaultDataAdapter(AbstractDataAdapter):
     """

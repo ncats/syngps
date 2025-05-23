@@ -6,8 +6,9 @@ from rdkit import Chem
 from rdkit.Chem import AllChem, Draw, Mol
 from rdkit.Chem.Draw.MolDrawing import DrawingOptions
 from rdkit.Chem.Scaffolds.MurckoScaffold import GetScaffoldForMol
-from src.aicplib.errors import NotCanonicalizableSmilesException
-from src.logging_config import logger
+from errors import NotCanonicalizableSmilesException
+import logging
+logger = logging.getLogger(__name__)
 
 
 class RxnSvgDepictionMode(Enum):

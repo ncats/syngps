@@ -6,11 +6,10 @@ from typing import Any, Dict, List, Tuple
 from networkx import DiGraph
 import yields as ay
 from adapters.abstract_data_adapter import AbstractDataAdapter
-from adapters.abstract_inventory_adapter import AbstractInventoryAdapter
 from errors.errors import (
     SynthGraphParsingException,
 )
-from src.aicplib.models.models import (
+from models.models import (
     ProjectedRoute,
     SGPInput,
     SynthGraph,
@@ -23,20 +22,20 @@ from src.aicplib.models.models import (
     TopNYieldSynthRoutesResult,
     TopologyInfo,
 )
-from src.aicplib.utils import graph_json_utils, graph_utils
-from src.logging_config import logger
+from utils import graph_json_utils, graph_utils
+import logging
+logger = logging.getLogger(__name__)
 
 
 class AicpFunctions:
     """
     Core AICP functionality. This class is responsible for fetching synthesis graph and finding top N yield synthesis routes.
-    This class gets initialized with data adapter and inventory adapter. It uses these adapters to fetch data from the knowledge base and inventory.
+    This class gets initialized with data adapter. It uses these adapters to fetch data from the knowledge base.
     """
 
     def __init__(
         self,
         data_adapter: AbstractDataAdapter,
-        inventory_adapter: AbstractInventoryAdapter,
         enable_profiler: bool = False,
     ):
         """
@@ -44,13 +43,12 @@ class AicpFunctions:
 
         Args:
             data_adapter (AbstractDataAdapter): Data adapter to fetch data from the knowledge base.
-            inventory_adapter (AbstractInventoryAdapter): Inventory adapter to fetch inventory data.
             enable_profiler (bool, optional): Enable profiler. Defaults to False.
         """
         self.enable_profiler = enable_profiler
         self.profiler = cProfile.Profile()
         self.data_adapter: AbstractDataAdapter = data_adapter
-        self.inventory_adapter: AbstractInventoryAdapter = inventory_adapter
+
 
     def fetch_synthesis_graph(self, synth_search: SynthGraphSearch) -> SynthGraph:
         """
@@ -306,9 +304,9 @@ class AicpFunctions:
             in_degree = synth_graph.synthesis_graph.in_degree(substance)
             if inchikey == target_molecule_inchikey:
                 srole = "tm"
-            elif self.inventory_adapter.in_inventory_by_inchikey(inchikey):
-                substance.is_in_inventory = True
-                srole = "sm"
+            # elif self.inventory_adapter.in_inventory_by_inchikey(inchikey):
+            #     substance.is_in_inventory = True
+            #     srole = "sm"
             elif in_degree == 0 and synth_graph.search_params.leaves_as_sm:
                 srole = "sm"
             else:
