@@ -65,6 +65,8 @@ Code and data required to reproduce the case studies is stored under subdirector
 Run the workflow in Jupyter Notebook in JupyterLab using the above created `syngps` [Conda environment](#create-the-required-python-environment-via-conda):
 
 ```bash
+src/syngps_cs1.ipynb
+src/case_study2.ipynb
 src/use_case_3_syngps_from_file.ipynb
 ```
 
