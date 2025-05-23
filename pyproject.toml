@@ -1,0 +1,37 @@
+[build-system]
+requires = ["setuptools>=80.4"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "syngps"
+version = "0.1.0"
+description = "Python library for SynGPS logic."
+authors = [
+  { name = "Gergely Zahoranszky-Kohalmi", email = "gergely.zahoranszky-kohalmi@nih.gov" },
+  { name = "Nathan Miller", email = "nathan.miller@nih.gov" },
+  { name = "Brandon Walker", email = "brandon.walker2@nih.gov" }
+]
+requires-python = ">=3.11,<3.13"
+
+dependencies = [
+    "rdkit==2025.03.2",
+    "pydantic",
+    "pydantic-settings",
+    "numpy",
+    "networkx",
+    "pandas",
+    "cryptography",
+    "drfp",
+    "svgutils",
+    "requests",
+]
+
+[project.optional-dependencies]
+dev = ["pytest"]
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
+include = ["aicplib*"]
