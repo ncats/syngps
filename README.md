@@ -31,8 +31,6 @@ The SynGPS code can be installed as a Python package using the following command
 pip install git+https://github.com/ncats/syngps.git
 ```
 
-Documentation for the package can be found under the `docs` directory.
-
 ### Clone this Git repository
 
 ```bash
@@ -76,6 +74,7 @@ Run the workflow in Jupyter Notebook in JupyterLab using the above created `syng
 
 ```bash
 workflows/use_case_3_syngps_from_file.ipynb
+workflows/syngps_cs1.ipynb
 ```
 
 ## Post Publication Notes

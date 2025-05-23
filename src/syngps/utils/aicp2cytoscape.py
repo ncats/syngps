@@ -97,7 +97,7 @@ STYLE_JSON = {
         },
         {
             "mappingType": "passthrough",
-            "mappingColumn": "node_id",
+            "mappingColumn": "node_label",
             "mappingColumnType": "String",
             "visualProperty": "NODE_LABEL",
         },
@@ -119,6 +119,8 @@ def validate_cytoscape(timeout: float = 1.0) -> bool:
 
 def to_cytoscape_json(G: nx.DiGraph) -> dict:
     """Converts a DiGraph to Cytoscape JSON format."""
+    for node in G.nodes():
+        G.nodes[node]["node_id"] = G.nodes[node]["node_label"]
     return nx.cytoscape_data(G, name="uuid", ident="node_label")
 
 

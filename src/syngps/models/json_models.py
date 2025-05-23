@@ -281,35 +281,6 @@ class Rxid2SVGResponse(BaseModel):
     )
 
 
-class YieldPredictionRequest(BaseModel):
-    rxsmiles: str = Field(
-        default="",
-        title="RXSMILES",
-        description="The RXSMILES string to be predicted",
-        examples=["CCO.CC(=O)O>>CC(=O)OCC.O"],
-    )
-
-
-class YieldPredictionResponse(BaseModel):
-    rxsmiles: str = Field(
-        default="",
-        title="RXSMILES",
-        description="The RXSMILES string to be predicted",
-        examples=["CCO.CC(=O)O>>CC(=O)OCC.O"],
-    )
-    predicted_yield: float = Field(
-        default=0.0,
-        title="Yield Prediction",
-        description="The predicted yield of the reaction",
-        examples=[0.8266466076655647],
-    )
-    drfp_version: str = Field(
-        default="Unknown",
-        title="DRFP Version",
-        description="The version of the DRFP package",
-    )
-
-
 class RxnClassifyRequest(BaseModel):
     rxsmiles: str = Field(
         default="",
