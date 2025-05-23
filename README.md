@@ -66,7 +66,6 @@ Run the workflow in Jupyter Notebook in JupyterLab using the above created `syng
 
 ```bash
 src/use_case_3_syngps_from_file.ipynb
-src/syngps_cs1.ipynb
 ```
 
 ## Post Publication Notes

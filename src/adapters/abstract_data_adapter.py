@@ -1,7 +1,7 @@
 from abc import ABC, abstractmethod
 from typing import Any, Dict, List, Optional, Set
 
-from models import SynthGraph, SynthGraphSearch
+from src.aicplib.models import SynthGraph, SynthGraphSearch
 
 
 # Abstract Data Adapter Class
