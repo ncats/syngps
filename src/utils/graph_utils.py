@@ -1,6 +1,11 @@
+import logging
 from typing import Any, Dict, List, Tuple, Union
 
 import pandas as pd
+
+# Define logger
+logging.basicConfig(level=logging.DEBUG, format="%(asctime)s - %(name)s - %(levelname)s - %(message)s")
+logger = logging.getLogger(__name__)
 from networkx import (
     DiGraph,
     ancestors,
@@ -10,8 +15,6 @@ from networkx import (
     set_edge_attributes,
 )
 from networkx.algorithms import bipartite
-from src.aicplib.utils import graph_hash_utils
-from src.logging_config import logger
 
 
 def generate_combination_graphs(G: DiGraph, method: str = "ebc", max_nr: int = 0) -> List[DiGraph]:
@@ -731,7 +734,6 @@ def identify_individual_synthesis_routes(
         # Check if the graph is not empty.
         if graph.nodes:
             # Generate a tree hash for the graph.
-            tree_hash = graph_hash_utils.hash_graph(graph)
             # Deduplicate based on the tree hash.
             if tree_hash not in deduplicated_hashes:
                 # Mark this tree hash as encountered.

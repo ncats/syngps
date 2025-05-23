@@ -1,9 +1,8 @@
-from typing import Dict, List, Union
+from typing import Dict, List, Tuple, Union
 
 from networkx import DiGraph
 
-
-def json_to_route_subgraphs(graph_obj: Dict, routes: Dict) -> Dict:
+def json_routes_to_graph_subgraphs(json_graph_obj: Dict, routes_list: List) -> Tuple[DiGraph, List]:
     """
     Parse a graph_obj representation of a graph, process nodes, edges, and routes,
     then return the subgraphs for each route.
@@ -14,65 +13,16 @@ def json_to_route_subgraphs(graph_obj: Dict, routes: Dict) -> Dict:
     Returns:
         dict: A dictionary with route names as keys and corresponding subgraphs as values.
     """
-    from src.aicplib.models.models import (  # avoid circular imports
-        ReactionNode,
-        SubstanceNode,
-    )
-
-    # Initialize the graph
-    G = DiGraph()
-
-    nodes = graph_obj.nodes
-    edges = graph_obj.edges
-
-    for node in nodes:
-        if isinstance(node, ReactionNode):
-            G.add_node(
-                node.node_label,
-                node_label=node.node_label,
-                node_type=node.node_type,
-                is_balanced=node.is_balanced,
-                is_in_aicp=node.is_in_aicp,
-                rxid=node.rxid,
-                rxsmiles=node.rxsmiles,
-                yield_predicted=node.yield_predicted,
-                yield_score=node.yield_score,
-                is_predicted=node.is_predicted,
-                is_evidence=node.is_evidence,
-            )
-        elif isinstance(node, SubstanceNode):
-            G.add_node(
-                node.node_label,
-                node_label=node.node_label,
-                node_type=node.node_type,
-                inchikey=node.inchikey,
-                canonical_smiles=node.canonical_smiles,
-                srole=node.srole,
-                is_predicted=node.is_predicted,
-                is_evidence=node.is_evidence,
-            )
-
-    for edge in edges:
-        G.add_edge(
-            edge.start_node,
-            edge.end_node,
-            edge_label=edge.edge_label,
-            edge_type=edge.edge_type,
-            is_in_aicp=edge.is_in_aicp,
-            uuid=edge.uuid,
-            inchikey=edge.inchikey,
-            rxid=edge.rxid,
-            is_predicted=edge.is_predicted,
-            is_evidence=edge.is_evidence,
-        )
+    # Parse graph
+    G = json_to_graph(json_graph_obj)
 
     # Parse routes and create subgraphs from routes
-    subgraphs = create_subgraphs_from_routes(routes, G)
+    subgraphs = create_subgraphs_from_routes(routes_list, G)
 
-    return subgraphs
+    return G, subgraphs
 
 
-def create_subgraphs_from_routes(routes: Dict, G: DiGraph) -> Dict:
+def create_subgraphs_from_routes(routes: List, G: DiGraph) -> List:
     """
     Create subgraphs based on the nodes defined in the routes, including the edges
     that connect them automatically.
@@ -84,19 +34,36 @@ def create_subgraphs_from_routes(routes: Dict, G: DiGraph) -> Dict:
     Returns:
         dict: A dictionary with route indices as keys and corresponding subgraphs as values.
     """
-    subgraphs = {}
+    from models.models import (  # avoid circular imports
+        SynthRoute,
+    )
+
+    subgraphs = []
 
     # Process each subgraph route in the 'subgraphs' list
-    for route_data in routes.subgraphs:
+    for route in routes:
+        # Treat route as RouteLabelsInput
+        route_data = route
+
         # Extract node labels for this route
         route_node_labels = route_data.route_node_labels
 
         # Create a subgraph for these nodes
         subgraph = G.subgraph(route_node_labels).copy()
 
-        # Store the subgraph, using the route's index as the key
-        route_index = route_data.route_index
-        subgraphs[route_index] = subgraph
+        # Create a SynthRoute object
+        synth_route = SynthRoute(
+            route_candidate=subgraph,
+            aggregated_yield=route_data.aggregated_yield,
+            predicted=route_data.predicted,
+            source=route_data.source,
+            route_index=route_data.route_index,
+            route_status=route_data.route_status,
+            method=route_data.method,
+        )
+
+        # Append the subgraph to the list
+        subgraphs.append(synth_route)
 
     return subgraphs
 
@@ -154,8 +121,8 @@ def _parse_node(node_data: dict) -> dict:
 
     Returns the dictionary representation of the node.
     """
-    from src.aicplib.models.models import RouteAssemblyType  # Import RouteAssemblyType
-    from src.aicplib.models.models import (  # avoid circular imports
+    from models.models import RouteAssemblyType  # Import RouteAssemblyType
+    from models.models import (  # avoid circular imports
         Provenance,
         ReactionNode,
         SubstanceNode,
@@ -169,7 +136,7 @@ def _parse_node(node_data: dict) -> dict:
     black_key_list = ["node_id"]  # Keys to be removed
 
     # Determine `is_predicted` and `is_evidence` based on the presence of specific keys
-    is_predicted = any(node_data.get(key) for key in predicted_keys) or node_data.get("is_predicted", False)
+    is_predicted = any(node_data.get(key) for key in predicted_keys)
     is_evidence = any(node_data.get(key) for key in evidence_keys)
 
     # Remove the original keys that are no longer needed
@@ -190,6 +157,8 @@ def _parse_node(node_data: dict) -> dict:
     if node_data["node_type"] == "substance":
         node_data["route_assembly_type"] = route_assembly_type
         node_data["provenance"] = Provenance(
+            patents=original_data["patents"] if "patents" in original_data else [],
+            patent_paragraph_nums=original_data["patent_paragraph_nums"] if "patent_paragraph_nums" in original_data else [],
             is_in_aicp=original_data["is_in_aicp"] if "is_in_aicp" in original_data else False,
             is_in_savi_130k=original_data["is_in_savi_130k"] if "is_in_savi_130k" in original_data else False,
             is_in_uspto_full=original_data["is_in_uspto_full"] if "is_in_uspto_full" in original_data else False,
@@ -199,16 +168,21 @@ def _parse_node(node_data: dict) -> dict:
     elif node_data["node_type"] == "reaction":
         # Extract correct fields from node_data and map them to respective models
         node_data["yield_info"] = YieldInfo(
-            yield_predicted=node_data["yield_predicted"],
+            yield_predicted=round(node_data["yield_predicted"], 2),
             yield_score=node_data["yield_score"],
         )
         node_data["provenance"] = Provenance(
+            patents=original_data["patents"] if "patents" in original_data else [],
+            patent_paragraph_nums=original_data["patent_paragraph_nums"] if "patent_paragraph_nums" in original_data else [],
             is_in_aicp=original_data["is_in_aicp"] if "is_in_aicp" in original_data else False,
             is_in_savi_130k=original_data["is_in_savi_130k"] if "is_in_savi_130k" in original_data else False,
             is_in_uspto_full=original_data["is_in_uspto_full"] if "is_in_uspto_full" in original_data else False,
         )
+        if "is_rxname_recognized" not in node_data:
+            node_data["is_rxname_recognized"] = False
         node_data["validation"] = Validation(
             is_balanced=node_data["is_balanced"],
+            is_rxname_recognized=node_data["is_rxname_recognized"],
         )
         node_data["route_assembly_type"] = route_assembly_type  # Assign route_assembly_type
 
@@ -226,7 +200,7 @@ def _parse_edge(edge_data: dict) -> dict:
     Parses raw edge data, grouping attributes into `provenance`, `validation`,
     and `route_assembly_type`, and returns the dictionary representation of an Edge object.
     """
-    from src.aicplib.models.models import (  # avoid circular imports
+    from models.models import (  # avoid circular imports
         Edge,
         Provenance,
         RouteAssemblyType,
@@ -296,18 +270,24 @@ def add_node(G: DiGraph, node_id, node_metadata: dict) -> None:
     G.add_node(node_id, **node_metadata)
 
 
-def validate_node(node: dict, valid_node_types: list) -> bool:
+def validate_node(node: Dict, valid_node_types: List) -> bool:
     """
-    Validate if the node type is in the list of valid node types.=
+    Validate if the node type is in the list of valid node types.
 
     Args:
-        node (dict): A dictionary representing a node.
-        valid_node_types (list): A list of valid node types.
+        node (Dict): A dictionary representing a node.
+        valid_node_types (List): A list of valid node types.
 
     Returns:
         bool: True if the node is valid, False otherwise.
     """
-    node_type = node.get("node_type")
+    if hasattr(node, "model_dump"):
+        n = node.model_dump()
+    elif isinstance(node, dict):
+        n = node
+    else:
+        raise TypeError("Edge must be a Pydantic model or a dictionary")
+    node_type = n.get("node_type")
     if node_type is None:
         raise ValueError("Node type is missing")
     node_type = node_type.lower()
@@ -316,47 +296,60 @@ def validate_node(node: dict, valid_node_types: list) -> bool:
     return True
 
 
-def process_nodes(G: DiGraph, nodes: list) -> DiGraph:
+def process_nodes(G: DiGraph, nodes: List) -> DiGraph:
     """
     Process a list of nodes and add them to a directed graph.
 
     Args:
         G (DiGraph): A NetworkX DiGraph instance.
-        nodes (list): A list of dictionaries, each representing a node.
+        nodes (List): A list of dictionaries, each representing a node.
 
     Returns:
         DiGraph: The modified DiGraph with added nodes.
     """
     valid_node_types = ["reaction", "substance"]
 
-    for n in nodes:
-        if validate_node(n, valid_node_types):
-            node_metadata = {"uuid": n["uuid"], "node_type": n["node_type"].lower(), "node_label": n["node_label"]}
+    for node in nodes:
+        if validate_node(node, valid_node_types):
+            # Get node metadata
+            if hasattr(node, "model_dump"):
+                n = node.model_dump()
+            elif isinstance(node, dict):
+                n = node
+            else:
+                raise ValueError("Invalid node structure type")
+            
+            node_metadata = {"uuid": n.get("uuid"), "node_type": n.get("node_type").lower(), "node_label": n.get("node_label")}
 
-            if n["node_type"].lower() == "reaction":
+            if n.get("node_type").lower() == "reaction":
                 node_metadata.update(
                     {
+                        "rxid": n.get("rxid", None),
                         "rxsmiles": n.get("rxsmiles", None),
-                        "name": n["node_label"],
+                        "name": n.get("node_label"),
                         "yield_score": n.get("yield_score", 0.0),
-                        "yield_predicted": n.get("yield_predicted", 0.0),
+                        "yield_predicted": round(n.get("yield_predicted", 0.0), 2),
+                        "yield_info": n.get("yield_info", {}),
                         "is_balanced": n.get("is_balanced", False),
+                        "is_in_aicp": n.get("is_in_aicp", False),
                         "is_in_savi_130k": n.get("is_in_savi_130k", False),
                         "is_in_uspto_full": n.get("is_in_uspto_full", False),
                     }
                 )
-                add_node(G, n["node_label"], node_metadata)
+                add_node(G, n.get("node_label"), node_metadata)
             else:  # Substance node
                 node_metadata.update(
                     {
+                        "inchikey": n.get("inchikey", None),
                         "smiles": n.get("smiles", None),
-                        "name": n["node_label"],
+                        "name": n.get("node_label"),
+                        "is_in_aicp": n.get("is_in_aicp", False),
                         "is_in_savi_130k": n.get("is_in_savi_130k", False),
                         "is_in_uspto_full": n.get("is_in_uspto_full", False),
                         "srole": n.get("srole", None),
                     }
                 )
-                add_node(G, n["node_label"], node_metadata)
+                add_node(G, n.get("node_label"), node_metadata)
 
     return G
 
@@ -385,13 +378,19 @@ def validate_edge(edge: dict, valid_edge_types: list) -> bool:
     Returns:
         bool: True if the edge is valid, False otherwise.
     """
-    edge_type = edge.get("edge_type")
+    if hasattr(edge, "model_dump"):
+        e = edge.model_dump()
+    elif isinstance(edge, dict):
+        e = edge
+    else:
+        raise TypeError("Edge must be a Pydantic model or a dictionary")
+    edge_type = e.get("edge_type")
     if edge_type not in valid_edge_types:
         raise ValueError(f"Invalid edge type: {edge_type}")
     return True
 
 
-def process_edges(G: DiGraph, edges: list) -> None:
+def process_edges(G: DiGraph, edges: List) -> None:
     """
     Process a list of edges and add them to a directed graph.
 
@@ -403,8 +402,14 @@ def process_edges(G: DiGraph, edges: list) -> None:
         DiGraph: The modified DiGraph with added edges.
     """
     valid_edge_types = ["reactant_of", "reagent_of", "product_of"]
-    for e in edges:
-        if validate_edge(e, valid_edge_types):
+    for edge in edges:
+        if validate_edge(edge, valid_edge_types):
+            if hasattr(edge, "model_dump"):
+                e = edge.model_dump()
+            elif isinstance(edge, dict):
+                e = edge
+            else:
+                raise TypeError("Edge must be a Pydantic model or a dictionary")
             edge_metadata = {}
             start_node = e["start_node"]
             end_node = e["end_node"]

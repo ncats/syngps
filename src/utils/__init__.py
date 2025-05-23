@@ -1,39 +1,6 @@
 # This file ensures that this directory will be published as part of this library
 # Find out more about regular packages here:
 # https://docs.python.org/3/reference/import.html#regular-packages
-from .decomposition_utils import (
-    FragmentGroup,
-    FragmentGroupError,
-    ParsedReaction,
-    ReactionComponent,
-    ReactionComponents,
-    RxSmilesInput,
-    extract_extension,
-    extract_original_reaction_components,
-    extract_smiles,
-    extract_smiles_and_extension,
-    has_extension,
-    has_fragment_extension,
-    join_reaction_components,
-    parse_fragment_groups,
-    parse_reaction_smiles,
-    validate_fragment_groups,
-)
-from .draw_utils import (
-    align_molecule,
-    check_atom_for_generalization,
-    combine_images_horizontally,
-    determine_highlight_colors,
-    draw_arrow,
-    draw_plus,
-    get_options,
-    get_size,
-    mol_to_image,
-    molecule_smiles_to_image,
-    reaction_smiles_to_image,
-    template_smarts_to_image,
-)
-from .graph_hash_utils import hash_graph
 from .graph_json_utils import (
     add_edge,
     add_node,
@@ -41,7 +8,7 @@ from .graph_json_utils import (
     graph_to_json_edges,
     graph_to_json_nodes,
     json_to_graph,
-    json_to_route_subgraphs,
+    json_routes_to_graph_subgraphs,
     process_edges,
     process_nodes,
     validate_edge,
@@ -85,16 +52,4 @@ from .rdkit_utils import (
     smiles2bms,
     smiles2inchikey,
     smiles2sdf,
-)
-from .role_assigner_utils import (
-    are_fragment_indices_coherent,
-    compute_rxn_balance_indices,
-    determine_max_product_index,
-    determine_max_product_index_from_parsed_rxn,
-    determine_max_reactant_index,
-    determine_max_reactant_index_from_parsed_rxn,
-    determine_min_product_index,
-    determine_min_product_index_from_parsed_rxn,
-    normalize_roles,
-    rxsmiles_has_atommapping,
 )
