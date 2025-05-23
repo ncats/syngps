@@ -14,7 +14,7 @@ def json_to_route_subgraphs(graph_obj: Dict, routes: Dict) -> Dict:
     Returns:
         dict: A dictionary with route names as keys and corresponding subgraphs as values.
     """
-    from src.aicplib.models.models import (  # avoid circular imports
+    from models.models import (  # avoid circular imports
         ReactionNode,
         SubstanceNode,
     )
