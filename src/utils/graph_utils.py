@@ -10,8 +10,9 @@ from networkx import (
     set_edge_attributes,
 )
 from networkx.algorithms import bipartite
-from src.aicplib.utils import graph_hash_utils
-from src.logging_config import logger
+from utils import graph_hash_utils
+import logging
+logger = logging.getLogger(__name__)
 
 
 def generate_combination_graphs(G: DiGraph, method: str = "ebc", max_nr: int = 0) -> List[DiGraph]:

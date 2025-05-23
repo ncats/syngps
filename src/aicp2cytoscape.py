@@ -109,7 +109,7 @@ NEW_STYLE_JSON = {
         },
         {
             "mappingType": "passthrough",
-            "mappingColumn": "node_id",
+            "mappingColumn": "node_label",
             "mappingColumnType": "String",
             "visualProperty": "NODE_LABEL"
             
@@ -121,15 +121,21 @@ NEW_STYLE_JSON = {
 
 
 def synth_graph2cyjs (G):
-    
-    cy_json_data = nx.cytoscape_data(G, name='uuid', ident='node_label')
+    # for n in G.nodes:
+    #     G.nodes[n]['node_id'] = G.nodes[n]['node_label']
+    #     G.nodes[n]['uuid'] = str(G.nodes[n]['uuid'])
+
+    cy_json_data = nx.cytoscape_data(G, name='node_id', ident='uuid')
 
     return (cy_json_data)
 
 
 def route2cyjs (G):
-
-    cy_json_data = nx.cytoscape_data(G, name='uuid', ident='node_label')
+    # for n in G.nodes:
+    #     G.nodes[n]['node_id'] = G.nodes[n]['node_label']
+    #     G.nodes[n]['uuid'] = int(G.nodes[n]['uuid'])
+        
+    cy_json_data = nx.cytoscape_data(G, name='node_id', ident='uuid')
 
     return (cy_json_data)
 
@@ -180,6 +186,8 @@ def create_style ():
     if existing_styles_response.ok:
         existing_styles = existing_styles_response.json()
         print("Existing styles:", existing_styles)  # Debug print
+    
+        # style_names = [style['title'] for style in existing_styles if isinstance(style, dict)]
         
         if NEW_STYLE_NAME in existing_styles:
             print(f"Style '{NEW_STYLE_NAME}' already exists. Applying existing style.")
@@ -235,5 +243,4 @@ def apply_layout (network_suid):
         print(f"Failed to apply layout '{LAYOUT_TYPE}'.")
 
     return (False)    
-
 
