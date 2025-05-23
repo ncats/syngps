@@ -23,6 +23,16 @@ Optional (not required, but nice to have):
 
 ## Installation
 
+### Install SynGPS code as a Python package
+
+The SynGPS code can be installed as a Python package using the following command:
+
+```bash
+pip install git+https://github.com/ncats/syngps.git
+```
+
+Documentation for the package can be found under the `docs` directory.
+
 ### Clone this Git repository
 
 ```bash
@@ -50,22 +60,22 @@ git pull
 
 ### Create the required Python environment via Conda
 
-```bash
-cd src
-```
+The conda environment for the SynGPS workflows can be created with the following commands:
 
 ```bash
+cd workflows
+
 conda env create -f environment.yml
 ```
 
 ## Case Study Reproduction
 
-Code and data required to reproduce the case studies is stored under subdirectories `syngps/src`, and `syngps/data`, respectively.
+The SynGPS library code required to reproduce the case studies is stored under subdirectory `src`. The workflows required to reproduce the case studies are stored under subdirectory `workflows`. The data required to reproduce the case studies is stored under subdirectory `data`.
 
 Run the workflow in Jupyter Notebook in JupyterLab using the above created `syngps` [Conda environment](#create-the-required-python-environment-via-conda):
 
 ```bash
-src/use_case_3_syngps_from_file.ipynb
+workflows/use_case_3_syngps_from_file.ipynb
 ```
 
 ## Post Publication Notes
@@ -108,7 +118,7 @@ This repository contains source code, Jupyter notebook, data and results files w
 
 - Worklows
 
-    The workflow to reproduce Case Study 3 in the form of Jupyter Notebook can be found at `src/use_case_3_syngps_from_file.ipynb`.
+    The workflow to reproduce Case Study 3 in the form of Jupyter Notebook can be found at `workflows/use_case_3_syngps_from_file.ipynb`.
 
 - Source Code License of SynGPS Repository
 
