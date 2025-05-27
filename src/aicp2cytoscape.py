@@ -13,7 +13,7 @@ import requests
 import json
 import pandas as pd
 import networkx as nx
-
+import uuid
 
 # Definitions
 
@@ -119,15 +119,32 @@ NEW_STYLE_JSON = {
 }
 
 
-
 def synth_graph2cyjs (G):
-    cy_json_data = nx.cytoscape_data(G, name='uuid', ident='node_label')
+    for n in G.nodes:
+        # If UUID is not set on nodes create a uuid:
+        if 'uuid' not in G.nodes[n]:
+            G.nodes[n]['uuid'] = str(uuid.uuid4())
+        if 'node_id' not in G.nodes[n]:
+            G.nodes[n]['node_id'] = G.nodes[n]['uuid']
+        if 'node_label' not in G.nodes[n]:
+            G.nodes[n]['node_label'] = G.nodes[n]['name']
+
+    cy_json_data = nx.cytoscape_data(G, name='node_label', ident='node_id')
 
     return (cy_json_data)
 
 
 def route2cyjs (G):
-    cy_json_data = nx.cytoscape_data(G, name='uuid', ident='node_label')
+    for n in G.nodes:
+        # If UUID is not set on nodes create a uuid:
+        if 'uuid' not in G.nodes[n]:
+            G.nodes[n]['uuid'] = str(uuid.uuid4())
+        if 'node_id' not in G.nodes[n]:
+            G.nodes[n]['node_id'] = G.nodes[n]['uuid']
+        if 'node_label' not in G.nodes[n]:
+            G.nodes[n]['node_label'] = G.nodes[n]['name']
+        
+    cy_json_data = nx.cytoscape_data(G, name='node_label', ident='node_id')
 
     return (cy_json_data)
 
@@ -138,8 +155,6 @@ def show_in_cytotscape(cy_json):
     # Send the network to Cytoscape
     response = requests.post(f"{CYTOSCAPE_API_URL}/networks?format=cyjs", json = cy_json)
     SUID = None
-
-    print(response.json())
     
     
     if response.ok:
@@ -237,4 +252,3 @@ def apply_layout (network_suid):
         print(f"Failed to apply layout '{LAYOUT_TYPE}'.")
 
     return (False)    
-
