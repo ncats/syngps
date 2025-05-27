@@ -1,8 +1,26 @@
-Results of Case Study 3
+Results of Case Study 1
 
-    data/case_study_3.json - A JSON file containing the results of the synthesis route search in Case Study 3 using the SynGPS and BOYA algorithms, as returned by the ASPIRE Integrated Computational Platform (AICP) API.
+    data/SynGPS_BOYA_graphs.cys - Cytoscape session file containing the input synthesis graph, the resultant synthesis route and the internediate steps of Case Study 1, which are shown as Subgraphs in Figure 4:
+        Subgraph 1: Synthesis graph (input) 
+        Subgraph 2: Artifact-free synthesis graph
+        Subgraph 3: Combination graph 1
+        Subgraph 4: Combination graph 2
+        Subgraph 5: Combination graph 3
+        Subgraph 6: Route candidate 1 - derived from Combination graph 1, and rejected as a viable synthesis route due to not being a directed-acyclic graph (DAG)
+        Subgraph 7: Route candidate 2 - derived from Combination graph 2, and identified as a viable synthesis route (the only one given the input)
+        Subgraph 8: Route candidate 3 - derived from Combination graph 3, and rejected as a viable synthesis route due to only containing the target molecule
+    
+        Toy Example VSR: The viable synthesis route shown in Figure 5
+        BOYA Example: The projected reaction network derived from the viable synthesis route shown in Figure 5
 
-    data/case_study_3.cys - A Cytoscape session file containing the synthesis graph and the synthesis routes of Case Study 3, created by parsing the graphs in the JSON file data/case_study_3.json and then sending it to Cytoscape cvia Cytoscape API.
+    data/case_study_1.cys - Cytoscape session file containing the reproduction of Case Study 1 via Jupyter Notebook in src/syngps_cs1.ipynb
+
+    data/case_study_3.cys - Cytoscape session file containing the reproduction of Case Study 3 (replicable via Jupyter Notebook in src/use_case_3_syngps_from_file.ipynb and input file in data/case_study_3.json). It was created by parsing the graphs in the JSON file data/case_study_3.json and then sending it to Cytoscape via Cytoscape API.
+
+    data/cs1.cyjs: Input file to replicate Case Study 1 via Jupyter Notebook in src/syngps_cs1.ipynb
+
+    data/case_study_3.json: A JSON file containing the results of the synthesis route search in Case Study 3 using the SynGPS and BOYA algorithms, as returned by the ASPIRE Integrated Computational Platform (AICP) API. It is the input file to replicate Case Study 3 via Jupyter Notebook in src/use_case_3_syngps_from_file.ipynb
+
 
     data/cs3_synth_graph.png - Depiction of the synthesis graph of in Case Study 3, image by Cytoscape.
 

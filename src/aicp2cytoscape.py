@@ -121,21 +121,13 @@ NEW_STYLE_JSON = {
 
 
 def synth_graph2cyjs (G):
-    # for n in G.nodes:
-    #     G.nodes[n]['node_id'] = G.nodes[n]['node_label']
-    #     G.nodes[n]['uuid'] = str(G.nodes[n]['uuid'])
-
-    cy_json_data = nx.cytoscape_data(G, name='node_id', ident='uuid')
+    cy_json_data = nx.cytoscape_data(G, name='uuid', ident='node_label')
 
     return (cy_json_data)
 
 
 def route2cyjs (G):
-    # for n in G.nodes:
-    #     G.nodes[n]['node_id'] = G.nodes[n]['node_label']
-    #     G.nodes[n]['uuid'] = int(G.nodes[n]['uuid'])
-        
-    cy_json_data = nx.cytoscape_data(G, name='node_id', ident='uuid')
+    cy_json_data = nx.cytoscape_data(G, name='uuid', ident='node_label')
 
     return (cy_json_data)
 
@@ -146,6 +138,8 @@ def show_in_cytotscape(cy_json):
     # Send the network to Cytoscape
     response = requests.post(f"{CYTOSCAPE_API_URL}/networks?format=cyjs", json = cy_json)
     SUID = None
+
+    print(response.json())
     
     
     if response.ok:
