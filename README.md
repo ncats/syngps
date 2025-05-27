@@ -1,10 +1,12 @@
 # This is the Source Code and Data Repository of the SynGPS and BOYA Algorithms
 
-### Preprint
+## Cite Us
 
-Citation...
+Preprint Citation...
 
-1.  [Prerequisite](#prerequisite)
+## Contents
+
+1.  [Prerequisites](#prerequisites)
 2.  [Installation](#installation)
 3.  [Case Study Reproduction](#case-study-reproduction)
 4.  [Post Publication Notes](#post-publication-notes)
@@ -35,7 +37,7 @@ Enter into the subdirectory containing the source code.
 cd syngps
 ```
 
-If you want to utilize the publication branch of this repository, you can check out the publication branch using the following commands:
+If you want to utilize the `publication` branch of this repository, which is **necessary for reproducing the case studies in the paper**, you can check it using the following commands:
 
 ```bash
 git fetch origin
@@ -60,7 +62,9 @@ conda env create -f environment.yml
 
 ## Case Study Reproduction
 
-Code and data required to reproduce the case studies is stored under subdirectories `syngps/src`, and `syngps/data`, respectively.
+Assuming you have the [prerequisites](#prerequisites) in place, please follow the instructions in ["Installation section"](#installation) and make sure you perform the step related to switching to the `publication` branch.
+
+Once on the `publication` branch, code and data required to reproduce the case studies is stored under subdirectories `syngps/src`, and `syngps/data`, respectively.
 
 Run the workflow in Jupyter Notebook in JupyterLab using the above created `syngps` [Conda environment](#create-the-required-python-environment-via-conda):
 
