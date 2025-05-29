@@ -73,8 +73,9 @@ The SynGPS library code required to reproduce the case studies is stored under s
 Run the workflow in Jupyter Notebook in JupyterLab using the above created `syngps` [Conda environment](#create-the-required-python-environment-via-conda):
 
 ```bash
-workflows/use_case_3_syngps_from_file.ipynb
 workflows/syngps_cs1.ipynb
+workflows/case_study2.ipynb
+workflows/use_case_3_syngps_from_file.ipynb
 ```
 
 ## Post Publication Notes
