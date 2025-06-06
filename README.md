@@ -4,6 +4,8 @@
 
 Zahoránszky-Kőhalmi G, Walker B, Cole W, Miller N, Yang B, Vorontcov I, et al. Synthesis Route Identification and Prioritization in Reaction Knowledge Graphs. ChemRxiv. 2025; doi:10.26434/chemrxiv-2025-0s3jp This content is a preprint and has not been peer-reviewed.
 
+[Link to preprint](https://chemrxiv.org/engage/chemrxiv/article-details/683f330a1a8f9bdab576d9ea)
+
 ## Contents
 
 1.  [Prerequisites](#prerequisites)
