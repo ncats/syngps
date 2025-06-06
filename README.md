@@ -1,15 +1,18 @@
 # This is the Source Code and Data Repository of the SynGPS and BOYA Algorithms
 
-### Preprint
+1.  [Cite Us](#cite-us)
+2.  [Prerequisite](#prerequisite)
+3.  [Installation](#installation)
+4.  [Case Study Reproduction](#case-study-reproduction)
+5.  [Post Publication Notes](#post-publication-notes)
+6.  [For Contributors](#for-contributors)
+7.  [License Related Section](#license-related-section)
+   
+## Cite Us
 
-Citation...
+Zahoránszky-Kőhalmi G, Walker B, Cole W, Miller N, Yang B, Vorontcov I, et al. Synthesis Route Identification and Prioritization in Reaction Knowledge Graphs. ChemRxiv. 2025; doi:10.26434/chemrxiv-2025-0s3jp This content is a preprint and has not been peer-reviewed.
 
-1.  [Prerequisite](#prerequisite)
-2.  [Installation](#installation)
-3.  [Case Study Reproduction](#case-study-reproduction)
-4.  [Post Publication Notes](#post-publication-notes)
-5.  [For Contributors](#for-contributors)
-6.  [License Related Section](#license-related-section)
+[Link to preprint](https://chemrxiv.org/engage/chemrxiv/article-details/683f330a1a8f9bdab576d9ea)
 
 ## Prerequisite
 
