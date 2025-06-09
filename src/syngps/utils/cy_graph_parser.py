@@ -66,7 +66,7 @@ def process_nodes(G, nodes):
             raise ValueError(
                 f'[ERROR] Invalid node type found: {node_type}. Terminating ...'
             )
-        node_uuid = n['data']['SUID']
+        node_uuid = str(n['data']['SUID'])
 
         # Ignoring source info. Filtering should be done before this stage,
         # because at this stage we're only interested in synthesis routes.
@@ -140,31 +140,15 @@ def process_edges(G, edges):
         Input: Directed NetworkX object (DiGraph),
 
         Output: Synthesis graph.
-
-
-
     """
 
     for e in edges:
-
         edge_metadata = {}
 
-        # edge_uuid = e['uuid']
-        # edge_type = e['edge_type']
+        start_node = str(e['data']['source'])
+        end_node = str(e['data']['target'])
 
-        # if edge_type not in valid_edge_types:
-        #    write_to_log ("Invalid edge type found: %s. Terminating ..." % (edge_type))
-        #    sys.exit(-1)
-
-        start_node = e['data']['source']
-        end_node = e['data']['target']
-
-        # edge_metadata['start_node'] = start_node
-        # edge_metadata['end_node'] = end_node
-
-        edge_metadata['node_label'] = e['data']['name']
-        edge_metadata['name'] = e['data']['name']
-        edge_metadata['uuid'] = e['data']['SUID']
+        edge_metadata['uuid'] = str(e['data']['SUID'])
         edge_metadata['edge_type'] = e['data']['edge_type']
 
         G = add_edge(G, start_node, end_node, edge_metadata)
@@ -195,7 +179,6 @@ def graph_to_json(graph):
 
 def add_aggregated_yield_info(G, agg_yield):
     for n in G.nodes:
-        print(agg_yield)
         G.nodes[n]['aggregated_yield'] = agg_yield
 
     return (G)

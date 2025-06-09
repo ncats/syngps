@@ -119,9 +119,41 @@ def validate_cytoscape(timeout: float = 1.0) -> bool:
 
 def to_cytoscape_json(G: nx.DiGraph) -> dict:
     """Converts a DiGraph to Cytoscape JSON format."""
-    for node in G.nodes():
-        G.nodes[node]["node_id"] = G.nodes[node]["node_label"]
-    return nx.cytoscape_data(G, name="uuid", ident="node_label")
+    # Step 1: Collect nodes to rename
+    nodes_to_rename = []
+    for n in G.nodes:
+        new_id = G.nodes[n].get('uuid')
+        G.nodes[n]['node_id'] = new_id
+        if new_id is not None and n != new_id:
+            nodes_to_rename.append((n, new_id))
+
+    # Step 2: Perform renaming
+    for old_id, new_id in nodes_to_rename:
+        rename_node(G, old_id, new_id)
+
+    # Step 3: Convert to Cytoscape JSON
+    return nx.cytoscape_data(G, name="node_label", ident="node_id")
+
+
+def rename_node(G: nx.DiGraph, old_id, new_id):
+    if old_id not in G:
+        raise ValueError(f"Node {old_id} not found in graph.")
+    if new_id in G:
+        raise ValueError(f"Node {new_id} already exists in graph.")
+
+    # Add the new node with the same attributes
+    G.add_node(new_id, **G.nodes[old_id])
+
+    # Redirect incoming edges
+    for u, _, data in G.in_edges(old_id, data=True):
+        G.add_edge(u, new_id, **data)
+
+    # Redirect outgoing edges
+    for _, v, data in G.out_edges(old_id, data=True):
+        G.add_edge(new_id, v, **data)
+
+    # Remove the old node
+    G.remove_node(old_id)
 
 
 def send_to_cytoscape(cyjs: dict) -> int:
@@ -228,6 +260,43 @@ def send_synthgraph_to_cytoscape(sg: SynthGraph, collection_name: Optional[str] 
     logger.info(f"SynthGraph sent and styled in Cytoscape with SUID {suid}.")
     return suid
 
+
+def send_network_to_cytoscape(network: nx.DiGraph, network_name: Optional[str] = None) -> int:
+    """
+    Sends a network to Cytoscape, assigns it to a collection,
+    and applies style and layout.
+
+    Args:
+        network (nx.DiGraph): The network to send.
+        network_name (str, optional): Name of the network to group the network into.
+
+    Returns:
+        int: The SUID of the created network.
+    """
+    logger.info("Sending Network to Cytoscape...")
+
+    # Convert DiGraph to Cytoscape JSON
+    cyjs = to_cytoscape_json(network)
+
+    # Assign default collection name if not provided
+    if not network_name:
+        network_name = "Network"
+
+    # Inject network-level metadata
+    cyjs["data"] = {
+        "name": network_name,
+        "networkCollection": network_name
+    }
+
+    # Send to Cytoscape
+    suid = send_to_cytoscape(cyjs)
+
+    # Apply style and layout
+    apply_style(suid)
+    apply_layout(suid)
+
+    logger.info(f"Network sent and styled in Cytoscape with SUID {suid}.")
+    return suid
 
 def send_synthgraphs_to_cytoscape(synthgraphs: list[SynthGraph], collection_name: Optional[str] = None) -> list[int]:
     """
