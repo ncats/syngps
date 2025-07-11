@@ -571,7 +571,7 @@ def find_viable_route(C: DiGraph, target_module_node_id: Union[str, int]) -> Tup
     if len(G.nodes) == 1:
         logger.debug("[***] Filtered graph only contains target molecule.")
         route_status = "Route Candidate Only Contains Target Molecule"
-        return DiGraph(), route_status
+        return G, route_status
 
     ###
     # 4
@@ -580,7 +580,7 @@ def find_viable_route(C: DiGraph, target_module_node_id: Union[str, int]) -> Tup
     if not is_directed_acyclic_graph(G):
         logger.debug("[***] Filtered graph is not a DAG.")
         route_status = "Route Candidate is not a DAG"
-        return DiGraph(), route_status
+        return G, route_status
 
     return G, route_status
 
@@ -767,7 +767,7 @@ def identify_individual_synthesis_routes(
     for route_candidate in route_candidates:
         graph = route_candidate["route_candidate"].copy()
         # Check if the graph is not empty.
-        if graph.nodes:
+        if route_candidate["route_status"] == "Viable Synthesis Route":
             # Generate a tree hash for the graph.
             tree_hash = graph_hash_utils.hash_graph(graph)
             # Deduplicate based on the tree hash.
