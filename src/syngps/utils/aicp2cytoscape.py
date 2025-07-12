@@ -324,10 +324,11 @@ def send_synthroute_to_cytoscape(synthroute: SynthRoute, collection_name: Option
 
     # Assign default collection name if not provided
     if not collection_name:
-        collection_name = f"SynthRoute_{"Predicted" if synthroute.predicted else "Evidence"}_{synthroute.route_index}"
+        status = "Predicted" if synthroute.predicted else "Evidence"
+        collection_name = f"SynthRoute_{status}_{synthroute.route_index}"
 
     # Inject network-level metadata
-    cyjs["data"] = {
+    ["data"] = {
         "name": collection_name,
         "networkCollection": collection_name,
         "aggregated_yield": synthroute.aggregated_yield if synthroute.aggregated_yield else "N/A"
