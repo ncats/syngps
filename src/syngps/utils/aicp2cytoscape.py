@@ -328,7 +328,7 @@ def send_synthroute_to_cytoscape(synthroute: SynthRoute, collection_name: Option
         collection_name = f"SynthRoute_{status}_{synthroute.route_index}"
 
     # Inject network-level metadata
-    ["data"] = {
+    cyjs["data"] = {
         "name": collection_name,
         "networkCollection": collection_name,
         "aggregated_yield": synthroute.aggregated_yield if synthroute.aggregated_yield else "N/A"
