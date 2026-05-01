@@ -58,7 +58,8 @@ from .rdkit_utils import (
 from .model_conversion_utils import (
     build_synthgraph_from_json,
     build_topn_yield_result,
-    build_synth_routes_result
+    build_synth_routes_result,
 )
+from .standalone_utils import find_top_n_routes
 from .aicp2cytoscape import *
 from .cy_graph_parser import cy_json2synthgraph

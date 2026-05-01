@@ -1,0 +1,270 @@
+{
+    "search_params": {
+        "target_molecule_inchikey": "UBKOYAUKDZMQDZ-UHFFFAOYSA-N",
+        "reaction_steps": 3,
+        "query_type": "shortest_path",
+        "leaves_as_sm": false,
+        "include_availability_info": true,
+        "annotate_reactions": true,
+        "graph_backend": "memgraph"
+    },
+    "time_info": {
+        "synth_graph_time": 0.012050151824951172
+    },
+    "summary": {
+        "num_edges": 4,
+        "num_nodes": 5
+    },
+    "availability": [
+        {
+            "inchikey": "IAZDPXIOMUYVGZ-UHFFFAOYSA-N",
+            "inventory": {
+                "available": true,
+                "locations": []
+            },
+            "commercial_availability": {
+                "available": false,
+                "vendors": []
+            }
+        },
+        {
+            "inchikey": "XXKCYKIJWLFVDG-UHFFFAOYSA-N",
+            "inventory": {
+                "available": true,
+                "locations": []
+            },
+            "commercial_availability": {
+                "available": false,
+                "vendors": []
+            }
+        },
+        {
+            "inchikey": "SNHMUERNLJLMHN-UHFFFAOYSA-N",
+            "inventory": {
+                "available": true,
+                "locations": []
+            },
+            "commercial_availability": {
+                "available": false,
+                "vendors": []
+            }
+        },
+        {
+            "inchikey": "UBKOYAUKDZMQDZ-UHFFFAOYSA-N",
+            "inventory": {
+                "available": false,
+                "locations": []
+            },
+            "commercial_availability": {
+                "available": false,
+                "vendors": []
+            }
+        }
+    ],
+    "nodes": [
+        {
+            "node_label": "ASPIRE-4889584092812887808",
+            "node_type": "reaction",
+            "uuid": "reaction_a30a5b64dc8024563109edc0e7ff0ca025d0937f76bd5d99c82abc017f19fda1",
+            "rxid": "ASPIRE-4889584092812887808",
+            "rxsmiles": "[C:1]([O:5][C:6]([N:8]1[CH2:15][C:12]2([CH2:14][CH2:13]2)[NH:11][CH2:10][CH2:9]1)=[O:7])([CH3:4])([CH3:3])[CH3:2].I[C:17]1[CH:22]=[CH:21][CH:20]=[CH:19][CH:18]=1>CS(C)=O>[C:1]([O:5][C:6]([N:8]1[CH2:15][C:12]2([CH2:13][CH2:14]2)[N:11]([C:17]2[CH:22]=[CH:21][CH:20]=[CH:19][CH:18]=2)[CH2:10][CH2:9]1)=[O:7])([CH3:4])([CH3:2])[CH3:3]",
+            "rxclass": "N-arylation with Ar-X",
+            "rxname": "Iodo N-arylation",
+            "original_rxsmiles": "[C:1]([O:5][C:6]([N:8]1[CH2:15][C:12]2([CH2:14][CH2:13]2)[NH:11][CH2:10][CH2:9]1)=[O:7])([CH3:4])([CH3:3])[CH3:2].I[C:17]1[CH:22]=[CH:21][CH:20]=[CH:19][CH:18]=1>CS(C)=O>[C:1]([O:5][C:6]([N:8]1[CH2:15][C:12]2([CH2:13][CH2:14]2)[N:11]([C:17]2[CH:22]=[CH:21][CH:20]=[CH:19][CH:18]=2)[CH2:10][CH2:9]1)=[O:7])([CH3:4])([CH3:2])[CH3:3]",
+            "yield_info": {
+                "yield_predicted": 65.69,
+                "yield_score": 3
+            },
+            "provenance": {
+                "is_in_aicp": false,
+                "is_in_uspto_full": false,
+                "is_in_savi_130k": false,
+                "is_from_askcos": false,
+                "patents": [
+                    "US20120184525A1"
+                ],
+                "patent_paragraph_nums": [
+                    985
+                ]
+            },
+            "validation": {
+                "is_balanced": false,
+                "is_rxname_recognized": true,
+                "is_valid": true
+            },
+            "route_assembly_type": {
+                "is_predicted": false,
+                "is_evidence": false
+            },
+            "evidence_protocol": null,
+            "evidence_conditions_info": null,
+            "predicted_conditions_info": null
+        },
+        {
+            "node_label": "IAZDPXIOMUYVGZ-UHFFFAOYSA-N",
+            "node_type": "substance",
+            "uuid": "substance_ca595d116f1b3723f294eb81b17506fc4a9298b37e6d9348bb10db9a53fbcc03",
+            "inchikey": "IAZDPXIOMUYVGZ-UHFFFAOYSA-N",
+            "canonical_smiles": "CS(C)=O",
+            "srole": "sm",
+            "route_assembly_type": {
+                "is_predicted": false,
+                "is_evidence": false
+            },
+            "provenance": {
+                "is_in_aicp": false,
+                "is_in_uspto_full": false,
+                "is_in_savi_130k": false,
+                "is_from_askcos": false,
+                "patents": [],
+                "patent_paragraph_nums": []
+            }
+        },
+        {
+            "node_label": "XXKCYKIJWLFVDG-UHFFFAOYSA-N",
+            "node_type": "substance",
+            "uuid": "substance_b9fcffc543508fb4d0b7304ef551e2bf6268f5dac59e0ad84a5210a954efd240",
+            "inchikey": "XXKCYKIJWLFVDG-UHFFFAOYSA-N",
+            "canonical_smiles": "CC(C)(C)OC(=O)N1CCNC2(CC2)C1",
+            "srole": "sm",
+            "route_assembly_type": {
+                "is_predicted": false,
+                "is_evidence": false
+            },
+            "provenance": {
+                "is_in_aicp": false,
+                "is_in_uspto_full": false,
+                "is_in_savi_130k": false,
+                "is_from_askcos": false,
+                "patents": [],
+                "patent_paragraph_nums": []
+            }
+        },
+        {
+            "node_label": "SNHMUERNLJLMHN-UHFFFAOYSA-N",
+            "node_type": "substance",
+            "uuid": "substance_19545982f172f76e6e312a116ca87ac6f658d3d9ce8b73d1746e4703690ea9d9",
+            "inchikey": "SNHMUERNLJLMHN-UHFFFAOYSA-N",
+            "canonical_smiles": "Ic1ccccc1",
+            "srole": "sm",
+            "route_assembly_type": {
+                "is_predicted": false,
+                "is_evidence": false
+            },
+            "provenance": {
+                "is_in_aicp": false,
+                "is_in_uspto_full": false,
+                "is_in_savi_130k": false,
+                "is_from_askcos": false,
+                "patents": [],
+                "patent_paragraph_nums": []
+            }
+        },
+        {
+            "node_label": "UBKOYAUKDZMQDZ-UHFFFAOYSA-N",
+            "node_type": "substance",
+            "uuid": "substance_e2080db89d963153e495ea9c88d9fdea4ff4ff7d51abb28a52a087c70482b431",
+            "inchikey": "UBKOYAUKDZMQDZ-UHFFFAOYSA-N",
+            "canonical_smiles": "CC(C)(C)OC(=O)N1CCN(c2ccccc2)C2(CC2)C1",
+            "srole": "tm",
+            "route_assembly_type": {
+                "is_predicted": false,
+                "is_evidence": false
+            },
+            "provenance": {
+                "is_in_aicp": false,
+                "is_in_uspto_full": false,
+                "is_in_savi_130k": false,
+                "is_from_askcos": false,
+                "patents": [],
+                "patent_paragraph_nums": []
+            }
+        }
+    ],
+    "edges": [
+        {
+            "start_node": "ASPIRE-4889584092812887808",
+            "end_node": "UBKOYAUKDZMQDZ-UHFFFAOYSA-N",
+            "edge_label": "ASPIRE-4889584092812887808|UBKOYAUKDZMQDZ-UHFFFAOYSA-N",
+            "edge_type": "product_of",
+            "provenance": {
+                "is_in_aicp": false,
+                "is_in_uspto_full": false,
+                "is_in_savi_130k": false,
+                "is_from_askcos": false,
+                "patents": null,
+                "patent_paragraph_nums": null
+            },
+            "uuid": "product_of_3df3d56127b2280cde5b8c89d86ed582e56eec27b22f8df71d3585ec7367232a",
+            "inchikey": "UBKOYAUKDZMQDZ-UHFFFAOYSA-N",
+            "rxid": "ASPIRE-4889584092812887808",
+            "route_assembly_type": {
+                "is_predicted": false,
+                "is_evidence": false
+            }
+        },
+        {
+            "start_node": "IAZDPXIOMUYVGZ-UHFFFAOYSA-N",
+            "end_node": "ASPIRE-4889584092812887808",
+            "edge_label": "IAZDPXIOMUYVGZ-UHFFFAOYSA-N|ASPIRE-4889584092812887808",
+            "edge_type": "reagent_of",
+            "provenance": {
+                "is_in_aicp": false,
+                "is_in_uspto_full": false,
+                "is_in_savi_130k": false,
+                "is_from_askcos": false,
+                "patents": null,
+                "patent_paragraph_nums": null
+            },
+            "uuid": "reagent_of_7790773f73ef73cc1f357a845db1ac56acbef10f0c032ff8c59f84a0698bbca0",
+            "inchikey": "IAZDPXIOMUYVGZ-UHFFFAOYSA-N",
+            "rxid": "ASPIRE-4889584092812887808",
+            "route_assembly_type": {
+                "is_predicted": false,
+                "is_evidence": false
+            }
+        },
+        {
+            "start_node": "XXKCYKIJWLFVDG-UHFFFAOYSA-N",
+            "end_node": "ASPIRE-4889584092812887808",
+            "edge_label": "XXKCYKIJWLFVDG-UHFFFAOYSA-N|ASPIRE-4889584092812887808",
+            "edge_type": "reactant_of",
+            "provenance": {
+                "is_in_aicp": false,
+                "is_in_uspto_full": false,
+                "is_in_savi_130k": false,
+                "is_from_askcos": false,
+                "patents": null,
+                "patent_paragraph_nums": null
+            },
+            "uuid": "reactant_of_5d998919175db2e280dd321e4fe35d4285ce9fb7b719683a35e0148bfde10056",
+            "inchikey": "XXKCYKIJWLFVDG-UHFFFAOYSA-N",
+            "rxid": "ASPIRE-4889584092812887808",
+            "route_assembly_type": {
+                "is_predicted": false,
+                "is_evidence": false
+            }
+        },
+        {
+            "start_node": "SNHMUERNLJLMHN-UHFFFAOYSA-N",
+            "end_node": "ASPIRE-4889584092812887808",
+            "edge_label": "SNHMUERNLJLMHN-UHFFFAOYSA-N|ASPIRE-4889584092812887808",
+            "edge_type": "reactant_of",
+            "provenance": {
+                "is_in_aicp": false,
+                "is_in_uspto_full": false,
+                "is_in_savi_130k": false,
+                "is_from_askcos": false,
+                "patents": null,
+                "patent_paragraph_nums": null
+            },
+            "uuid": "reactant_of_de0c730d10a242fc0af6a393298e2e9eace52c1660dfbdb7a19b0ec5d3accc3a",
+            "inchikey": "SNHMUERNLJLMHN-UHFFFAOYSA-N",
+            "rxid": "ASPIRE-4889584092812887808",
+            "route_assembly_type": {
+                "is_predicted": false,
+                "is_evidence": false
+            }
+        }
+    ]
+}
