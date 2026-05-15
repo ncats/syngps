@@ -1,6 +1,6 @@
 import math
 from pstats import Stats
-from typing import Any, Dict, List, Optional, Union
+from typing import Any, Dict, List, Literal, Optional, Union
 
 from networkx import DiGraph
 from pydantic import BaseModel, ConfigDict, Field, computed_field, model_validator
@@ -64,19 +64,19 @@ class Inventory(BaseModel):
 
 class CommercialAvailability(BaseModel):
     available: bool = Field(description="Availability status commercially")
-    vendors: List[Vendor] = Field(default_factory=list, description="List of vendors offering the substance")
-
+    source: Optional[str] = Field(default=None, description="Source of commercial availability information")
+    url: Optional[str] = Field(default=None, description="URL for commercial availability information")
 
 class Availability(BaseModel):
     inchikey: str = Field(description="InChIKey of the substance")
     inventory: Inventory = Field(description="Inventory availability details")
-    commercial_availability: CommercialAvailability = Field(description="Commercial availability details")
+    commercial_availability: Optional[CommercialAvailability] = Field(default=None, description="Commercial availability details")
 
 
 class SynthGraphSearch(BaseModel):
     target_molecule_inchikey: str = Field(examples=["YTIQRXMAVJLXHH-UHFFFAOYSA-N"], min_length=1)
     reaction_steps: int = Field(default=2, examples=[2], description="Number of reaction steps to search away from target molecule", gt=0)
-    query_type: str = Field(
+    query_type: Literal["shortest_path"] = Field(
         default="shortest_path",
         examples=["shortest_path"],
         description='Type of query to be used for extracting graph data, options are "shortest_path". "shortest_path" (the default) will use shortest path to truncate much of the graph searching to enable faster query time.',
@@ -84,8 +84,8 @@ class SynthGraphSearch(BaseModel):
     leaves_as_sm: bool = Field(default=True, examples=[True], description="Whether to consider leaf substance nodes as starting materials")
     include_availability_info: bool = Field(default=False, examples=[False], description="Whether to include availability information in the response")
     annotate_reactions: bool = Field(default=False, examples=[False], description="Whether to annotate reactions in the graph with Hazelnut")
-    graph_backend: str = Field(default="memgraph", examples=[
-                               "memgraph", "neo4j", "networkx"], description="Whether to use memgraph, neo4j or networkx graph backend. Neo4j backend may not be enabled for all deployments.")
+    graph_backend: Literal["memgraph"] = Field(default="memgraph", examples=["memgraph"], description='Graph backend to use for synthesis graph operations, options are "memgraph" (the default)')
+    inventory_source: Literal["enamine", "askcos", "emolecules", "stock"] = Field(default="enamine", examples=["enamine", "askcos", "emolecules", "stock"], description="Source of inventory to check for availability, options are 'enamine', 'askcos', 'emolecules', 'stock' (for custom stock inventory)")
 
     @property
     def search_depth(self) -> int:
@@ -98,6 +98,7 @@ class TopNYieldSearch(SynthGraphSearch):
     include_route_candidates: bool = Field(default=False, examples=[False], description="Whether to return route candidates or not")
     include_combination_graphs: bool = Field(default=False, examples=[False], description="Whether to return combination graphs or not")
     synthesis_graph_json: Optional[Dict[str, Any]] = Field(default=None, description="Optional synthesis graph input", examples=[None])
+    inventory_source: Literal["enamine", "askcos", "emolecules", "stock"] = Field(default="enamine", examples=["enamine", "askcos", "emolecules", "stock"], description="Source of inventory to check for availability, options are 'enamine', 'askcos', 'emolecules', 'stock' (for custom stock inventory)")
 
 
 class SynthGraphJsonInput(BaseModel):
@@ -316,9 +317,10 @@ class Node(BaseModel):
 
 
 class Provenance(BaseModel):
-    is_in_aicp: bool
-    is_in_uspto_full: bool
-    is_in_savi_130k: bool
+    is_in_aicp: bool = Field(default=False)
+    is_in_uspto_full: bool = Field(default=False)
+    is_in_savi_130k: bool = Field(default=False)
+    is_in_askcos: bool = Field(default=False)
     patents: Optional[List[str]] = Field(default=None, description="List of patent strings")
     patent_paragraph_nums: Optional[List[int]] = Field(default=None, description="List of paragraph numbers corresponding to patents")
 
@@ -402,6 +404,8 @@ class SGPInput(BaseModel):
     synth_graph_json: SynthGraphJsonInput = Field()
     unwanted_substances: List[str] = Field(default=[])
     unwanted_reactions: List[str] = Field(default=[])
+    inventory_source: Literal["enamine", "askcos", "emolecules", "stock"] = Field(default="enamine", examples=["enamine", "askcos", "emolecules", "stock"], description="Source of inventory to check for availability, options are 'enamine', 'askcos', 'emolecules', 'stock' (for custom stock inventory)")
+
 
 
 class CustomConfig:
@@ -447,6 +451,7 @@ class ParseSynthGraphInput(BaseModel):
     synthesis_graph_json: SynthGraphJson = Field()
     include_route_candidates: Optional[bool] = Field(default=False, description="Whether to return route candidates or not")
     include_combination_graphs: Optional[bool] = Field(default=False, description="Whether to return combination graphs or not")
+    inventory_source: Literal["enamine", "askcos", "emolecules", "stock"] = Field(default="enamine", examples=["enamine", "askcos", "emolecules", "stock"], description="Source of inventory to check for availability, options are 'enamine', 'askcos', 'emolecules', 'stock' (for custom stock inventory)")
 
 
 class ParseSynthGraphOutput(BaseModel):
@@ -475,7 +480,6 @@ class AggregateYieldsInput(BaseModel):
     # Define model configuration
     model_config = ConfigDict(extra="ignore")
 
-    repredict_yields: bool = Field(default=False, description="Whether to repredict yields or not")
     synthesis_graph_json: SynthGraphJson = Field(description="Synthesis graph input. Required to get yield information of reactions.")
     find_routes: bool = Field(default=False, description="Whether to find routes or not. If true, routes_json will be ignored.")
     routes: List[RouteLabelsInput] = Field(default=[], description="List of routes")

@@ -850,7 +850,7 @@ class SynthesisRoutesRequest(BaseModel):
     include_evidence_synth_graph: bool = Field(default=True, examples=[True])
     include_predicted_routes: bool = Field(default=True, examples=[True])
     prediction_options: PredictedRouteDetails = Field()
-    include_predictive_synth_graph: bool = Field(default=True, examples=[True])
+    include_predicted_synth_graph: bool = Field(default=True, examples=[True])
 
 
 class SynthesisRoutesResponse(BaseModel):
@@ -861,7 +861,7 @@ class SynthesisRoutesResponse(BaseModel):
     predicted_routes_success: bool = Field(default=False, examples=[True])
     routes: List[SynthRoute | SynthRoutePreDefined] = Field(default=[])
     evidence_synth_graph: Optional[SynthGraph] = Field(default=None)
-    predictive_synth_graph: Optional[SynthGraph] = Field(default=None)
+    predicted_synth_graph: Optional[SynthGraph] = Field(default=None)
 
     @computed_field
     def num_routes(self) -> int:

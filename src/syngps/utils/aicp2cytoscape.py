@@ -328,7 +328,7 @@ def send_synthroute_to_cytoscape(synthroute: SynthRoute, collection_name: Option
         collection_name = f"SynthRoute_{status}_{synthroute.route_index}"
 
     # Inject network-level metadata
-    ["data"] = {
+    cyjs["data"] = {
         "name": collection_name,
         "networkCollection": collection_name,
         "aggregated_yield": synthroute.aggregated_yield if synthroute.aggregated_yield else "N/A"
@@ -378,9 +378,9 @@ def send_synthesis_routes_response_to_cytoscape(synthesis_routes_response: Synth
         esg_suid = send_synthgraph_to_cytoscape(synthesis_routes_response.evidence_synth_graph, collection_name)
         sg_suids.append(esg_suid)
 
-    # Send predictive synth graph
-    if synthesis_routes_response.predictive_synth_graph:
-        psg_suid = send_synthgraph_to_cytoscape(synthesis_routes_response.predictive_synth_graph, collection_name)
+    # Send predicted synth graph
+    if synthesis_routes_response.predicted_synth_graph:
+        psg_suid = send_synthgraph_to_cytoscape(synthesis_routes_response.predicted_synth_graph, collection_name)
         sg_suids.append(psg_suid)
 
     # Filter out routes that are not SynthRoute objects

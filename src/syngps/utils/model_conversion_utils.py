@@ -128,15 +128,15 @@ def build_synth_routes_result(json_dict: dict) -> SynthesisRoutesResponse:
     else:
         evidence_synth_graph = None
 
-    # Step 2: Extract predictive graph
-    if "predictive_synth_graph" in json_dict:
-        predictive_synth_graph = build_synthgraph_from_json(json_dict["predictive_synth_graph"])  
+    # Step 2: Extract predicted graph
+    if "predicted_synth_graph" in json_dict:
+        predicted_synth_graph = build_synthgraph_from_json(json_dict["predicted_synth_graph"])  
     else:
-        predictive_synth_graph = None
+        predicted_synth_graph = None
 
     # Step 3: Validate at least one graph is present
-    if evidence_synth_graph is None and predictive_synth_graph is None:
-        raise ValueError("Neither evidence_synth_graph nor predictive_synth_graph found in JSON data")
+    if evidence_synth_graph is None and predicted_synth_graph is None:
+        raise ValueError("Neither evidence_synth_graph nor predicted_synth_graph found in JSON data")
     
     # Step 4: Create evidence routes
     evidence_routes_mapped = []
@@ -144,11 +144,11 @@ def build_synth_routes_result(json_dict: dict) -> SynthesisRoutesResponse:
         evidence_routes = [route for route in json_dict["routes"] if not route.get("predicted", False)]
         evidence_routes_mapped = create_subgraphs_from_routes(evidence_routes, evidence_synth_graph.synthesis_graph)
 
-    # Step 5: Create predictive routes
-    predictive_routes_mapped = []
-    if predictive_synth_graph:
-        predictive_routes = [route for route in json_dict["routes"] if route.get("predicted", False)]
-        predictive_routes_mapped = create_subgraphs_from_routes(predictive_routes, predictive_synth_graph.synthesis_graph)
+    # Step 5: Create predicted routes
+    predicted_routes_mapped = []
+    if predicted_synth_graph:
+        predicted_routes = [route for route in json_dict["routes"] if route.get("predicted", False)]
+        predicted_routes_mapped = create_subgraphs_from_routes(predicted_routes, predicted_synth_graph.synthesis_graph)
 
     # Step 6: Build the final SynthesisRoutesResponse
     result = SynthesisRoutesResponse(
@@ -157,9 +157,9 @@ def build_synth_routes_result(json_dict: dict) -> SynthesisRoutesResponse:
         reaction_steps=json_dict["reaction_steps"],
         evidence_routes_success=json_dict["evidence_routes_success"],
         predicted_routes_success=json_dict["predicted_routes_success"],
-        routes=evidence_routes_mapped + predictive_routes_mapped,
+        routes=evidence_routes_mapped + predicted_routes_mapped,
         evidence_synth_graph=evidence_synth_graph,
-        predictive_synth_graph=predictive_synth_graph,
+        predicted_synth_graph=predicted_synth_graph,
     )
 
     return result

@@ -291,7 +291,7 @@ def rxsmiles_to_svg(
     return svg
 
 
-def moleculesmiles_to_svg(mol_smiles: str, monochrome_atoms: bool = False, kekulize_mol: bool = False, img_width: int = 1800, img_height: int = 600) -> str:
+def molecule_smiles_to_svg(mol_smiles: str, monochrome_atoms: bool = False, kekulize_mol: bool = False, img_width: int = 1800, img_height: int = 600) -> str:
     """
     Convert a molecule SMILES string into an SVG representation.
 
@@ -453,3 +453,4 @@ def process_reaction(rxn: str) -> str:
     joined_precursors = ".".join(sorted(precursors))
     joined_products = ".".join(sorted(product_list))
     return f"{joined_precursors}>>{joined_products}"
+

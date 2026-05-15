@@ -46,7 +46,7 @@ from .rdkit_utils import (
     is_reaction_valid,
     is_sdf_parseable,
     moleculeinchi_to_svg,
-    moleculesmiles_to_svg,
+    molecule_smiles_to_svg,
     parse_rxn_extended_smiles,
     process_reaction,
     rxsmiles_to_svg,
@@ -63,3 +63,11 @@ from .model_conversion_utils import (
 from .standalone_utils import find_top_n_routes
 from .aicp2cytoscape import *
 from .cy_graph_parser import cy_json2synthgraph
+from .draw_utils import reaction_smiles_to_image, molecule_smiles_to_image
+from .decomposition_utils import (
+    parse_reaction_smiles
+)
+from .role_assigner_utils import (
+    compute_rxn_balance_indices, 
+    normalize_roles
+)

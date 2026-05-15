@@ -5,6 +5,7 @@ from typing import Any, Dict, List, Tuple
 from networkx import DiGraph
 from syngps import yields as ay
 from syngps.adapters.abstract_data_adapter import AbstractDataAdapter
+from syngps.adapters.abstract_inventory_adapter import AbstractInventoryAdapter
 from syngps.errors import (
     SynthGraphParsingException,
 )
@@ -42,6 +43,7 @@ class AicpFunctions:
     def __init__(
         self,
         data_adapter: AbstractDataAdapter,
+        inventory_adapter: AbstractInventoryAdapter,
         enable_profiler: bool = False,
     ):
         """
@@ -54,6 +56,7 @@ class AicpFunctions:
         self.enable_profiler = enable_profiler
         self.profiler = cProfile.Profile()
         self.data_adapter: AbstractDataAdapter = data_adapter
+        self.inventory_adapter: AbstractInventoryAdapter = inventory_adapter
 
     def fetch_synthesis_graph(self, synth_search: SynthGraphSearch) -> SynthGraph:
         """
@@ -380,9 +383,9 @@ class AicpFunctions:
             in_degree = synth_graph.synthesis_graph.in_degree(substance)
             if inchikey == target_molecule_inchikey:
                 srole = "tm"
-            # elif self.inventory_adapter.in_inventory_by_inchikey(inchikey):
-            #     substance.is_in_inventory = True
-            #     srole = "sm"
+            elif self.inventory_adapter.in_inventory_by_inchikey(inchikey):
+                synth_graph.synthesis_graph.nodes[substance]["is_in_inventory"] = True
+                srole = "sm"
             elif in_degree == 0 and (synth_graph.search_params and synth_graph.search_params.leaves_as_sm):
                 srole = "sm"
             else:
@@ -558,20 +561,17 @@ class AicpFunctions:
         Returns:
             List[Availability]: Availability information for each substance node.
         """
-        availability_info: List[Availability] = []
-        for node_id, node_data in synth_graph.synthesis_graph.nodes(data=True):
-            if node_data.get("node_type") == "substance":
-                availability_info.append(
-                    # TEMPORARILY SET ALL SM AS AVAILABLE
-                    # TODO : Hook into substance availability and ASI inventory
-                    Availability(
-                        inchikey=node_data.get("inchikey"),
-                        inventory=Inventory(available=node_data.get(
-                            "srole") == "sm", locations=[]),
-                        commercial_availability=CommercialAvailability(
-                            available=False, vendors=[]),
-                    )
-                )
+        from concurrent.futures import ThreadPoolExecutor
+
+        inchikeys = [
+            node_data.get("inchikey")
+            for _, node_data in synth_graph.synthesis_graph.nodes(data=True)
+            if node_data.get("node_type") == "substance" and node_data.get("inchikey")
+        ]
+
+        with ThreadPoolExecutor() as executor:
+            availability_info = list(executor.map(self.inventory_adapter.inventory_status_details, inchikeys))
+
         return availability_info
 
     def update_reaction_provenance(self, synth_graph: SynthGraph) -> SynthGraph:

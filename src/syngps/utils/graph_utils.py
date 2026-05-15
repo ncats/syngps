@@ -782,3 +782,99 @@ def identify_individual_synthesis_routes(
     logger.debug(f"Identified {len(final_route_candidates)} final route candidates.")
 
     return final_route_candidates, route_candidates, combination_graphs
+
+def merge_synth_graphs(graphs: List[DiGraph], target_inchikey: str) -> DiGraph:
+    """
+    Merge multiple synthesis graphs (AICP format) into a single DiGraph.
+    Traverses each graph from the target molecule node (by inchikey), adding all reachable nodes/edges to the merged graph.
+    Deduplication is by unique identifier (inchikey for substances, rxid for reactions).
+    No nodes are skipped unless unreachable from the target.
+
+    Args:
+        graphs: List of DiGraph objects to merge.
+        target_inchikey: The inchikey of the target molecule node to start traversal from in each graph.
+    """
+    from collections import deque
+
+    merged_graph = DiGraph()
+    inchikey_to_node_id: dict[str, str] = {}
+    rxid_to_node_id: dict[str, str] = {}
+
+    for g_idx, graph in enumerate(graphs):
+        # Find the node with node_type == "Substance" and inchikey == target_inchikey
+        target_node_id = None
+        for node_id, node_data in graph.nodes(data=True):
+            node_type = (node_data.get("node_type") or "").lower()
+            if node_type.lower() == "substance" and node_data.get("inchikey") == target_inchikey:
+                target_node_id = node_id
+                break
+        if not target_node_id:
+            continue  # Skip this graph if no target node found
+
+
+        visited = set()
+        queue = deque([target_node_id])
+
+        while queue:
+            node_id = queue.popleft()
+            if node_id in visited:
+                continue
+            visited.add(node_id)
+            node_data = graph.nodes[node_id]
+            node_type = (node_data.get("node_type") or "").lower()
+
+            # Deduplication by unique identifier
+            if node_type == "substance":
+                inchikey = node_data.get("inchikey")
+                if inchikey in inchikey_to_node_id:
+                    merged_id = inchikey_to_node_id[inchikey]
+                else:
+                    merged_id = inchikey  # Use inchikey as node id in merged graph
+                    merged_graph.add_node(merged_id, **node_data)
+                    inchikey_to_node_id[inchikey] = merged_id
+            elif node_type == "reaction":
+                rxid = node_data.get("rxid")
+                if rxid in rxid_to_node_id:
+                    merged_id = rxid_to_node_id[rxid]
+                else:
+                    merged_id = rxid  # Use rxid as node id in merged graph
+                    merged_graph.add_node(merged_id, **node_data)
+                    rxid_to_node_id[rxid] = merged_id
+            else:
+                merged_id = node_id
+                if merged_id not in merged_graph.nodes:
+                    merged_graph.add_node(merged_id, **node_data)
+
+            # Add edges and enqueue predecessors
+            for pred in graph.predecessors(node_id):
+                pred_data = graph.nodes[pred]
+                pred_type = (pred_data.get("node_type") or "").lower()
+                if pred_type == "substance":
+                    pred_key = pred_data.get("inchikey")
+                    if pred_key in inchikey_to_node_id:
+                        pred_merged_id = inchikey_to_node_id[pred_key]
+                    else:
+                        pred_merged_id = pred_key
+                        merged_graph.add_node(pred_merged_id, **pred_data)
+                        inchikey_to_node_id[pred_key] = pred_merged_id
+                elif pred_type == "reaction":
+                    pred_key = pred_data.get("rxid")
+                    if pred_key in rxid_to_node_id:
+                        pred_merged_id = rxid_to_node_id[pred_key]
+                    else:
+                        pred_merged_id = pred_key
+                        merged_graph.add_node(pred_merged_id, **pred_data)
+                        rxid_to_node_id[pred_key] = pred_merged_id
+                else:
+                    pred_merged_id = pred
+                    if pred_merged_id not in merged_graph.nodes:
+                        merged_graph.add_node(pred_merged_id, **pred_data)
+
+                # Add edge if not present
+                if not merged_graph.has_edge(pred_merged_id, merged_id):
+                    merged_graph.add_edge(pred_merged_id, merged_id, **graph.get_edge_data(pred, node_id))
+
+                if pred not in visited:
+                    queue.append(pred)
+
+    return merged_graph

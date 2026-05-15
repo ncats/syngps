@@ -3,3 +3,4 @@
 # https://docs.python.org/3/reference/import.html#regular-packages
 from .abstract_data_adapter import AbstractDataAdapter
 from .networkx_data_adapter import NetworkxDataAdapter
+from .abstract_inventory_adapter import AbstractInventoryAdapter
