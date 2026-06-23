@@ -85,7 +85,7 @@ class SynthGraphSearch(BaseModel):
     include_availability_info: bool = Field(default=False, examples=[False], description="Whether to include availability information in the response")
     annotate_reactions: bool = Field(default=False, examples=[False], description="Whether to annotate reactions in the graph with Hazelnut")
     graph_backend: Literal["memgraph"] = Field(default="memgraph", examples=["memgraph"], description='Graph backend to use for synthesis graph operations, options are "memgraph" (the default)')
-    inventory_source: Literal["enamine", "askcos", "emolecules", "stock"] = Field(default="enamine", examples=["enamine", "askcos", "emolecules", "stock"], description="Source of inventory to check for availability, options are 'enamine', 'askcos', 'emolecules', 'stock' (for custom stock inventory)")
+    inventory_source: Literal["enamine", "askcos", "emolecules", "stock"] = Field(default="askcos", examples=["enamine", "askcos", "emolecules", "stock"], description="Source of inventory to check for availability, options are 'enamine', 'askcos', 'emolecules', 'stock' (for custom stock inventory)")
 
     @property
     def search_depth(self) -> int:
@@ -98,7 +98,7 @@ class TopNYieldSearch(SynthGraphSearch):
     include_route_candidates: bool = Field(default=False, examples=[False], description="Whether to return route candidates or not")
     include_combination_graphs: bool = Field(default=False, examples=[False], description="Whether to return combination graphs or not")
     synthesis_graph_json: Optional[Dict[str, Any]] = Field(default=None, description="Optional synthesis graph input", examples=[None])
-    inventory_source: Literal["enamine", "askcos", "emolecules", "stock"] = Field(default="enamine", examples=["enamine", "askcos", "emolecules", "stock"], description="Source of inventory to check for availability, options are 'enamine', 'askcos', 'emolecules', 'stock' (for custom stock inventory)")
+    inventory_source: Literal["enamine", "askcos", "emolecules", "stock"] = Field(default="askcos", examples=["enamine", "askcos", "emolecules", "stock"], description="Source of inventory to check for availability, options are 'enamine', 'askcos', 'emolecules', 'stock' (for custom stock inventory)")
 
 
 class SynthGraphJsonInput(BaseModel):
@@ -404,7 +404,7 @@ class SGPInput(BaseModel):
     synth_graph_json: SynthGraphJsonInput = Field()
     unwanted_substances: List[str] = Field(default=[])
     unwanted_reactions: List[str] = Field(default=[])
-    inventory_source: Literal["enamine", "askcos", "emolecules", "stock"] = Field(default="enamine", examples=["enamine", "askcos", "emolecules", "stock"], description="Source of inventory to check for availability, options are 'enamine', 'askcos', 'emolecules', 'stock' (for custom stock inventory)")
+    inventory_source: Literal["enamine", "askcos", "emolecules", "stock"] = Field(default="askcos", examples=["enamine", "askcos", "emolecules", "stock"], description="Source of inventory to check for availability, options are 'enamine', 'askcos', 'emolecules', 'stock' (for custom stock inventory)")
 
 
 
@@ -451,7 +451,7 @@ class ParseSynthGraphInput(BaseModel):
     synthesis_graph_json: SynthGraphJson = Field()
     include_route_candidates: Optional[bool] = Field(default=False, description="Whether to return route candidates or not")
     include_combination_graphs: Optional[bool] = Field(default=False, description="Whether to return combination graphs or not")
-    inventory_source: Literal["enamine", "askcos", "emolecules", "stock"] = Field(default="enamine", examples=["enamine", "askcos", "emolecules", "stock"], description="Source of inventory to check for availability, options are 'enamine', 'askcos', 'emolecules', 'stock' (for custom stock inventory)")
+    inventory_source: Literal["enamine", "askcos", "emolecules", "stock"] = Field(default="askcos", examples=["enamine", "askcos", "emolecules", "stock"], description="Source of inventory to check for availability, options are 'enamine', 'askcos', 'emolecules', 'stock' (for custom stock inventory)")
 
 
 class ParseSynthGraphOutput(BaseModel):
