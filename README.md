@@ -114,10 +114,12 @@ This repository contains source code, Jupyter notebook, data and results files w
 - Source code subdirectories
 
     `src/`
+    `revision/src/`
 
 - Data and results subdirectory
 
     `data/`
+    `revision/data/`
 
 - Worklows
 
@@ -125,15 +127,15 @@ This repository contains source code, Jupyter notebook, data and results files w
 
 - Source Code License of SynGPS Repository
 
-    The applicable license to source code can be found under filename: [src/LICENSE](src/LICENSE) (license type: [MIT License](https://opensource.org/licenses/MIT)). This license is applicable to all files recursively in the source code subdirectories as defined above. The files [src/NOTES](src/NOTES) list source code modules that were utilized and their respective licenses. These modules have their own licenses which might be different from the Source Code License of this repository, and they need to be respected accordingly.
+    The applicable license to source code can be found under filename: [src/LICENSE](src/LICENSE) (license type: [MIT License](https://opensource.org/licenses/MIT)). This license is applicable to all files recursively in the source code subdirectories as defined above. The files [src/NOTES](src/NOTES) and [revision/src/NOTES.md](revision/src/NOTES.md) list source code modules that were utilized and their respective licenses. These modules have their own licenses which might be different from the Source Code License of this repository, and they need to be respected accordingly.
 
 - Data License of SynGPS Repository
 
-    The applicable license to data and results can be found under: [data/LICENSE](data/LICENSE) that is a [Creative Commons Attribution 4.0 International Public License](https://creativecommons.org/licenses/by/4.0/legalcode.txt). This license is applicable to all files recursively in the data and results subdirectory as defined above. The files listed in [data/NOTES](data/NOTES) and [plots/NOTES](plots/NOTES) lists input files and resources utilized to perform the experiments and are considered as derivative work of those resources. These input files and resources have their own licenses which might be different from the Data License of this repository, and they need to be respected accordingly. In the same file we also list which results files can be considered as derivative works, and we also list the the respective ascendent data source(s).
+    The applicable license to data and results can be found under: [data/LICENSE](data/LICENSE) that is a [Creative Commons Attribution 4.0 International Public License](https://creativecommons.org/licenses/by/4.0/legalcode.txt). This license is applicable to all files recursively in the data and results subdirectory as defined above. The files listed in [data/NOTES](data/NOTES), [plots/NOTES](plots/NOTES) and [revision/src/NOTES.md](revision/src/NOTES.md) list input files and resources utilized to perform the experiments and are considered as derivative work of those resources. These input files and resources have their own licenses which might be different from the Data License of this repository, and they need to be respected accordingly. In the same file we also list which results files can be considered as derivative works, and we also list the the respective ascendent data source(s).
 
 - Jupyter Notebook License of SynGPS Repository
 
-    Jupyter Notebboks are special in the sense that they are comprised of source code, but they can also contain embedded data and plot (graph) sections. This duality is resolved via dual-licensing as follows. The code sections of Jupter Notebooks fall under the same license as source codes, i.e. the MIT License [src/LICENSE](src/LICENSE)whereas data and plot sections embedded into the Jupyter Notebooks fall under the same license as data and result files, i.e. Creative Commons Attribution 4.0 International Public License CC-BY 4.0 International License [data/LICENSE](data/LICENSE). Remarks enclosed in the [src/NOTES](src/NOTES) file are also valid for code section of the Jupyter Notebooks. Remarks enclosed in the [data/NOTES](data/NOTES) files are also valid for the embedded data and plots of the Jupyter Notebook files.
+    Jupyter Notebboks are special in the sense that they are comprised of source code, but they can also contain embedded data and plot (graph) sections. This duality is resolved via dual-licensing as follows. The code sections of Jupter Notebooks fall under the same license as source codes, i.e. the MIT License [src/LICENSE](src/LICENSE) whereas data and plot sections embedded into the Jupyter Notebooks fall under the same license as data and result files, i.e. Creative Commons Attribution 4.0 International Public License CC-BY 4.0 International License [data/LICENSE](data/LICENSE). Remarks enclosed in the [src/NOTES](src/NOTES) and [revision/src/NOTES.md](revision/src/NOTES.md) file are also valid for code section of the Jupyter Notebooks. Remarks enclosed in the [data/NOTES](data/NOTES) and [revision/data/NOTES.md](revision/data/NOTES.md) files are also valid for the embedded data and plots of the Jupyter Notebook files.
 
 - Links to licenses
 
@@ -149,4 +151,14 @@ This repository contains source code, Jupyter notebook, data and results files w
 
   - Apache License 2.0: [https://www.apache.org/licenses/LICENSE-2.0](https://www.apache.org/licenses/LICENSE-2.0)
 
-  - 3-Clause BSD license: [https://opensource.org/licenses/BSD-3-Clause](https://opensource.org/licenses/BSD-3-Clause), [https://github.com/scikit-learn/scikit-learn/blob/master/COPYING](https://github.com/scikit-learn/scikit-learn/blob/master/COPYING)
+  - 3-Clause BSD license: [https://opensource.org/licenses/BSD-3-Clause](https://opensource.org/licenses/BSD-3-Clause)
+
+  - PYTHON SOFTWARE FOUNDATION LICENSE VERSION 2: [https://opensource.org/license/Python-2.0](https://opensource.org/license/Python-2.0)
+
+  - Custom/Matplotlib: [https://github.com/matplotlib/matplotlib/blob/main/LICENSE/LICENSE](https://github.com/matplotlib/matplotlib/blob/main/LICENSE/LICENSE)
+
+  - MEMGRAPH BUSINESS SOURCE LICENSE (BSL) 1.1, AS AMENDED BY THE ADDITIONAL USE GRANT (“LICENSE”), January 1, 2026: [https://github.com/memgraph/memgraph/blob/master/licenses/BSL.txt](https://github.com/memgraph/memgraph/blob/master/licenses/BSL.txt)
+
+  - Server Side Public License (SSPL) v1.0: [https://www.mongodb.com/legal/licensing/community-edition](https://www.mongodb.com/legal/licensing/community-edition)
+  
+

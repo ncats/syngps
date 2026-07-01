@@ -1,0 +1,342 @@
+{
+  "search_params": {
+    "target_molecule_inchikey": "FDFUKZJWVPEZEH-VWYCJHECSA-N",
+    "reaction_steps": 5,
+    "query_type": "shortest_path",
+    "leaves_as_sm": true,
+    "include_availability_info": false,
+    "annotate_reactions": false,
+    "graph_backend": "memgraph",
+    "inventory_source": "enamine",
+    "top_n_routes": 10,
+    "include_route_candidates": true,
+    "include_combination_graphs": true
+  },
+  "synth_graph": {
+    "time_info": {
+      "synth_graph_time": 0.0016238689422607422
+    },
+    "summary": {
+      "num_edges": 3,
+      "num_nodes": 4
+    },
+    "nodes": [
+      {
+        "node_label": "ASPIRE-1447440085978191399",
+        "node_type": "reaction",
+        "uuid": "reaction_c1814e84287a12f520c3098235de02591cf9a78a6ae381edd7903caa4dff72be",
+        "rxid": "ASPIRE-1447440085978191399",
+        "rxsmiles": "[F:1][C:2]1[N:7]=[CH:6][C:5]([C@H:8]2[CH2:14][C@H:13]3[NH:15][C@@H:9]2[CH2:10][CH2:11][CH2:12]3)=[CH:4][CH:3]=1>C(Cl)(Cl)Cl>[F:1][C:2]1[N:7]=[CH:6][C:5]([C@@H:8]2[CH2:14][C@@H:13]3[NH:15][C@H:9]2[CH2:10][CH2:11][CH2:12]3)=[CH:4][CH:3]=1",
+        "rxclass": null,
+        "rxname": null,
+        "original_rxsmiles": null,
+        "yield_info": {
+          "yield_predicted": 61.89,
+          "yield_score": 3
+        },
+        "provenance": {
+          "is_in_aicp": false,
+          "is_in_uspto_full": false,
+          "is_in_savi_130k": false,
+          "is_in_askcos": false,
+          "patents": [],
+          "patent_paragraph_nums": []
+        },
+        "validation": {
+          "is_balanced": true,
+          "is_rxname_recognized": false,
+          "is_valid": true
+        },
+        "route_assembly_type": {
+          "is_predicted": false,
+          "is_evidence": false
+        },
+        "evidence_protocol": null,
+        "evidence_conditions_info": null,
+        "predicted_conditions_info": null
+      },
+      {
+        "node_label": "HEDRZPFGACZZDS-UHFFFAOYSA-N",
+        "node_type": "substance",
+        "uuid": "substance_a9372e02684840f73325de6aa92bb087400d87788ea1c947e76ca1ecdf4eb1a6",
+        "inchikey": "HEDRZPFGACZZDS-UHFFFAOYSA-N",
+        "canonical_smiles": "ClC(Cl)Cl",
+        "srole": "sm",
+        "route_assembly_type": {
+          "is_predicted": false,
+          "is_evidence": false
+        },
+        "provenance": {
+          "is_in_aicp": false,
+          "is_in_uspto_full": false,
+          "is_in_savi_130k": false,
+          "is_in_askcos": false,
+          "patents": [],
+          "patent_paragraph_nums": []
+        }
+      },
+      {
+        "node_label": "FDFUKZJWVPEZEH-HBNTYKKESA-N",
+        "node_type": "substance",
+        "uuid": "substance_1608a52d761f8273b0279b0abcf97bd16a603f40714abb5e3e925271ff342c97",
+        "inchikey": "FDFUKZJWVPEZEH-HBNTYKKESA-N",
+        "canonical_smiles": "Fc1ccc([C@H]2C[C@@H]3CCC[C@H]2N3)cn1",
+        "srole": "sm",
+        "route_assembly_type": {
+          "is_predicted": false,
+          "is_evidence": false
+        },
+        "provenance": {
+          "is_in_aicp": false,
+          "is_in_uspto_full": false,
+          "is_in_savi_130k": false,
+          "is_in_askcos": false,
+          "patents": [],
+          "patent_paragraph_nums": []
+        }
+      },
+      {
+        "node_label": "FDFUKZJWVPEZEH-VWYCJHECSA-N",
+        "node_type": "substance",
+        "uuid": "substance_23d0d972609460cf283304a694d6a0c81710ede03df9ccebd1937026e1a3c4c8",
+        "inchikey": "FDFUKZJWVPEZEH-VWYCJHECSA-N",
+        "canonical_smiles": "Fc1ccc([C@@H]2C[C@H]3CCC[C@@H]2N3)cn1",
+        "srole": "tm",
+        "route_assembly_type": {
+          "is_predicted": false,
+          "is_evidence": false
+        },
+        "provenance": {
+          "is_in_aicp": false,
+          "is_in_uspto_full": false,
+          "is_in_savi_130k": false,
+          "is_in_askcos": false,
+          "patents": [],
+          "patent_paragraph_nums": []
+        }
+      }
+    ],
+    "edges": [
+      {
+        "start_node": "ASPIRE-1447440085978191399",
+        "end_node": "FDFUKZJWVPEZEH-VWYCJHECSA-N",
+        "edge_label": "ASPIRE-1447440085978191399|FDFUKZJWVPEZEH-VWYCJHECSA-N",
+        "edge_type": "product_of",
+        "provenance": {
+          "is_in_aicp": false,
+          "is_in_uspto_full": false,
+          "is_in_savi_130k": false,
+          "is_in_askcos": false,
+          "patents": null,
+          "patent_paragraph_nums": null
+        },
+        "uuid": "product_of_73d99ba44467d47c6b8e1259a76acff53bf298d2c6524794f7c6c8d236a1f35f",
+        "inchikey": "FDFUKZJWVPEZEH-VWYCJHECSA-N",
+        "rxid": "ASPIRE-1447440085978191399",
+        "route_assembly_type": {
+          "is_predicted": false,
+          "is_evidence": false
+        }
+      },
+      {
+        "start_node": "HEDRZPFGACZZDS-UHFFFAOYSA-N",
+        "end_node": "ASPIRE-1447440085978191399",
+        "edge_label": "HEDRZPFGACZZDS-UHFFFAOYSA-N|ASPIRE-1447440085978191399",
+        "edge_type": "reagent_of",
+        "provenance": {
+          "is_in_aicp": false,
+          "is_in_uspto_full": false,
+          "is_in_savi_130k": false,
+          "is_in_askcos": false,
+          "patents": null,
+          "patent_paragraph_nums": null
+        },
+        "uuid": "reagent_of_4cbe12123eb7312a92e4f531e5d07ff1455b2d638b1a35921f61317dc32fd651",
+        "inchikey": "HEDRZPFGACZZDS-UHFFFAOYSA-N",
+        "rxid": "ASPIRE-1447440085978191399",
+        "route_assembly_type": {
+          "is_predicted": false,
+          "is_evidence": false
+        }
+      },
+      {
+        "start_node": "FDFUKZJWVPEZEH-HBNTYKKESA-N",
+        "end_node": "ASPIRE-1447440085978191399",
+        "edge_label": "FDFUKZJWVPEZEH-HBNTYKKESA-N|ASPIRE-1447440085978191399",
+        "edge_type": "reactant_of",
+        "provenance": {
+          "is_in_aicp": false,
+          "is_in_uspto_full": false,
+          "is_in_savi_130k": false,
+          "is_in_askcos": false,
+          "patents": null,
+          "patent_paragraph_nums": null
+        },
+        "uuid": "reactant_of_7b1fa57848e809e650f757fa2a375846c891fc1ec48066ad25004b38b7159528",
+        "inchikey": "FDFUKZJWVPEZEH-HBNTYKKESA-N",
+        "rxid": "ASPIRE-1447440085978191399",
+        "route_assembly_type": {
+          "is_predicted": false,
+          "is_evidence": false
+        }
+      }
+    ]
+  },
+  "artifact_free_graph": {
+    "route_node_labels": [
+      "ASPIRE-1447440085978191399",
+      "HEDRZPFGACZZDS-UHFFFAOYSA-N",
+      "FDFUKZJWVPEZEH-HBNTYKKESA-N",
+      "FDFUKZJWVPEZEH-VWYCJHECSA-N"
+    ]
+  },
+  "combination_graphs": [
+    {
+      "route_index": 1,
+      "route_candidate_json": {
+        "nodes": [
+          {
+            "node_label": "ASPIRE-1447440085978191399",
+            "is_balanced": true,
+            "is_in_aicp": false,
+            "is_in_savi_130k": false,
+            "is_in_uspto_full": false,
+            "node_type": "Reaction",
+            "rxid": "ASPIRE-1447440085978191399",
+            "rxsmiles": "[F:1][C:2]1[N:7]=[CH:6][C:5]([C@H:8]2[CH2:14][C@H:13]3[NH:15][C@@H:9]2[CH2:10][CH2:11][CH2:12]3)=[CH:4][CH:3]=1>C(Cl)(Cl)Cl>[F:1][C:2]1[N:7]=[CH:6][C:5]([C@@H:8]2[CH2:14][C@@H:13]3[NH:15][C@H:9]2[CH2:10][CH2:11][CH2:12]3)=[CH:4][CH:3]=1",
+            "uuid": "reaction_c1814e84287a12f520c3098235de02591cf9a78a6ae381edd7903caa4dff72be",
+            "yield_empirical": 43.0,
+            "yield_predicted": 61.89200000000002,
+            "yield_score": 3.0,
+            "yield_info": {
+              "yield_predicted": 61.89200000000002,
+              "yield_score": 3.0
+            },
+            "node_id": 2549862
+          },
+          {
+            "node_label": "HEDRZPFGACZZDS-UHFFFAOYSA-N",
+            "canonical_smiles": "ClC(Cl)Cl",
+            "inchikey": "HEDRZPFGACZZDS-UHFFFAOYSA-N",
+            "is_in_aicp": false,
+            "is_in_savi_130k": false,
+            "is_in_uspto_full": false,
+            "node_type": "substance",
+            "uuid": "substance_a9372e02684840f73325de6aa92bb087400d87788ea1c947e76ca1ecdf4eb1a6",
+            "node_id": 3693191,
+            "srole": "sm"
+          },
+          {
+            "node_label": "FDFUKZJWVPEZEH-HBNTYKKESA-N",
+            "canonical_smiles": "Fc1ccc([C@H]2C[C@@H]3CCC[C@H]2N3)cn1",
+            "inchikey": "FDFUKZJWVPEZEH-HBNTYKKESA-N",
+            "is_in_aicp": false,
+            "is_in_savi_130k": false,
+            "is_in_uspto_full": false,
+            "node_type": "substance",
+            "uuid": "substance_1608a52d761f8273b0279b0abcf97bd16a603f40714abb5e3e925271ff342c97",
+            "node_id": 3676034,
+            "srole": "sm"
+          },
+          {
+            "node_label": "FDFUKZJWVPEZEH-VWYCJHECSA-N",
+            "canonical_smiles": "Fc1ccc([C@@H]2C[C@H]3CCC[C@@H]2N3)cn1",
+            "inchikey": "FDFUKZJWVPEZEH-VWYCJHECSA-N",
+            "is_in_aicp": false,
+            "is_in_savi_130k": false,
+            "is_in_uspto_full": false,
+            "node_type": "substance",
+            "uuid": "substance_23d0d972609460cf283304a694d6a0c81710ede03df9ccebd1937026e1a3c4c8",
+            "node_id": 3064596,
+            "srole": "tm"
+          }
+        ],
+        "edges": [
+          {
+            "start_node": "ASPIRE-1447440085978191399",
+            "end_node": "FDFUKZJWVPEZEH-VWYCJHECSA-N",
+            "edge_label": "ASPIRE-1447440085978191399|FDFUKZJWVPEZEH-VWYCJHECSA-N",
+            "edge_type": "product_of",
+            "is_in_aicp": false,
+            "is_in_savi_130k": false,
+            "is_in_uspto_full": false,
+            "uuid": "product_of_73d99ba44467d47c6b8e1259a76acff53bf298d2c6524794f7c6c8d236a1f35f",
+            "start_node_id": 2549862,
+            "end_node_id": 3064596,
+            "inchikey": "FDFUKZJWVPEZEH-VWYCJHECSA-N",
+            "rxid": "ASPIRE-1447440085978191399"
+          },
+          {
+            "start_node": "HEDRZPFGACZZDS-UHFFFAOYSA-N",
+            "end_node": "ASPIRE-1447440085978191399",
+            "edge_label": "HEDRZPFGACZZDS-UHFFFAOYSA-N|ASPIRE-1447440085978191399",
+            "edge_type": "reagent_of",
+            "is_in_aicp": false,
+            "is_in_savi_130k": false,
+            "is_in_uspto_full": false,
+            "uuid": "reagent_of_4cbe12123eb7312a92e4f531e5d07ff1455b2d638b1a35921f61317dc32fd651",
+            "start_node_id": 3693191,
+            "end_node_id": 2549862,
+            "inchikey": "HEDRZPFGACZZDS-UHFFFAOYSA-N",
+            "rxid": "ASPIRE-1447440085978191399"
+          },
+          {
+            "start_node": "FDFUKZJWVPEZEH-HBNTYKKESA-N",
+            "end_node": "ASPIRE-1447440085978191399",
+            "edge_label": "FDFUKZJWVPEZEH-HBNTYKKESA-N|ASPIRE-1447440085978191399",
+            "edge_type": "reactant_of",
+            "is_in_aicp": false,
+            "is_in_savi_130k": false,
+            "is_in_uspto_full": false,
+            "uuid": "reactant_of_7b1fa57848e809e650f757fa2a375846c891fc1ec48066ad25004b38b7159528",
+            "start_node_id": 3676034,
+            "end_node_id": 2549862,
+            "inchikey": "FDFUKZJWVPEZEH-HBNTYKKESA-N",
+            "rxid": "ASPIRE-1447440085978191399"
+          }
+        ]
+      }
+    }
+  ],
+  "route_candidates": {
+    "subgraphs": [
+      {
+        "route_index": 1,
+        "route_status": "Viable Synthesis Route",
+        "method": "AICP",
+        "route_node_labels": [
+          "ASPIRE-1447440085978191399",
+          "HEDRZPFGACZZDS-UHFFFAOYSA-N",
+          "FDFUKZJWVPEZEH-HBNTYKKESA-N",
+          "FDFUKZJWVPEZEH-VWYCJHECSA-N"
+        ]
+      }
+    ],
+    "num_subgraphs": 1
+  },
+  "routes": [
+    {
+      "aggregated_yield": 61.89,
+      "route_index": 1,
+      "route_status": "Viable Synthesis Route",
+      "method": "AICP",
+      "route_node_labels": [
+        "ASPIRE-1447440085978191399",
+        "HEDRZPFGACZZDS-UHFFFAOYSA-N",
+        "FDFUKZJWVPEZEH-HBNTYKKESA-N",
+        "FDFUKZJWVPEZEH-VWYCJHECSA-N"
+      ]
+    }
+  ],
+  "time_info": {
+    "synth_graph_time": 0.0016238689422607422,
+    "enumerate_routes_time": 0.00023031234741210938,
+    "aggregated_yield_time": 0.00034356117248535156,
+    "rank_routes_time": 3.0994415283203125e-06
+  },
+  "summary": {
+    "num_routes": 1,
+    "num_combination_graphs": 1,
+    "num_route_candidates": 1
+  }
+}
