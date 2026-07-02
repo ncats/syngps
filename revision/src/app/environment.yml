@@ -1,0 +1,27 @@
+name: syngps-service
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.12
+  - fastapi
+  - uvicorn
+  - pydantic
+  - pydantic-settings
+  - rdkit=2025.03.2
+  - numpy
+  - networkx
+  - pandas
+  - neo4j-python-driver=5.22.0
+  - xgboost=2.0.3
+  - pymongo=4.8.0
+  - requests
+  - cryptography
+  - grpcio 
+  - grpcio-tools
+  - pip
+  - pip:
+    - drfp
+    - svgutils
+    # Install publication branch of syngps which includes the latest changes to the API and the new graph database schema
+    - git+https://github.com/ncats/syngps.git@publication

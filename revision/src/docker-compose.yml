@@ -1,0 +1,79 @@
+name: syngps-services
+services:
+  mongodb:
+    image: mongodb/mongodb-community-server:8.3-ubi9-slim
+    volumes:
+      - mongo_data:/data/db
+    ports:
+      - "27017:27017"
+    healthcheck:
+      test: ["CMD", "mongosh", "--eval", "db.adminCommand('ping')"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+      start_period: 10s
+
+  mongo-restore:
+    image: mongo:7
+    depends_on:
+      mongodb:
+        condition: service_healthy
+    volumes:
+      - ../data/input/mongo_dump/syngps-mongo.gz:/dump/syngps-mongo.gz:ro
+    entrypoint: ["bash", "-c"]
+    command:
+      - |
+        count=$$(mongosh --host mongodb --quiet --eval "db.adminCommand({listDatabases:1}).databases.length")
+        if [ "$$count" -le 3 ]; then
+          echo "Restoring database..."
+          mongorestore --host mongodb --gzip --archive=/dump/syngps-mongo.gz
+        else
+          echo "Data already exists ($$count databases), skipping restore"
+        fi
+    restart: "no"
+
+  memgraph:
+    image: memgraph/memgraph:latest
+    ports:
+      - "7687:7687"
+    volumes:
+      - ../data/input/memgraph_snapshot:/var/lib/memgraph/snapshots:ro
+      - memgraph_data:/var/lib/memgraph
+      - ./database/memgraph.conf:/etc/memgraph/memgraph.conf:ro
+
+  memgraph-lab:
+    image: memgraph/lab:latest
+    depends_on:
+      - memgraph
+    ports:
+      - "3000:3000"
+    environment:
+      - QUICK_CONNECT_MG_HOST=memgraph
+      - QUICK_CONNECT_MG_PORT=7687
+
+  app:
+    build:
+      context: ./app
+    depends_on:
+      mongodb:
+        condition: service_healthy
+      memgraph:
+        condition: service_started
+    ports:
+      - "8002:8002"
+    env_file:
+      - ./app/.env
+    environment:
+      # Override localhost references with Docker service names
+      - MONGO_DB_HOST=mongodb
+      - MEMGRAPH_HOST=memgraph
+      # Override relative data paths to absolute container paths
+      - ASKCOS_INV_FILE_PATH=/app_data/input/askcos_inv.tsv
+      - CUSTOM_STOCK_INV_FILE_PATH=/app_data/input/custom_inv.txt
+      - MODELS_DIR=/app_data
+    volumes:
+      - ../data:/app_data                  # maps temp/data/ (inventory files)
+
+volumes:
+  mongo_data:
+  memgraph_data:

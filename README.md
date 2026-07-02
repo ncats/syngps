@@ -1,19 +1,18 @@
 # This is the Source Code and Data Repository of the SynGPS and BOYA Algorithms
 
+1.  [Cite Us](#cite-us)
+2.  [Prerequisite](#prerequisite)
+3.  [Installation](#installation)
+4.  [Case Study Reproduction](#case-study-reproduction)
+5.  [Post Publication Notes](#post-publication-notes)
+6.  [For Contributors](#for-contributors)
+7.  [License Related Section](#license-related-section)
+   
 ## Cite Us
 
 Zahoránszky-Kőhalmi G, Walker B, Cole W, Miller N, Yang B, Vorontcov I, et al. Synthesis Route Identification and Prioritization in Reaction Knowledge Graphs. ChemRxiv. 2025; doi:10.26434/chemrxiv-2025-0s3jp This content is a preprint and has not been peer-reviewed.
 
 [Link to preprint](https://chemrxiv.org/engage/chemrxiv/article-details/683f330a1a8f9bdab576d9ea)
-
-## Contents
-
-1.  [Prerequisites](#prerequisites)
-2.  [Installation](#installation)
-3.  [Case Study Reproduction](#case-study-reproduction)
-4.  [Post Publication Notes](#post-publication-notes)
-5.  [For Contributors](#for-contributors)
-6.  [License Related Section](#license-related-section)
 
 ## Prerequisite
 
@@ -26,6 +25,14 @@ Optional (not required, but nice to have):
 - [Git](https://git-scm.com/)
 
 ## Installation
+
+### Install SynGPS code as a Python package
+
+The SynGPS code can be installed as a Python package using the following command:
+
+```bash
+pip install git+https://github.com/ncats/syngps.git
+```
 
 ### Clone this Git repository
 
@@ -54,26 +61,24 @@ git pull
 
 ### Create the required Python environment via Conda
 
-```bash
-cd src
-```
+The conda environment for the SynGPS workflows can be created with the following commands:
 
 ```bash
+cd workflows
+
 conda env create -f environment.yml
 ```
 
 ## Case Study Reproduction
 
-Assuming you have the [prerequisites](#prerequisites) in place, please follow the instructions in ["Installation section"](#installation) and make sure you perform the step related to switching to the `publication` branch.
-
-Once on the `publication` branch, code and data required to reproduce the case studies is stored under subdirectories `syngps/src`, and `syngps/data`, respectively.
+The SynGPS library code required to reproduce the case studies is stored under subdirectory `src`. The workflows required to reproduce the case studies are stored under subdirectory `workflows`. The data required to reproduce the case studies is stored under subdirectory `data`.
 
 Run the workflow in Jupyter Notebook in JupyterLab using the above created `syngps` [Conda environment](#create-the-required-python-environment-via-conda):
 
 ```bash
-src/syngps_cs1.ipynb
-src/case_study2.ipynb
-src/use_case_3_syngps_from_file.ipynb
+workflows/syngps_cs1.ipynb
+workflows/case_study2.ipynb
+workflows/use_case_3_syngps_from_file.ipynb
 ```
 
 ## Post Publication Notes
@@ -109,26 +114,28 @@ This repository contains source code, Jupyter notebook, data and results files w
 - Source code subdirectories
 
     `src/`
+    `revision/src/`
 
 - Data and results subdirectory
 
     `data/`
+    `revision/data/`
 
 - Worklows
 
-    The workflow to reproduce Case Study 3 in the form of Jupyter Notebook can be found at `src/use_case_3_syngps_from_file.ipynb`.
+    The workflow to reproduce Case Study 3 in the form of Jupyter Notebook can be found at `workflows/use_case_3_syngps_from_file.ipynb`.
 
 - Source Code License of SynGPS Repository
 
-    The applicable license to source code can be found under filename: [src/LICENSE](src/LICENSE) (license type: [MIT License](https://opensource.org/licenses/MIT)). This license is applicable to all files recursively in the source code subdirectories as defined above. The files [src/NOTES](src/NOTES) list source code modules that were utilized and their respective licenses. These modules have their own licenses which might be different from the Source Code License of this repository, and they need to be respected accordingly.
+    The applicable license to source code can be found under filename: [src/LICENSE](src/LICENSE) (license type: [MIT License](https://opensource.org/licenses/MIT)). This license is applicable to all files recursively in the source code subdirectories as defined above. The files [src/NOTES](src/NOTES) and [revision/src/NOTES.md](revision/src/NOTES.md) list source code modules that were utilized and their respective licenses. These modules have their own licenses which might be different from the Source Code License of this repository, and they need to be respected accordingly.
 
 - Data License of SynGPS Repository
 
-    The applicable license to data and results can be found under: [data/LICENSE](data/LICENSE) that is a [Creative Commons Attribution 4.0 International Public License](https://creativecommons.org/licenses/by/4.0/legalcode.txt). This license is applicable to all files recursively in the data and results subdirectory as defined above. The files listed in [data/NOTES](data/NOTES) and [plots/NOTES](plots/NOTES) lists input files and resources utilized to perform the experiments and are considered as derivative work of those resources. These input files and resources have their own licenses which might be different from the Data License of this repository, and they need to be respected accordingly. In the same file we also list which results files can be considered as derivative works, and we also list the the respective ascendent data source(s).
+    The applicable license to data and results can be found under: [data/LICENSE](data/LICENSE) that is a [Creative Commons Attribution 4.0 International Public License](https://creativecommons.org/licenses/by/4.0/legalcode.txt). This license is applicable to all files recursively in the data and results subdirectory as defined above. The files listed in [data/NOTES](data/NOTES), [plots/NOTES](plots/NOTES) and [revision/src/NOTES.md](revision/src/NOTES.md) list input files and resources utilized to perform the experiments and are considered as derivative work of those resources. These input files and resources have their own licenses which might be different from the Data License of this repository, and they need to be respected accordingly. In the same file we also list which results files can be considered as derivative works, and we also list the the respective ascendent data source(s).
 
 - Jupyter Notebook License of SynGPS Repository
 
-    Jupyter Notebboks are special in the sense that they are comprised of source code, but they can also contain embedded data and plot (graph) sections. This duality is resolved via dual-licensing as follows. The code sections of Jupter Notebooks fall under the same license as source codes, i.e. the MIT License [src/LICENSE](src/LICENSE)whereas data and plot sections embedded into the Jupyter Notebooks fall under the same license as data and result files, i.e. Creative Commons Attribution 4.0 International Public License CC-BY 4.0 International License [data/LICENSE](data/LICENSE). Remarks enclosed in the [src/NOTES](src/NOTES) file are also valid for code section of the Jupyter Notebooks. Remarks enclosed in the [data/NOTES](data/NOTES) files are also valid for the embedded data and plots of the Jupyter Notebook files.
+    Jupyter Notebboks are special in the sense that they are comprised of source code, but they can also contain embedded data and plot (graph) sections. This duality is resolved via dual-licensing as follows. The code sections of Jupter Notebooks fall under the same license as source codes, i.e. the MIT License [src/LICENSE](src/LICENSE) whereas data and plot sections embedded into the Jupyter Notebooks fall under the same license as data and result files, i.e. Creative Commons Attribution 4.0 International Public License CC-BY 4.0 International License [data/LICENSE](data/LICENSE). Remarks enclosed in the [src/NOTES](src/NOTES) and [revision/src/NOTES.md](revision/src/NOTES.md) file are also valid for code section of the Jupyter Notebooks. Remarks enclosed in the [data/NOTES](data/NOTES) and [revision/data/NOTES.md](revision/data/NOTES.md) files are also valid for the embedded data and plots of the Jupyter Notebook files.
 
 - Links to licenses
 
@@ -144,4 +151,14 @@ This repository contains source code, Jupyter notebook, data and results files w
 
   - Apache License 2.0: [https://www.apache.org/licenses/LICENSE-2.0](https://www.apache.org/licenses/LICENSE-2.0)
 
-  - 3-Clause BSD license: [https://opensource.org/licenses/BSD-3-Clause](https://opensource.org/licenses/BSD-3-Clause), [https://github.com/scikit-learn/scikit-learn/blob/master/COPYING](https://github.com/scikit-learn/scikit-learn/blob/master/COPYING)
+  - 3-Clause BSD license: [https://opensource.org/licenses/BSD-3-Clause](https://opensource.org/licenses/BSD-3-Clause)
+
+  - PYTHON SOFTWARE FOUNDATION LICENSE VERSION 2: [https://opensource.org/license/Python-2.0](https://opensource.org/license/Python-2.0)
+
+  - Custom/Matplotlib: [https://github.com/matplotlib/matplotlib/blob/main/LICENSE/LICENSE](https://github.com/matplotlib/matplotlib/blob/main/LICENSE/LICENSE)
+
+  - MEMGRAPH BUSINESS SOURCE LICENSE (BSL) 1.1, AS AMENDED BY THE ADDITIONAL USE GRANT (“LICENSE”), January 1, 2026: [https://github.com/memgraph/memgraph/blob/master/licenses/BSL.txt](https://github.com/memgraph/memgraph/blob/master/licenses/BSL.txt)
+
+  - Server Side Public License (SSPL) v1.0: [https://www.mongodb.com/legal/licensing/community-edition](https://www.mongodb.com/legal/licensing/community-edition)
+  
+

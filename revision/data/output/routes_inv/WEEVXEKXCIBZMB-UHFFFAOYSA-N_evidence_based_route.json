@@ -1,0 +1,2161 @@
+{
+  "search_params": {
+    "target_molecule_inchikey": "WEEVXEKXCIBZMB-UHFFFAOYSA-N",
+    "reaction_steps": 5,
+    "query_type": "shortest_path",
+    "leaves_as_sm": false,
+    "include_availability_info": false,
+    "annotate_reactions": false,
+    "graph_backend": "memgraph",
+    "inventory_source": "askcos",
+    "top_n_routes": 10,
+    "include_route_candidates": true,
+    "include_combination_graphs": true
+  },
+  "synth_graph": {
+    "time_info": {
+      "synth_graph_time": 0.053992271423339844
+    },
+    "summary": {
+      "num_edges": 42,
+      "num_nodes": 29
+    },
+    "nodes": [
+      {
+        "node_label": "ASPIRE-7430789756912665551",
+        "node_type": "reaction",
+        "uuid": "reaction_6f993a50cfc6f2a2c87048fc9acaffb5626c617a1bef4cb4109a6630478ba9fb",
+        "rxid": "ASPIRE-7430789756912665551",
+        "rxsmiles": "[F:17][C:18]1[CH:23]=[CH:22][C:21](B2OCC(C)(C)CO2)=[CH:20][CH:19]=1.Br[C:2]1([C:8]([OH:10])=[O:9])[CH:7]=[CH:6][CH:5]=[CH:4][NH:3]1>C1C=CC([P]([Pd]([P](C2C=CC=CC=2)(C2C=CC=CC=2)C2C=CC=CC=2)([P](C2C=CC=CC=2)(C2C=CC=CC=2)C2C=CC=CC=2)[P](C2C=CC=CC=2)(C2C=CC=CC=2)C2C=CC=CC=2)(C2C=CC=CC=2)C2C=CC=CC=2)=CC=1.[Na+].[Na+].C([O-])([O-])=O.COCCOC.CCO>[F:17][C:18]1[CH:23]=[CH:22][C:21]([C:4]2[N:3]=[C:2]([C:8]([OH:10])=[O:9])[CH:7]=[CH:6][CH:5]=2)=[CH:20][CH:19]=1 |f:3.4.5|",
+        "rxclass": null,
+        "rxname": null,
+        "original_rxsmiles": null,
+        "yield_info": {
+          "yield_predicted": 59.89,
+          "yield_score": 4
+        },
+        "provenance": {
+          "is_in_aicp": false,
+          "is_in_uspto_full": false,
+          "is_in_savi_130k": false,
+          "is_in_askcos": false,
+          "patents": [],
+          "patent_paragraph_nums": []
+        },
+        "validation": {
+          "is_balanced": false,
+          "is_rxname_recognized": false,
+          "is_valid": true
+        },
+        "route_assembly_type": {
+          "is_predicted": false,
+          "is_evidence": false
+        },
+        "evidence_protocol": null,
+        "evidence_conditions_info": null,
+        "predicted_conditions_info": null
+      },
+      {
+        "node_label": "LFQSCWFLJHTTHZ-UHFFFAOYSA-N",
+        "node_type": "substance",
+        "uuid": "substance_e4487bfe0598c87622cdf6c9a03a1c4c60cdbc6eef5b7bbc54fb47843d8dcc1a",
+        "inchikey": "LFQSCWFLJHTTHZ-UHFFFAOYSA-N",
+        "canonical_smiles": "CCO",
+        "srole": "sm",
+        "route_assembly_type": {
+          "is_predicted": false,
+          "is_evidence": false
+        },
+        "provenance": {
+          "is_in_aicp": false,
+          "is_in_uspto_full": false,
+          "is_in_savi_130k": false,
+          "is_in_askcos": false,
+          "patents": [],
+          "patent_paragraph_nums": []
+        }
+      },
+      {
+        "node_label": "NFHFRUOZVGFOOS-UHFFFAOYSA-N",
+        "node_type": "substance",
+        "uuid": "substance_1b478ad1142d1ef1c1094a9528c8a55d36e12adcdc31d57b23348445a35a5529",
+        "inchikey": "NFHFRUOZVGFOOS-UHFFFAOYSA-N",
+        "canonical_smiles": "c1ccc([P](c2ccccc2)(c2ccccc2)[Pd]([P](c2ccccc2)(c2ccccc2)c2ccccc2)([P](c2ccccc2)(c2ccccc2)c2ccccc2)[P](c2ccccc2)(c2ccccc2)c2ccccc2)cc1",
+        "srole": "sm",
+        "route_assembly_type": {
+          "is_predicted": false,
+          "is_evidence": false
+        },
+        "provenance": {
+          "is_in_aicp": false,
+          "is_in_uspto_full": false,
+          "is_in_savi_130k": false,
+          "is_in_askcos": false,
+          "patents": [],
+          "patent_paragraph_nums": []
+        }
+      },
+      {
+        "node_label": "CDBYLPFSWZWCQE-UHFFFAOYSA-L",
+        "node_type": "substance",
+        "uuid": "substance_9264ed6a25ff015d0aee802e5aa38332ffe3f5e158262eabb839297bcdba9ff1",
+        "inchikey": "CDBYLPFSWZWCQE-UHFFFAOYSA-L",
+        "canonical_smiles": "O=C([O-])[O-].[Na+].[Na+]",
+        "srole": "im",
+        "route_assembly_type": {
+          "is_predicted": false,
+          "is_evidence": false
+        },
+        "provenance": {
+          "is_in_aicp": false,
+          "is_in_uspto_full": false,
+          "is_in_savi_130k": false,
+          "is_in_askcos": false,
+          "patents": [],
+          "patent_paragraph_nums": []
+        }
+      },
+      {
+        "node_label": "XTHFKEDIFFGKHM-UHFFFAOYSA-N",
+        "node_type": "substance",
+        "uuid": "substance_2155120f56239585af99934bbeacda09ebd2c0410c5600937637fa61b443a433",
+        "inchikey": "XTHFKEDIFFGKHM-UHFFFAOYSA-N",
+        "canonical_smiles": "COCCOC",
+        "srole": "sm",
+        "route_assembly_type": {
+          "is_predicted": false,
+          "is_evidence": false
+        },
+        "provenance": {
+          "is_in_aicp": false,
+          "is_in_uspto_full": false,
+          "is_in_savi_130k": false,
+          "is_in_askcos": false,
+          "patents": [],
+          "patent_paragraph_nums": []
+        }
+      },
+      {
+        "node_label": "GWWSSPCPSWVJRZ-UHFFFAOYSA-N",
+        "node_type": "substance",
+        "uuid": "substance_bc240dbff9a7dc20dc25cf62b06890df7ab038a3fce04a0c5e07766e68c013cf",
+        "inchikey": "GWWSSPCPSWVJRZ-UHFFFAOYSA-N",
+        "canonical_smiles": "CC1(C)COB(c2ccc(F)cc2)OC1",
+        "srole": "sm",
+        "route_assembly_type": {
+          "is_predicted": false,
+          "is_evidence": false
+        },
+        "provenance": {
+          "is_in_aicp": false,
+          "is_in_uspto_full": false,
+          "is_in_savi_130k": false,
+          "is_in_askcos": false,
+          "patents": [],
+          "patent_paragraph_nums": []
+        }
+      },
+      {
+        "node_label": "HXQPWFAIYBVPTK-UHFFFAOYSA-N",
+        "node_type": "substance",
+        "uuid": "substance_91a6ff8116f84143dbb2e2cba1b11e522e0edaaef998d9302aa9c2158bbeb2d0",
+        "inchikey": "HXQPWFAIYBVPTK-UHFFFAOYSA-N",
+        "canonical_smiles": "O=C(O)C1(Br)C=CC=CN1",
+        "srole": "im",
+        "route_assembly_type": {
+          "is_predicted": false,
+          "is_evidence": false
+        },
+        "provenance": {
+          "is_in_aicp": false,
+          "is_in_uspto_full": false,
+          "is_in_savi_130k": false,
+          "is_in_askcos": false,
+          "patents": [],
+          "patent_paragraph_nums": []
+        }
+      },
+      {
+        "node_label": "WEEVXEKXCIBZMB-UHFFFAOYSA-N",
+        "node_type": "substance",
+        "uuid": "substance_c5e916c7ce6053639c692aba70b09033a8be986ee1fc0a81f956449176a29bd8",
+        "inchikey": "WEEVXEKXCIBZMB-UHFFFAOYSA-N",
+        "canonical_smiles": "O=C(O)c1cccc(-c2ccc(F)cc2)n1",
+        "srole": "tm",
+        "route_assembly_type": {
+          "is_predicted": false,
+          "is_evidence": false
+        },
+        "provenance": {
+          "is_in_aicp": false,
+          "is_in_uspto_full": false,
+          "is_in_savi_130k": false,
+          "is_in_askcos": false,
+          "patents": [],
+          "patent_paragraph_nums": []
+        }
+      },
+      {
+        "node_label": "ASPIRE-3764465736884414097",
+        "node_type": "reaction",
+        "uuid": "reaction_f5da9fad291607109c765622d0e5ce61229a07554c981756bed220159ccfca0d",
+        "rxid": "ASPIRE-3764465736884414097",
+        "rxsmiles": "[F:17][C:18]1[CH:23]=[CH:22][C:21](B2OCC(C)(C)CO2)=[CH:20][CH:19]=1.Br[C:2]1[N:7]=[C:6]([C:8]([OH:10])=[O:9])[CH:5]=[CH:4][CH:3]=1>C1C=CC([P]([Pd]([P](C2C=CC=CC=2)(C2C=CC=CC=2)C2C=CC=CC=2)([P](C2C=CC=CC=2)(C2C=CC=CC=2)C2C=CC=CC=2)[P](C2C=CC=CC=2)(C2C=CC=CC=2)C2C=CC=CC=2)(C2C=CC=CC=2)C2C=CC=CC=2)=CC=1.[Na+].[Na+].C([O-])([O-])=O.COCCOC.CCO>[F:17][C:18]1[CH:23]=[CH:22][C:21]([C:2]2[N:7]=[C:6]([C:8]([OH:10])=[O:9])[CH:5]=[CH:4][CH:3]=2)=[CH:20][CH:19]=1 |f:3.4.5|",
+        "rxclass": null,
+        "rxname": null,
+        "original_rxsmiles": null,
+        "yield_info": {
+          "yield_predicted": 55.33,
+          "yield_score": 4
+        },
+        "provenance": {
+          "is_in_aicp": false,
+          "is_in_uspto_full": false,
+          "is_in_savi_130k": false,
+          "is_in_askcos": false,
+          "patents": [],
+          "patent_paragraph_nums": []
+        },
+        "validation": {
+          "is_balanced": false,
+          "is_rxname_recognized": false,
+          "is_valid": true
+        },
+        "route_assembly_type": {
+          "is_predicted": false,
+          "is_evidence": false
+        },
+        "evidence_protocol": null,
+        "evidence_conditions_info": null,
+        "predicted_conditions_info": null
+      },
+      {
+        "node_label": "XURXQNUIGWHWHU-UHFFFAOYSA-N",
+        "node_type": "substance",
+        "uuid": "substance_d4f3ad40ee5d6ea376ccbf61a7fd2a1ab1423c7f326b5b720b024fdd263e86ea",
+        "inchikey": "XURXQNUIGWHWHU-UHFFFAOYSA-N",
+        "canonical_smiles": "O=C(O)c1cccc(Br)n1",
+        "srole": "sm",
+        "route_assembly_type": {
+          "is_predicted": false,
+          "is_evidence": false
+        },
+        "provenance": {
+          "is_in_aicp": false,
+          "is_in_uspto_full": false,
+          "is_in_savi_130k": false,
+          "is_in_askcos": false,
+          "patents": [],
+          "patent_paragraph_nums": []
+        }
+      },
+      {
+        "node_label": "GLXDVVHUTZTUQK-UHFFFAOYSA-M",
+        "node_type": "substance",
+        "uuid": "substance_916203761c1c7fec83323bf4de7c9c2f6b8c14e3b463a91ac5caacf930d116ab",
+        "inchikey": "GLXDVVHUTZTUQK-UHFFFAOYSA-M",
+        "canonical_smiles": "O.[Li+].[OH-]",
+        "srole": "im",
+        "route_assembly_type": {
+          "is_predicted": false,
+          "is_evidence": false
+        },
+        "provenance": {
+          "is_in_aicp": false,
+          "is_in_uspto_full": false,
+          "is_in_savi_130k": false,
+          "is_in_askcos": false,
+          "patents": [],
+          "patent_paragraph_nums": []
+        }
+      },
+      {
+        "node_label": "BSCHIACBONPEOB-UHFFFAOYSA-N",
+        "node_type": "substance",
+        "uuid": "substance_f4d037911aad691659723f2b3b7d35d25f2726394c16f733ca8582a02eecbbdb",
+        "inchikey": "BSCHIACBONPEOB-UHFFFAOYSA-N",
+        "canonical_smiles": "C1CCOC1.O",
+        "srole": "im",
+        "route_assembly_type": {
+          "is_predicted": false,
+          "is_evidence": false
+        },
+        "provenance": {
+          "is_in_aicp": false,
+          "is_in_uspto_full": false,
+          "is_in_savi_130k": false,
+          "is_in_askcos": false,
+          "patents": [],
+          "patent_paragraph_nums": []
+        }
+      },
+      {
+        "node_label": "SGNCOKUHMXLGAH-UHFFFAOYSA-N",
+        "node_type": "substance",
+        "uuid": "substance_478358749d93a6bb929b81a8783d597d128ae3b7ac9062ee0542fd48f9cb2f6d",
+        "inchikey": "SGNCOKUHMXLGAH-UHFFFAOYSA-N",
+        "canonical_smiles": "COC(=O)c1cccc(Br)n1",
+        "srole": "sm",
+        "route_assembly_type": {
+          "is_predicted": false,
+          "is_evidence": false
+        },
+        "provenance": {
+          "is_in_aicp": false,
+          "is_in_uspto_full": false,
+          "is_in_savi_130k": false,
+          "is_in_askcos": false,
+          "patents": [],
+          "patent_paragraph_nums": []
+        }
+      },
+      {
+        "node_label": "OKKJLVBELUTLKV-UHFFFAOYSA-N",
+        "node_type": "substance",
+        "uuid": "substance_0e399ac08516c61398e6aa5ac8b1c23f7f4ea94c8ec1dcfd724f6209b900f13a",
+        "inchikey": "OKKJLVBELUTLKV-UHFFFAOYSA-N",
+        "canonical_smiles": "CO",
+        "srole": "sm",
+        "route_assembly_type": {
+          "is_predicted": false,
+          "is_evidence": false
+        },
+        "provenance": {
+          "is_in_aicp": false,
+          "is_in_uspto_full": false,
+          "is_in_savi_130k": false,
+          "is_in_askcos": false,
+          "patents": [],
+          "patent_paragraph_nums": []
+        }
+      },
+      {
+        "node_label": "UIIMBOGNXHQVGW-UHFFFAOYSA-M",
+        "node_type": "substance",
+        "uuid": "substance_f28abc52c54e9c122a595f02205a37c5eb45054a9187a2c39684ff883257cacd",
+        "inchikey": "UIIMBOGNXHQVGW-UHFFFAOYSA-M",
+        "canonical_smiles": "O=C([O-])O.[Na+]",
+        "srole": "im",
+        "route_assembly_type": {
+          "is_predicted": false,
+          "is_evidence": false
+        },
+        "provenance": {
+          "is_in_aicp": false,
+          "is_in_uspto_full": false,
+          "is_in_savi_130k": false,
+          "is_in_askcos": false,
+          "patents": [],
+          "patent_paragraph_nums": []
+        }
+      },
+      {
+        "node_label": "QAOWNCQODCNURD-UHFFFAOYSA-N",
+        "node_type": "substance",
+        "uuid": "substance_14fee5b9f62ab4ddd40bda88e99a1f583875df6f491bc05f129ad43135c1dc3c",
+        "inchikey": "QAOWNCQODCNURD-UHFFFAOYSA-N",
+        "canonical_smiles": "O=S(=O)(O)O",
+        "srole": "sm",
+        "route_assembly_type": {
+          "is_predicted": false,
+          "is_evidence": false
+        },
+        "provenance": {
+          "is_in_aicp": false,
+          "is_in_uspto_full": false,
+          "is_in_savi_130k": false,
+          "is_in_askcos": false,
+          "patents": [],
+          "patent_paragraph_nums": []
+        }
+      },
+      {
+        "node_label": "XEKOWRVHYACXOJ-UHFFFAOYSA-N",
+        "node_type": "substance",
+        "uuid": "substance_8a947ac7df712bbd36e1306510bf21223c60a80e218d485b6303d9b83fd7595d",
+        "inchikey": "XEKOWRVHYACXOJ-UHFFFAOYSA-N",
+        "canonical_smiles": "CCOC(C)=O",
+        "srole": "sm",
+        "route_assembly_type": {
+          "is_predicted": false,
+          "is_evidence": false
+        },
+        "provenance": {
+          "is_in_aicp": false,
+          "is_in_uspto_full": false,
+          "is_in_savi_130k": false,
+          "is_in_askcos": false,
+          "patents": [],
+          "patent_paragraph_nums": []
+        }
+      },
+      {
+        "node_label": "INQOMBQAUSQDDS-UHFFFAOYSA-N",
+        "node_type": "substance",
+        "uuid": "substance_40df1ed1d7dcf93325b8486d5d0454efd251af93284e9c137fecd030c4f5c28f",
+        "inchikey": "INQOMBQAUSQDDS-UHFFFAOYSA-N",
+        "canonical_smiles": "CI",
+        "srole": "sm",
+        "route_assembly_type": {
+          "is_predicted": false,
+          "is_evidence": false
+        },
+        "provenance": {
+          "is_in_aicp": false,
+          "is_in_uspto_full": false,
+          "is_in_savi_130k": false,
+          "is_in_askcos": false,
+          "patents": [],
+          "patent_paragraph_nums": []
+        }
+      },
+      {
+        "node_label": "ZMXDDKWLCZADIW-UHFFFAOYSA-N",
+        "node_type": "substance",
+        "uuid": "substance_211e2547ef3aad73584356892d56e089345bddeb91cf667307a34933a4ff0aca",
+        "inchikey": "ZMXDDKWLCZADIW-UHFFFAOYSA-N",
+        "canonical_smiles": "CN(C)C=O",
+        "srole": "sm",
+        "route_assembly_type": {
+          "is_predicted": false,
+          "is_evidence": false
+        },
+        "provenance": {
+          "is_in_aicp": false,
+          "is_in_uspto_full": false,
+          "is_in_savi_130k": false,
+          "is_in_askcos": false,
+          "patents": [],
+          "patent_paragraph_nums": []
+        }
+      },
+      {
+        "node_label": "YMWUJEATGCHHMB-UHFFFAOYSA-N",
+        "node_type": "substance",
+        "uuid": "substance_7906f981a63d9a1c502cb1ff5080e4fa1440682fd14e77f217ef5bc7a03289a9",
+        "inchikey": "YMWUJEATGCHHMB-UHFFFAOYSA-N",
+        "canonical_smiles": "ClCCl",
+        "srole": "sm",
+        "route_assembly_type": {
+          "is_predicted": false,
+          "is_evidence": false
+        },
+        "provenance": {
+          "is_in_aicp": false,
+          "is_in_uspto_full": false,
+          "is_in_savi_130k": false,
+          "is_in_askcos": false,
+          "patents": [],
+          "patent_paragraph_nums": []
+        }
+      },
+      {
+        "node_label": "BWHMMNNQKKPAPP-UHFFFAOYSA-L",
+        "node_type": "substance",
+        "uuid": "substance_8c1a0989d807d896a950aa44fb3e29dfda549bbb46e2bd8a9e55522ed314d536",
+        "inchikey": "BWHMMNNQKKPAPP-UHFFFAOYSA-L",
+        "canonical_smiles": "O=C([O-])[O-].[K+].[K+]",
+        "srole": "im",
+        "route_assembly_type": {
+          "is_predicted": false,
+          "is_evidence": false
+        },
+        "provenance": {
+          "is_in_aicp": false,
+          "is_in_uspto_full": false,
+          "is_in_savi_130k": false,
+          "is_in_askcos": false,
+          "patents": [],
+          "patent_paragraph_nums": []
+        }
+      },
+      {
+        "node_label": "FYSNRJHAOHDILO-UHFFFAOYSA-N",
+        "node_type": "substance",
+        "uuid": "substance_b7b9bdcdf5594a080e30dbe90d556c45fa0d285ffadb840c01d9ba15b72d7f71",
+        "inchikey": "FYSNRJHAOHDILO-UHFFFAOYSA-N",
+        "canonical_smiles": "O=S(Cl)Cl",
+        "srole": "sm",
+        "route_assembly_type": {
+          "is_predicted": false,
+          "is_evidence": false
+        },
+        "provenance": {
+          "is_in_aicp": false,
+          "is_in_uspto_full": false,
+          "is_in_savi_130k": false,
+          "is_in_askcos": false,
+          "patents": [],
+          "patent_paragraph_nums": []
+        }
+      },
+      {
+        "node_label": "ASPIRE-4281193131444595318",
+        "node_type": "reaction",
+        "uuid": "reaction_c2730a5e7d01d7315dc46d38623487c9674f062de3fd3235d03d59a1e5e75c5c",
+        "rxid": "ASPIRE-4281193131444595318",
+        "rxsmiles": "Br[C:2]1[N:7]=[C:6]([C:8]([OH:10])=[O:9])[CH:5]=[CH:4][CH:3]=1.[F:11][C:12]1[CH:17]=[CH:16][C:15](B(O)O)=[CH:14][CH:13]=1>>[F:11][C:12]1[CH:17]=[CH:16][C:15]([C:2]2[N:7]=[C:6]([C:8]([OH:10])=[O:9])[CH:5]=[CH:4][CH:3]=2)=[CH:14][CH:13]=1",
+        "rxclass": null,
+        "rxname": null,
+        "original_rxsmiles": null,
+        "yield_info": {
+          "yield_predicted": 63.56,
+          "yield_score": 3
+        },
+        "provenance": {
+          "is_in_aicp": false,
+          "is_in_uspto_full": false,
+          "is_in_savi_130k": false,
+          "is_in_askcos": false,
+          "patents": [],
+          "patent_paragraph_nums": []
+        },
+        "validation": {
+          "is_balanced": false,
+          "is_rxname_recognized": false,
+          "is_valid": true
+        },
+        "route_assembly_type": {
+          "is_predicted": false,
+          "is_evidence": false
+        },
+        "evidence_protocol": null,
+        "evidence_conditions_info": null,
+        "predicted_conditions_info": null
+      },
+      {
+        "node_label": "LBUNNMJLXWQQBY-UHFFFAOYSA-N",
+        "node_type": "substance",
+        "uuid": "substance_5c655cfb82ec32ca3cc47f825622f753d7d56c9ed025b61c54439d7cf4d2afb6",
+        "inchikey": "LBUNNMJLXWQQBY-UHFFFAOYSA-N",
+        "canonical_smiles": "OB(O)c1ccc(F)cc1",
+        "srole": "sm",
+        "route_assembly_type": {
+          "is_predicted": false,
+          "is_evidence": false
+        },
+        "provenance": {
+          "is_in_aicp": false,
+          "is_in_uspto_full": false,
+          "is_in_savi_130k": false,
+          "is_in_askcos": false,
+          "patents": [],
+          "patent_paragraph_nums": []
+        }
+      }
+    ],
+    "edges": [
+      {
+        "start_node": "ASPIRE-7430789756912665551",
+        "end_node": "WEEVXEKXCIBZMB-UHFFFAOYSA-N",
+        "edge_label": "ASPIRE-7430789756912665551|WEEVXEKXCIBZMB-UHFFFAOYSA-N",
+        "edge_type": "product_of",
+        "provenance": {
+          "is_in_aicp": false,
+          "is_in_uspto_full": false,
+          "is_in_savi_130k": false,
+          "is_in_askcos": false,
+          "patents": null,
+          "patent_paragraph_nums": null
+        },
+        "uuid": "product_of_61561bbf7170a4060a479dcd61c7903cdb6a9caad7e68766149b4deb2f6510d0",
+        "inchikey": "WEEVXEKXCIBZMB-UHFFFAOYSA-N",
+        "rxid": "ASPIRE-7430789756912665551",
+        "route_assembly_type": {
+          "is_predicted": false,
+          "is_evidence": false
+        }
+      },
+      {
+        "start_node": "LFQSCWFLJHTTHZ-UHFFFAOYSA-N",
+        "end_node": "ASPIRE-7430789756912665551",
+        "edge_label": "LFQSCWFLJHTTHZ-UHFFFAOYSA-N|ASPIRE-7430789756912665551",
+        "edge_type": "reagent_of",
+        "provenance": {
+          "is_in_aicp": false,
+          "is_in_uspto_full": false,
+          "is_in_savi_130k": false,
+          "is_in_askcos": false,
+          "patents": null,
+          "patent_paragraph_nums": null
+        },
+        "uuid": "reagent_of_48832924873f0af82e9aaafbed45d11bfa4708e44ca8b3fea9a56cccb613602d",
+        "inchikey": "LFQSCWFLJHTTHZ-UHFFFAOYSA-N",
+        "rxid": "ASPIRE-7430789756912665551",
+        "route_assembly_type": {
+          "is_predicted": false,
+          "is_evidence": false
+        }
+      },
+      {
+        "start_node": "LFQSCWFLJHTTHZ-UHFFFAOYSA-N",
+        "end_node": "ASPIRE-3764465736884414097",
+        "edge_label": "LFQSCWFLJHTTHZ-UHFFFAOYSA-N|ASPIRE-3764465736884414097",
+        "edge_type": "reagent_of",
+        "provenance": {
+          "is_in_aicp": false,
+          "is_in_uspto_full": false,
+          "is_in_savi_130k": false,
+          "is_in_askcos": false,
+          "patents": null,
+          "patent_paragraph_nums": null
+        },
+        "uuid": "reagent_of_f8bcfecfa1624b64dd62a2dd86da8248438f9f90d697a8a57d69d51f2167953c",
+        "inchikey": "LFQSCWFLJHTTHZ-UHFFFAOYSA-N",
+        "rxid": "ASPIRE-3764465736884414097",
+        "route_assembly_type": {
+          "is_predicted": false,
+          "is_evidence": false
+        }
+      },
+      {
+        "start_node": "NFHFRUOZVGFOOS-UHFFFAOYSA-N",
+        "end_node": "ASPIRE-7430789756912665551",
+        "edge_label": "NFHFRUOZVGFOOS-UHFFFAOYSA-N|ASPIRE-7430789756912665551",
+        "edge_type": "reagent_of",
+        "provenance": {
+          "is_in_aicp": false,
+          "is_in_uspto_full": false,
+          "is_in_savi_130k": false,
+          "is_in_askcos": false,
+          "patents": null,
+          "patent_paragraph_nums": null
+        },
+        "uuid": "reagent_of_79fff3d41206fb93000bc54f6ba7e2385a784e1c778782e6ccd8330828328848",
+        "inchikey": "NFHFRUOZVGFOOS-UHFFFAOYSA-N",
+        "rxid": "ASPIRE-7430789756912665551",
+        "route_assembly_type": {
+          "is_predicted": false,
+          "is_evidence": false
+        }
+      },
+      {
+        "start_node": "NFHFRUOZVGFOOS-UHFFFAOYSA-N",
+        "end_node": "ASPIRE-3764465736884414097",
+        "edge_label": "NFHFRUOZVGFOOS-UHFFFAOYSA-N|ASPIRE-3764465736884414097",
+        "edge_type": "reagent_of",
+        "provenance": {
+          "is_in_aicp": false,
+          "is_in_uspto_full": false,
+          "is_in_savi_130k": false,
+          "is_in_askcos": false,
+          "patents": null,
+          "patent_paragraph_nums": null
+        },
+        "uuid": "reagent_of_b60f83518b6db8f9de3afd1c5ae45494b089772d8a841f31d53b3c7956ec72fb",
+        "inchikey": "NFHFRUOZVGFOOS-UHFFFAOYSA-N",
+        "rxid": "ASPIRE-3764465736884414097",
+        "route_assembly_type": {
+          "is_predicted": false,
+          "is_evidence": false
+        }
+      },
+      {
+        "start_node": "CDBYLPFSWZWCQE-UHFFFAOYSA-L",
+        "end_node": "ASPIRE-7430789756912665551",
+        "edge_label": "CDBYLPFSWZWCQE-UHFFFAOYSA-L|ASPIRE-7430789756912665551",
+        "edge_type": "reagent_of",
+        "provenance": {
+          "is_in_aicp": false,
+          "is_in_uspto_full": false,
+          "is_in_savi_130k": false,
+          "is_in_askcos": false,
+          "patents": null,
+          "patent_paragraph_nums": null
+        },
+        "uuid": "reagent_of_280c53d747a75c5a217b2a306db2bb710524c3d275501f8f162943be82567572",
+        "inchikey": "CDBYLPFSWZWCQE-UHFFFAOYSA-L",
+        "rxid": "ASPIRE-7430789756912665551",
+        "route_assembly_type": {
+          "is_predicted": false,
+          "is_evidence": false
+        }
+      },
+      {
+        "start_node": "CDBYLPFSWZWCQE-UHFFFAOYSA-L",
+        "end_node": "ASPIRE-3764465736884414097",
+        "edge_label": "CDBYLPFSWZWCQE-UHFFFAOYSA-L|ASPIRE-3764465736884414097",
+        "edge_type": "reagent_of",
+        "provenance": {
+          "is_in_aicp": false,
+          "is_in_uspto_full": false,
+          "is_in_savi_130k": false,
+          "is_in_askcos": false,
+          "patents": null,
+          "patent_paragraph_nums": null
+        },
+        "uuid": "reagent_of_948955a926a43fca8fbfbd1896e9c6aa3be0a63be4ecd7c970713387a72b9b1e",
+        "inchikey": "CDBYLPFSWZWCQE-UHFFFAOYSA-L",
+        "rxid": "ASPIRE-3764465736884414097",
+        "route_assembly_type": {
+          "is_predicted": false,
+          "is_evidence": false
+        }
+      },
+      {
+        "start_node": "XTHFKEDIFFGKHM-UHFFFAOYSA-N",
+        "end_node": "ASPIRE-7430789756912665551",
+        "edge_label": "XTHFKEDIFFGKHM-UHFFFAOYSA-N|ASPIRE-7430789756912665551",
+        "edge_type": "reagent_of",
+        "provenance": {
+          "is_in_aicp": false,
+          "is_in_uspto_full": false,
+          "is_in_savi_130k": false,
+          "is_in_askcos": false,
+          "patents": null,
+          "patent_paragraph_nums": null
+        },
+        "uuid": "reagent_of_82df2a6b5241154173d88e6d4dd9bc5dab1057eea8b6f1c591b5331453900567",
+        "inchikey": "XTHFKEDIFFGKHM-UHFFFAOYSA-N",
+        "rxid": "ASPIRE-7430789756912665551",
+        "route_assembly_type": {
+          "is_predicted": false,
+          "is_evidence": false
+        }
+      },
+      {
+        "start_node": "XTHFKEDIFFGKHM-UHFFFAOYSA-N",
+        "end_node": "ASPIRE-3764465736884414097",
+        "edge_label": "XTHFKEDIFFGKHM-UHFFFAOYSA-N|ASPIRE-3764465736884414097",
+        "edge_type": "reagent_of",
+        "provenance": {
+          "is_in_aicp": false,
+          "is_in_uspto_full": false,
+          "is_in_savi_130k": false,
+          "is_in_askcos": false,
+          "patents": null,
+          "patent_paragraph_nums": null
+        },
+        "uuid": "reagent_of_ea2a3b3ffa7e8de06be85fc38163ced1b13874983f504d50fe446b9b2a27fa33",
+        "inchikey": "XTHFKEDIFFGKHM-UHFFFAOYSA-N",
+        "rxid": "ASPIRE-3764465736884414097",
+        "route_assembly_type": {
+          "is_predicted": false,
+          "is_evidence": false
+        }
+      },
+      {
+        "start_node": "GWWSSPCPSWVJRZ-UHFFFAOYSA-N",
+        "end_node": "ASPIRE-7430789756912665551",
+        "edge_label": "GWWSSPCPSWVJRZ-UHFFFAOYSA-N|ASPIRE-7430789756912665551",
+        "edge_type": "reactant_of",
+        "provenance": {
+          "is_in_aicp": false,
+          "is_in_uspto_full": false,
+          "is_in_savi_130k": false,
+          "is_in_askcos": false,
+          "patents": null,
+          "patent_paragraph_nums": null
+        },
+        "uuid": "reactant_of_e82c85e48dc1045dd4a8c72f20fe3cf28bd776cd712b23823344e3e889bf0337",
+        "inchikey": "GWWSSPCPSWVJRZ-UHFFFAOYSA-N",
+        "rxid": "ASPIRE-7430789756912665551",
+        "route_assembly_type": {
+          "is_predicted": false,
+          "is_evidence": false
+        }
+      },
+      {
+        "start_node": "GWWSSPCPSWVJRZ-UHFFFAOYSA-N",
+        "end_node": "ASPIRE-3764465736884414097",
+        "edge_label": "GWWSSPCPSWVJRZ-UHFFFAOYSA-N|ASPIRE-3764465736884414097",
+        "edge_type": "reactant_of",
+        "provenance": {
+          "is_in_aicp": false,
+          "is_in_uspto_full": false,
+          "is_in_savi_130k": false,
+          "is_in_askcos": false,
+          "patents": null,
+          "patent_paragraph_nums": null
+        },
+        "uuid": "reactant_of_47ea967a45c83a96d477db276ad3319d395cdb249bbf76089b41c5bcc06a35ec",
+        "inchikey": "GWWSSPCPSWVJRZ-UHFFFAOYSA-N",
+        "rxid": "ASPIRE-3764465736884414097",
+        "route_assembly_type": {
+          "is_predicted": false,
+          "is_evidence": false
+        }
+      },
+      {
+        "start_node": "HXQPWFAIYBVPTK-UHFFFAOYSA-N",
+        "end_node": "ASPIRE-7430789756912665551",
+        "edge_label": "HXQPWFAIYBVPTK-UHFFFAOYSA-N|ASPIRE-7430789756912665551",
+        "edge_type": "reactant_of",
+        "provenance": {
+          "is_in_aicp": false,
+          "is_in_uspto_full": false,
+          "is_in_savi_130k": false,
+          "is_in_askcos": false,
+          "patents": null,
+          "patent_paragraph_nums": null
+        },
+        "uuid": "reactant_of_75c11d2dfb798c05c55e216d9705b9b0a9527aea5acc55eaf9e03705da797eae",
+        "inchikey": "HXQPWFAIYBVPTK-UHFFFAOYSA-N",
+        "rxid": "ASPIRE-7430789756912665551",
+        "route_assembly_type": {
+          "is_predicted": false,
+          "is_evidence": false
+        }
+      },
+      {
+        "start_node": "ASPIRE-3764465736884414097",
+        "end_node": "WEEVXEKXCIBZMB-UHFFFAOYSA-N",
+        "edge_label": "ASPIRE-3764465736884414097|WEEVXEKXCIBZMB-UHFFFAOYSA-N",
+        "edge_type": "product_of",
+        "provenance": {
+          "is_in_aicp": false,
+          "is_in_uspto_full": false,
+          "is_in_savi_130k": false,
+          "is_in_askcos": false,
+          "patents": null,
+          "patent_paragraph_nums": null
+        },
+        "uuid": "product_of_b52ed96d68ca0585f27f3bf9f5ba82813cfdb48e3d484891e82b8fe4151c92e4",
+        "inchikey": "WEEVXEKXCIBZMB-UHFFFAOYSA-N",
+        "rxid": "ASPIRE-3764465736884414097",
+        "route_assembly_type": {
+          "is_predicted": false,
+          "is_evidence": false
+        }
+      },
+      {
+        "start_node": "XURXQNUIGWHWHU-UHFFFAOYSA-N",
+        "end_node": "ASPIRE-3764465736884414097",
+        "edge_label": "XURXQNUIGWHWHU-UHFFFAOYSA-N|ASPIRE-3764465736884414097",
+        "edge_type": "reactant_of",
+        "provenance": {
+          "is_in_aicp": false,
+          "is_in_uspto_full": false,
+          "is_in_savi_130k": false,
+          "is_in_askcos": false,
+          "patents": null,
+          "patent_paragraph_nums": null
+        },
+        "uuid": "reactant_of_c33a2fdf8d5b25044bacb538399f024301813107458e4d6e2d3343a33ebf8e04",
+        "inchikey": "XURXQNUIGWHWHU-UHFFFAOYSA-N",
+        "rxid": "ASPIRE-3764465736884414097",
+        "route_assembly_type": {
+          "is_predicted": false,
+          "is_evidence": false
+        }
+      },
+      {
+        "start_node": "XURXQNUIGWHWHU-UHFFFAOYSA-N",
+        "end_node": "ASPIRE-4281193131444595318",
+        "edge_label": "XURXQNUIGWHWHU-UHFFFAOYSA-N|ASPIRE-4281193131444595318",
+        "edge_type": "reactant_of",
+        "provenance": {
+          "is_in_aicp": false,
+          "is_in_uspto_full": false,
+          "is_in_savi_130k": false,
+          "is_in_askcos": false,
+          "patents": null,
+          "patent_paragraph_nums": null
+        },
+        "uuid": "reactant_of_c2097b50ec8b29bb5e63dfa650359d8378b69ce9fdf744a54e4496cc47b98eb3",
+        "inchikey": "XURXQNUIGWHWHU-UHFFFAOYSA-N",
+        "rxid": "ASPIRE-4281193131444595318",
+        "route_assembly_type": {
+          "is_predicted": false,
+          "is_evidence": false
+        }
+      },
+      {
+        "start_node": "ASPIRE-4281193131444595318",
+        "end_node": "WEEVXEKXCIBZMB-UHFFFAOYSA-N",
+        "edge_label": "ASPIRE-4281193131444595318|WEEVXEKXCIBZMB-UHFFFAOYSA-N",
+        "edge_type": "product_of",
+        "provenance": {
+          "is_in_aicp": false,
+          "is_in_uspto_full": false,
+          "is_in_savi_130k": false,
+          "is_in_askcos": false,
+          "patents": null,
+          "patent_paragraph_nums": null
+        },
+        "uuid": "product_of_ada9ad552aa9137c6948144fcb5f7ace29e627a42e6338b914a30a0b1ca05f9c",
+        "inchikey": "WEEVXEKXCIBZMB-UHFFFAOYSA-N",
+        "rxid": "ASPIRE-4281193131444595318",
+        "route_assembly_type": {
+          "is_predicted": false,
+          "is_evidence": false
+        }
+      },
+      {
+        "start_node": "LBUNNMJLXWQQBY-UHFFFAOYSA-N",
+        "end_node": "ASPIRE-4281193131444595318",
+        "edge_label": "LBUNNMJLXWQQBY-UHFFFAOYSA-N|ASPIRE-4281193131444595318",
+        "edge_type": "reactant_of",
+        "provenance": {
+          "is_in_aicp": false,
+          "is_in_uspto_full": false,
+          "is_in_savi_130k": false,
+          "is_in_askcos": false,
+          "patents": null,
+          "patent_paragraph_nums": null
+        },
+        "uuid": "reactant_of_3fa201e7711c090e88cc00918e1d51595819defdb08dfbb0fb9c1493165ac65e",
+        "inchikey": "LBUNNMJLXWQQBY-UHFFFAOYSA-N",
+        "rxid": "ASPIRE-4281193131444595318",
+        "route_assembly_type": {
+          "is_predicted": false,
+          "is_evidence": false
+        }
+      }
+    ]
+  },
+  "artifact_free_graph": {
+    "route_node_labels": [
+      "ASPIRE-7430789756912665551",
+      "LFQSCWFLJHTTHZ-UHFFFAOYSA-N",
+      "NFHFRUOZVGFOOS-UHFFFAOYSA-N",
+      "CDBYLPFSWZWCQE-UHFFFAOYSA-L",
+      "XTHFKEDIFFGKHM-UHFFFAOYSA-N",
+      "GWWSSPCPSWVJRZ-UHFFFAOYSA-N",
+      "HXQPWFAIYBVPTK-UHFFFAOYSA-N",
+      "WEEVXEKXCIBZMB-UHFFFAOYSA-N",
+      "ASPIRE-3764465736884414097",
+      "XURXQNUIGWHWHU-UHFFFAOYSA-N",
+      "GLXDVVHUTZTUQK-UHFFFAOYSA-M",
+      "BSCHIACBONPEOB-UHFFFAOYSA-N",
+      "SGNCOKUHMXLGAH-UHFFFAOYSA-N",
+      "OKKJLVBELUTLKV-UHFFFAOYSA-N",
+      "UIIMBOGNXHQVGW-UHFFFAOYSA-M",
+      "QAOWNCQODCNURD-UHFFFAOYSA-N",
+      "XEKOWRVHYACXOJ-UHFFFAOYSA-N",
+      "INQOMBQAUSQDDS-UHFFFAOYSA-N",
+      "ZMXDDKWLCZADIW-UHFFFAOYSA-N",
+      "YMWUJEATGCHHMB-UHFFFAOYSA-N",
+      "BWHMMNNQKKPAPP-UHFFFAOYSA-L",
+      "FYSNRJHAOHDILO-UHFFFAOYSA-N",
+      "ASPIRE-4281193131444595318",
+      "LBUNNMJLXWQQBY-UHFFFAOYSA-N"
+    ]
+  },
+  "combination_graphs": [
+    {
+      "route_index": 1,
+      "route_candidate_json": {
+        "nodes": [
+          {
+            "node_label": "ASPIRE-7430789756912665551",
+            "is_balanced": false,
+            "is_in_aicp": false,
+            "is_in_savi_130k": false,
+            "is_in_uspto_full": false,
+            "node_type": "Reaction",
+            "rxid": "ASPIRE-7430789756912665551",
+            "rxsmiles": "[F:17][C:18]1[CH:23]=[CH:22][C:21](B2OCC(C)(C)CO2)=[CH:20][CH:19]=1.Br[C:2]1([C:8]([OH:10])=[O:9])[CH:7]=[CH:6][CH:5]=[CH:4][NH:3]1>C1C=CC([P]([Pd]([P](C2C=CC=CC=2)(C2C=CC=CC=2)C2C=CC=CC=2)([P](C2C=CC=CC=2)(C2C=CC=CC=2)C2C=CC=CC=2)[P](C2C=CC=CC=2)(C2C=CC=CC=2)C2C=CC=CC=2)(C2C=CC=CC=2)C2C=CC=CC=2)=CC=1.[Na+].[Na+].C([O-])([O-])=O.COCCOC.CCO>[F:17][C:18]1[CH:23]=[CH:22][C:21]([C:4]2[N:3]=[C:2]([C:8]([OH:10])=[O:9])[CH:7]=[CH:6][CH:5]=2)=[CH:20][CH:19]=1 |f:3.4.5|",
+            "uuid": "reaction_6f993a50cfc6f2a2c87048fc9acaffb5626c617a1bef4cb4109a6630478ba9fb",
+            "yield_empirical": 46.0,
+            "yield_predicted": 59.888000000000005,
+            "yield_score": 4.0,
+            "yield_info": {
+              "yield_predicted": 59.888000000000005,
+              "yield_score": 4.0
+            },
+            "node_id": 1909384
+          },
+          {
+            "node_label": "LFQSCWFLJHTTHZ-UHFFFAOYSA-N",
+            "canonical_smiles": "CCO",
+            "inchikey": "LFQSCWFLJHTTHZ-UHFFFAOYSA-N",
+            "is_in_aicp": false,
+            "is_in_savi_130k": false,
+            "is_in_uspto_full": false,
+            "node_type": "substance",
+            "uuid": "substance_e4487bfe0598c87622cdf6c9a03a1c4c60cdbc6eef5b7bbc54fb47843d8dcc1a",
+            "node_id": 3727219,
+            "is_in_inventory": true,
+            "srole": "sm"
+          },
+          {
+            "node_label": "NFHFRUOZVGFOOS-UHFFFAOYSA-N",
+            "canonical_smiles": "c1ccc([P](c2ccccc2)(c2ccccc2)[Pd]([P](c2ccccc2)(c2ccccc2)c2ccccc2)([P](c2ccccc2)(c2ccccc2)c2ccccc2)[P](c2ccccc2)(c2ccccc2)c2ccccc2)cc1",
+            "inchikey": "NFHFRUOZVGFOOS-UHFFFAOYSA-N",
+            "is_in_aicp": false,
+            "is_in_savi_130k": false,
+            "is_in_uspto_full": false,
+            "node_type": "substance",
+            "uuid": "substance_1b478ad1142d1ef1c1094a9528c8a55d36e12adcdc31d57b23348445a35a5529",
+            "node_id": 4116894,
+            "is_in_inventory": true,
+            "srole": "sm"
+          },
+          {
+            "node_label": "CDBYLPFSWZWCQE-UHFFFAOYSA-L",
+            "canonical_smiles": "O=C([O-])[O-].[Na+].[Na+]",
+            "inchikey": "CDBYLPFSWZWCQE-UHFFFAOYSA-L",
+            "is_in_aicp": false,
+            "is_in_savi_130k": false,
+            "is_in_uspto_full": false,
+            "node_type": "substance",
+            "uuid": "substance_9264ed6a25ff015d0aee802e5aa38332ffe3f5e158262eabb839297bcdba9ff1",
+            "node_id": 2843182,
+            "srole": "im"
+          },
+          {
+            "node_label": "XTHFKEDIFFGKHM-UHFFFAOYSA-N",
+            "canonical_smiles": "COCCOC",
+            "inchikey": "XTHFKEDIFFGKHM-UHFFFAOYSA-N",
+            "is_in_aicp": false,
+            "is_in_savi_130k": false,
+            "is_in_uspto_full": false,
+            "node_type": "substance",
+            "uuid": "substance_2155120f56239585af99934bbeacda09ebd2c0410c5600937637fa61b443a433",
+            "node_id": 3010900,
+            "is_in_inventory": true,
+            "srole": "sm"
+          },
+          {
+            "node_label": "GWWSSPCPSWVJRZ-UHFFFAOYSA-N",
+            "canonical_smiles": "CC1(C)COB(c2ccc(F)cc2)OC1",
+            "inchikey": "GWWSSPCPSWVJRZ-UHFFFAOYSA-N",
+            "is_in_aicp": false,
+            "is_in_savi_130k": false,
+            "is_in_uspto_full": false,
+            "node_type": "substance",
+            "uuid": "substance_bc240dbff9a7dc20dc25cf62b06890df7ab038a3fce04a0c5e07766e68c013cf",
+            "node_id": 3894017,
+            "is_in_inventory": true,
+            "srole": "sm"
+          },
+          {
+            "node_label": "HXQPWFAIYBVPTK-UHFFFAOYSA-N",
+            "canonical_smiles": "O=C(O)C1(Br)C=CC=CN1",
+            "inchikey": "HXQPWFAIYBVPTK-UHFFFAOYSA-N",
+            "is_in_aicp": false,
+            "is_in_savi_130k": false,
+            "is_in_uspto_full": false,
+            "node_type": "substance",
+            "uuid": "substance_91a6ff8116f84143dbb2e2cba1b11e522e0edaaef998d9302aa9c2158bbeb2d0",
+            "node_id": 4086767,
+            "srole": "im"
+          },
+          {
+            "node_label": "WEEVXEKXCIBZMB-UHFFFAOYSA-N",
+            "canonical_smiles": "O=C(O)c1cccc(-c2ccc(F)cc2)n1",
+            "inchikey": "WEEVXEKXCIBZMB-UHFFFAOYSA-N",
+            "is_in_aicp": false,
+            "is_in_savi_130k": false,
+            "is_in_uspto_full": false,
+            "node_type": "substance",
+            "uuid": "substance_c5e916c7ce6053639c692aba70b09033a8be986ee1fc0a81f956449176a29bd8",
+            "node_id": 3609733,
+            "srole": "tm"
+          },
+          {
+            "node_label": "ASPIRE-3764465736884414097",
+            "is_balanced": false,
+            "is_in_aicp": false,
+            "is_in_savi_130k": false,
+            "is_in_uspto_full": false,
+            "node_type": "Reaction",
+            "rxid": "ASPIRE-3764465736884414097",
+            "rxsmiles": "[F:17][C:18]1[CH:23]=[CH:22][C:21](B2OCC(C)(C)CO2)=[CH:20][CH:19]=1.Br[C:2]1[N:7]=[C:6]([C:8]([OH:10])=[O:9])[CH:5]=[CH:4][CH:3]=1>C1C=CC([P]([Pd]([P](C2C=CC=CC=2)(C2C=CC=CC=2)C2C=CC=CC=2)([P](C2C=CC=CC=2)(C2C=CC=CC=2)C2C=CC=CC=2)[P](C2C=CC=CC=2)(C2C=CC=CC=2)C2C=CC=CC=2)(C2C=CC=CC=2)C2C=CC=CC=2)=CC=1.[Na+].[Na+].C([O-])([O-])=O.COCCOC.CCO>[F:17][C:18]1[CH:23]=[CH:22][C:21]([C:2]2[N:7]=[C:6]([C:8]([OH:10])=[O:9])[CH:5]=[CH:4][CH:3]=2)=[CH:20][CH:19]=1 |f:3.4.5|",
+            "uuid": "reaction_f5da9fad291607109c765622d0e5ce61229a07554c981756bed220159ccfca0d",
+            "yield_empirical": 46.0,
+            "yield_predicted": 55.33000000000001,
+            "yield_score": 4.0,
+            "yield_info": {
+              "yield_predicted": 55.33000000000001,
+              "yield_score": 4.0
+            },
+            "node_id": 2369057
+          },
+          {
+            "node_label": "XURXQNUIGWHWHU-UHFFFAOYSA-N",
+            "canonical_smiles": "O=C(O)c1cccc(Br)n1",
+            "inchikey": "XURXQNUIGWHWHU-UHFFFAOYSA-N",
+            "is_in_aicp": false,
+            "is_in_savi_130k": false,
+            "is_in_uspto_full": false,
+            "node_type": "substance",
+            "uuid": "substance_d4f3ad40ee5d6ea376ccbf61a7fd2a1ab1423c7f326b5b720b024fdd263e86ea",
+            "node_id": 3011342,
+            "is_in_inventory": true,
+            "srole": "sm"
+          },
+          {
+            "node_label": "ASPIRE-4281193131444595318",
+            "is_balanced": false,
+            "is_in_aicp": false,
+            "is_in_savi_130k": false,
+            "is_in_uspto_full": false,
+            "node_type": "Reaction",
+            "rxid": "ASPIRE-4281193131444595318",
+            "rxsmiles": "Br[C:2]1[N:7]=[C:6]([C:8]([OH:10])=[O:9])[CH:5]=[CH:4][CH:3]=1.[F:11][C:12]1[CH:17]=[CH:16][C:15](B(O)O)=[CH:14][CH:13]=1>>[F:11][C:12]1[CH:17]=[CH:16][C:15]([C:2]2[N:7]=[C:6]([C:8]([OH:10])=[O:9])[CH:5]=[CH:4][CH:3]=2)=[CH:14][CH:13]=1",
+            "uuid": "reaction_c2730a5e7d01d7315dc46d38623487c9674f062de3fd3235d03d59a1e5e75c5c",
+            "yield_predicted": 63.55620000000001,
+            "yield_score": 3.0,
+            "yield_info": {
+              "yield_predicted": 63.55620000000001,
+              "yield_score": 3.0
+            },
+            "node_id": 2018720
+          },
+          {
+            "node_label": "LBUNNMJLXWQQBY-UHFFFAOYSA-N",
+            "canonical_smiles": "OB(O)c1ccc(F)cc1",
+            "inchikey": "LBUNNMJLXWQQBY-UHFFFAOYSA-N",
+            "is_in_aicp": false,
+            "is_in_savi_130k": false,
+            "is_in_uspto_full": false,
+            "node_type": "substance",
+            "uuid": "substance_5c655cfb82ec32ca3cc47f825622f753d7d56c9ed025b61c54439d7cf4d2afb6",
+            "node_id": 3318926,
+            "is_in_inventory": true,
+            "srole": "sm"
+          }
+        ],
+        "edges": [
+          {
+            "start_node": "ASPIRE-7430789756912665551",
+            "end_node": "WEEVXEKXCIBZMB-UHFFFAOYSA-N",
+            "edge_label": "ASPIRE-7430789756912665551|WEEVXEKXCIBZMB-UHFFFAOYSA-N",
+            "edge_type": "product_of",
+            "is_in_aicp": false,
+            "is_in_savi_130k": false,
+            "is_in_uspto_full": false,
+            "uuid": "product_of_61561bbf7170a4060a479dcd61c7903cdb6a9caad7e68766149b4deb2f6510d0",
+            "start_node_id": 1909384,
+            "end_node_id": 3609733,
+            "inchikey": "WEEVXEKXCIBZMB-UHFFFAOYSA-N",
+            "rxid": "ASPIRE-7430789756912665551"
+          },
+          {
+            "start_node": "LFQSCWFLJHTTHZ-UHFFFAOYSA-N",
+            "end_node": "ASPIRE-7430789756912665551",
+            "edge_label": "LFQSCWFLJHTTHZ-UHFFFAOYSA-N|ASPIRE-7430789756912665551",
+            "edge_type": "reagent_of",
+            "is_in_aicp": false,
+            "is_in_savi_130k": false,
+            "is_in_uspto_full": false,
+            "uuid": "reagent_of_48832924873f0af82e9aaafbed45d11bfa4708e44ca8b3fea9a56cccb613602d",
+            "start_node_id": 3727219,
+            "end_node_id": 1909384,
+            "inchikey": "LFQSCWFLJHTTHZ-UHFFFAOYSA-N",
+            "rxid": "ASPIRE-7430789756912665551"
+          },
+          {
+            "start_node": "LFQSCWFLJHTTHZ-UHFFFAOYSA-N",
+            "end_node": "ASPIRE-3764465736884414097",
+            "edge_label": "LFQSCWFLJHTTHZ-UHFFFAOYSA-N|ASPIRE-3764465736884414097",
+            "edge_type": "reagent_of",
+            "is_in_aicp": false,
+            "is_in_savi_130k": false,
+            "is_in_uspto_full": false,
+            "uuid": "reagent_of_f8bcfecfa1624b64dd62a2dd86da8248438f9f90d697a8a57d69d51f2167953c",
+            "start_node_id": 3727219,
+            "end_node_id": 2369057,
+            "inchikey": "LFQSCWFLJHTTHZ-UHFFFAOYSA-N",
+            "rxid": "ASPIRE-3764465736884414097"
+          },
+          {
+            "start_node": "NFHFRUOZVGFOOS-UHFFFAOYSA-N",
+            "end_node": "ASPIRE-7430789756912665551",
+            "edge_label": "NFHFRUOZVGFOOS-UHFFFAOYSA-N|ASPIRE-7430789756912665551",
+            "edge_type": "reagent_of",
+            "is_in_aicp": false,
+            "is_in_savi_130k": false,
+            "is_in_uspto_full": false,
+            "uuid": "reagent_of_79fff3d41206fb93000bc54f6ba7e2385a784e1c778782e6ccd8330828328848",
+            "start_node_id": 4116894,
+            "end_node_id": 1909384,
+            "inchikey": "NFHFRUOZVGFOOS-UHFFFAOYSA-N",
+            "rxid": "ASPIRE-7430789756912665551"
+          },
+          {
+            "start_node": "NFHFRUOZVGFOOS-UHFFFAOYSA-N",
+            "end_node": "ASPIRE-3764465736884414097",
+            "edge_label": "NFHFRUOZVGFOOS-UHFFFAOYSA-N|ASPIRE-3764465736884414097",
+            "edge_type": "reagent_of",
+            "is_in_aicp": false,
+            "is_in_savi_130k": false,
+            "is_in_uspto_full": false,
+            "uuid": "reagent_of_b60f83518b6db8f9de3afd1c5ae45494b089772d8a841f31d53b3c7956ec72fb",
+            "start_node_id": 4116894,
+            "end_node_id": 2369057,
+            "inchikey": "NFHFRUOZVGFOOS-UHFFFAOYSA-N",
+            "rxid": "ASPIRE-3764465736884414097"
+          },
+          {
+            "start_node": "CDBYLPFSWZWCQE-UHFFFAOYSA-L",
+            "end_node": "ASPIRE-7430789756912665551",
+            "edge_label": "CDBYLPFSWZWCQE-UHFFFAOYSA-L|ASPIRE-7430789756912665551",
+            "edge_type": "reagent_of",
+            "is_in_aicp": false,
+            "is_in_savi_130k": false,
+            "is_in_uspto_full": false,
+            "uuid": "reagent_of_280c53d747a75c5a217b2a306db2bb710524c3d275501f8f162943be82567572",
+            "start_node_id": 2843182,
+            "end_node_id": 1909384,
+            "inchikey": "CDBYLPFSWZWCQE-UHFFFAOYSA-L",
+            "rxid": "ASPIRE-7430789756912665551"
+          },
+          {
+            "start_node": "CDBYLPFSWZWCQE-UHFFFAOYSA-L",
+            "end_node": "ASPIRE-3764465736884414097",
+            "edge_label": "CDBYLPFSWZWCQE-UHFFFAOYSA-L|ASPIRE-3764465736884414097",
+            "edge_type": "reagent_of",
+            "is_in_aicp": false,
+            "is_in_savi_130k": false,
+            "is_in_uspto_full": false,
+            "uuid": "reagent_of_948955a926a43fca8fbfbd1896e9c6aa3be0a63be4ecd7c970713387a72b9b1e",
+            "start_node_id": 2843182,
+            "end_node_id": 2369057,
+            "inchikey": "CDBYLPFSWZWCQE-UHFFFAOYSA-L",
+            "rxid": "ASPIRE-3764465736884414097"
+          },
+          {
+            "start_node": "XTHFKEDIFFGKHM-UHFFFAOYSA-N",
+            "end_node": "ASPIRE-7430789756912665551",
+            "edge_label": "XTHFKEDIFFGKHM-UHFFFAOYSA-N|ASPIRE-7430789756912665551",
+            "edge_type": "reagent_of",
+            "is_in_aicp": false,
+            "is_in_savi_130k": false,
+            "is_in_uspto_full": false,
+            "uuid": "reagent_of_82df2a6b5241154173d88e6d4dd9bc5dab1057eea8b6f1c591b5331453900567",
+            "start_node_id": 3010900,
+            "end_node_id": 1909384,
+            "inchikey": "XTHFKEDIFFGKHM-UHFFFAOYSA-N",
+            "rxid": "ASPIRE-7430789756912665551"
+          },
+          {
+            "start_node": "XTHFKEDIFFGKHM-UHFFFAOYSA-N",
+            "end_node": "ASPIRE-3764465736884414097",
+            "edge_label": "XTHFKEDIFFGKHM-UHFFFAOYSA-N|ASPIRE-3764465736884414097",
+            "edge_type": "reagent_of",
+            "is_in_aicp": false,
+            "is_in_savi_130k": false,
+            "is_in_uspto_full": false,
+            "uuid": "reagent_of_ea2a3b3ffa7e8de06be85fc38163ced1b13874983f504d50fe446b9b2a27fa33",
+            "start_node_id": 3010900,
+            "end_node_id": 2369057,
+            "inchikey": "XTHFKEDIFFGKHM-UHFFFAOYSA-N",
+            "rxid": "ASPIRE-3764465736884414097"
+          },
+          {
+            "start_node": "GWWSSPCPSWVJRZ-UHFFFAOYSA-N",
+            "end_node": "ASPIRE-7430789756912665551",
+            "edge_label": "GWWSSPCPSWVJRZ-UHFFFAOYSA-N|ASPIRE-7430789756912665551",
+            "edge_type": "reactant_of",
+            "is_in_aicp": false,
+            "is_in_savi_130k": false,
+            "is_in_uspto_full": false,
+            "uuid": "reactant_of_e82c85e48dc1045dd4a8c72f20fe3cf28bd776cd712b23823344e3e889bf0337",
+            "start_node_id": 3894017,
+            "end_node_id": 1909384,
+            "inchikey": "GWWSSPCPSWVJRZ-UHFFFAOYSA-N",
+            "rxid": "ASPIRE-7430789756912665551"
+          },
+          {
+            "start_node": "GWWSSPCPSWVJRZ-UHFFFAOYSA-N",
+            "end_node": "ASPIRE-3764465736884414097",
+            "edge_label": "GWWSSPCPSWVJRZ-UHFFFAOYSA-N|ASPIRE-3764465736884414097",
+            "edge_type": "reactant_of",
+            "is_in_aicp": false,
+            "is_in_savi_130k": false,
+            "is_in_uspto_full": false,
+            "uuid": "reactant_of_47ea967a45c83a96d477db276ad3319d395cdb249bbf76089b41c5bcc06a35ec",
+            "start_node_id": 3894017,
+            "end_node_id": 2369057,
+            "inchikey": "GWWSSPCPSWVJRZ-UHFFFAOYSA-N",
+            "rxid": "ASPIRE-3764465736884414097"
+          },
+          {
+            "start_node": "HXQPWFAIYBVPTK-UHFFFAOYSA-N",
+            "end_node": "ASPIRE-7430789756912665551",
+            "edge_label": "HXQPWFAIYBVPTK-UHFFFAOYSA-N|ASPIRE-7430789756912665551",
+            "edge_type": "reactant_of",
+            "is_in_aicp": false,
+            "is_in_savi_130k": false,
+            "is_in_uspto_full": false,
+            "uuid": "reactant_of_75c11d2dfb798c05c55e216d9705b9b0a9527aea5acc55eaf9e03705da797eae",
+            "start_node_id": 4086767,
+            "end_node_id": 1909384,
+            "inchikey": "HXQPWFAIYBVPTK-UHFFFAOYSA-N",
+            "rxid": "ASPIRE-7430789756912665551"
+          },
+          {
+            "start_node": "XURXQNUIGWHWHU-UHFFFAOYSA-N",
+            "end_node": "ASPIRE-3764465736884414097",
+            "edge_label": "XURXQNUIGWHWHU-UHFFFAOYSA-N|ASPIRE-3764465736884414097",
+            "edge_type": "reactant_of",
+            "is_in_aicp": false,
+            "is_in_savi_130k": false,
+            "is_in_uspto_full": false,
+            "uuid": "reactant_of_c33a2fdf8d5b25044bacb538399f024301813107458e4d6e2d3343a33ebf8e04",
+            "start_node_id": 3011342,
+            "end_node_id": 2369057,
+            "inchikey": "XURXQNUIGWHWHU-UHFFFAOYSA-N",
+            "rxid": "ASPIRE-3764465736884414097"
+          },
+          {
+            "start_node": "XURXQNUIGWHWHU-UHFFFAOYSA-N",
+            "end_node": "ASPIRE-4281193131444595318",
+            "edge_label": "XURXQNUIGWHWHU-UHFFFAOYSA-N|ASPIRE-4281193131444595318",
+            "edge_type": "reactant_of",
+            "is_in_aicp": false,
+            "is_in_savi_130k": false,
+            "is_in_uspto_full": false,
+            "uuid": "reactant_of_c2097b50ec8b29bb5e63dfa650359d8378b69ce9fdf744a54e4496cc47b98eb3",
+            "start_node_id": 3011342,
+            "end_node_id": 2018720,
+            "inchikey": "XURXQNUIGWHWHU-UHFFFAOYSA-N",
+            "rxid": "ASPIRE-4281193131444595318"
+          },
+          {
+            "start_node": "LBUNNMJLXWQQBY-UHFFFAOYSA-N",
+            "end_node": "ASPIRE-4281193131444595318",
+            "edge_label": "LBUNNMJLXWQQBY-UHFFFAOYSA-N|ASPIRE-4281193131444595318",
+            "edge_type": "reactant_of",
+            "is_in_aicp": false,
+            "is_in_savi_130k": false,
+            "is_in_uspto_full": false,
+            "uuid": "reactant_of_3fa201e7711c090e88cc00918e1d51595819defdb08dfbb0fb9c1493165ac65e",
+            "start_node_id": 3318926,
+            "end_node_id": 2018720,
+            "inchikey": "LBUNNMJLXWQQBY-UHFFFAOYSA-N",
+            "rxid": "ASPIRE-4281193131444595318"
+          }
+        ]
+      }
+    },
+    {
+      "route_index": 2,
+      "route_candidate_json": {
+        "nodes": [
+          {
+            "node_label": "ASPIRE-7430789756912665551",
+            "is_balanced": false,
+            "is_in_aicp": false,
+            "is_in_savi_130k": false,
+            "is_in_uspto_full": false,
+            "node_type": "Reaction",
+            "rxid": "ASPIRE-7430789756912665551",
+            "rxsmiles": "[F:17][C:18]1[CH:23]=[CH:22][C:21](B2OCC(C)(C)CO2)=[CH:20][CH:19]=1.Br[C:2]1([C:8]([OH:10])=[O:9])[CH:7]=[CH:6][CH:5]=[CH:4][NH:3]1>C1C=CC([P]([Pd]([P](C2C=CC=CC=2)(C2C=CC=CC=2)C2C=CC=CC=2)([P](C2C=CC=CC=2)(C2C=CC=CC=2)C2C=CC=CC=2)[P](C2C=CC=CC=2)(C2C=CC=CC=2)C2C=CC=CC=2)(C2C=CC=CC=2)C2C=CC=CC=2)=CC=1.[Na+].[Na+].C([O-])([O-])=O.COCCOC.CCO>[F:17][C:18]1[CH:23]=[CH:22][C:21]([C:4]2[N:3]=[C:2]([C:8]([OH:10])=[O:9])[CH:7]=[CH:6][CH:5]=2)=[CH:20][CH:19]=1 |f:3.4.5|",
+            "uuid": "reaction_6f993a50cfc6f2a2c87048fc9acaffb5626c617a1bef4cb4109a6630478ba9fb",
+            "yield_empirical": 46.0,
+            "yield_predicted": 59.888000000000005,
+            "yield_score": 4.0,
+            "yield_info": {
+              "yield_predicted": 59.888000000000005,
+              "yield_score": 4.0
+            },
+            "node_id": 1909384
+          },
+          {
+            "node_label": "LFQSCWFLJHTTHZ-UHFFFAOYSA-N",
+            "canonical_smiles": "CCO",
+            "inchikey": "LFQSCWFLJHTTHZ-UHFFFAOYSA-N",
+            "is_in_aicp": false,
+            "is_in_savi_130k": false,
+            "is_in_uspto_full": false,
+            "node_type": "substance",
+            "uuid": "substance_e4487bfe0598c87622cdf6c9a03a1c4c60cdbc6eef5b7bbc54fb47843d8dcc1a",
+            "node_id": 3727219,
+            "is_in_inventory": true,
+            "srole": "sm"
+          },
+          {
+            "node_label": "NFHFRUOZVGFOOS-UHFFFAOYSA-N",
+            "canonical_smiles": "c1ccc([P](c2ccccc2)(c2ccccc2)[Pd]([P](c2ccccc2)(c2ccccc2)c2ccccc2)([P](c2ccccc2)(c2ccccc2)c2ccccc2)[P](c2ccccc2)(c2ccccc2)c2ccccc2)cc1",
+            "inchikey": "NFHFRUOZVGFOOS-UHFFFAOYSA-N",
+            "is_in_aicp": false,
+            "is_in_savi_130k": false,
+            "is_in_uspto_full": false,
+            "node_type": "substance",
+            "uuid": "substance_1b478ad1142d1ef1c1094a9528c8a55d36e12adcdc31d57b23348445a35a5529",
+            "node_id": 4116894,
+            "is_in_inventory": true,
+            "srole": "sm"
+          },
+          {
+            "node_label": "CDBYLPFSWZWCQE-UHFFFAOYSA-L",
+            "canonical_smiles": "O=C([O-])[O-].[Na+].[Na+]",
+            "inchikey": "CDBYLPFSWZWCQE-UHFFFAOYSA-L",
+            "is_in_aicp": false,
+            "is_in_savi_130k": false,
+            "is_in_uspto_full": false,
+            "node_type": "substance",
+            "uuid": "substance_9264ed6a25ff015d0aee802e5aa38332ffe3f5e158262eabb839297bcdba9ff1",
+            "node_id": 2843182,
+            "srole": "im"
+          },
+          {
+            "node_label": "XTHFKEDIFFGKHM-UHFFFAOYSA-N",
+            "canonical_smiles": "COCCOC",
+            "inchikey": "XTHFKEDIFFGKHM-UHFFFAOYSA-N",
+            "is_in_aicp": false,
+            "is_in_savi_130k": false,
+            "is_in_uspto_full": false,
+            "node_type": "substance",
+            "uuid": "substance_2155120f56239585af99934bbeacda09ebd2c0410c5600937637fa61b443a433",
+            "node_id": 3010900,
+            "is_in_inventory": true,
+            "srole": "sm"
+          },
+          {
+            "node_label": "GWWSSPCPSWVJRZ-UHFFFAOYSA-N",
+            "canonical_smiles": "CC1(C)COB(c2ccc(F)cc2)OC1",
+            "inchikey": "GWWSSPCPSWVJRZ-UHFFFAOYSA-N",
+            "is_in_aicp": false,
+            "is_in_savi_130k": false,
+            "is_in_uspto_full": false,
+            "node_type": "substance",
+            "uuid": "substance_bc240dbff9a7dc20dc25cf62b06890df7ab038a3fce04a0c5e07766e68c013cf",
+            "node_id": 3894017,
+            "is_in_inventory": true,
+            "srole": "sm"
+          },
+          {
+            "node_label": "HXQPWFAIYBVPTK-UHFFFAOYSA-N",
+            "canonical_smiles": "O=C(O)C1(Br)C=CC=CN1",
+            "inchikey": "HXQPWFAIYBVPTK-UHFFFAOYSA-N",
+            "is_in_aicp": false,
+            "is_in_savi_130k": false,
+            "is_in_uspto_full": false,
+            "node_type": "substance",
+            "uuid": "substance_91a6ff8116f84143dbb2e2cba1b11e522e0edaaef998d9302aa9c2158bbeb2d0",
+            "node_id": 4086767,
+            "srole": "im"
+          },
+          {
+            "node_label": "WEEVXEKXCIBZMB-UHFFFAOYSA-N",
+            "canonical_smiles": "O=C(O)c1cccc(-c2ccc(F)cc2)n1",
+            "inchikey": "WEEVXEKXCIBZMB-UHFFFAOYSA-N",
+            "is_in_aicp": false,
+            "is_in_savi_130k": false,
+            "is_in_uspto_full": false,
+            "node_type": "substance",
+            "uuid": "substance_c5e916c7ce6053639c692aba70b09033a8be986ee1fc0a81f956449176a29bd8",
+            "node_id": 3609733,
+            "srole": "tm"
+          },
+          {
+            "node_label": "ASPIRE-3764465736884414097",
+            "is_balanced": false,
+            "is_in_aicp": false,
+            "is_in_savi_130k": false,
+            "is_in_uspto_full": false,
+            "node_type": "Reaction",
+            "rxid": "ASPIRE-3764465736884414097",
+            "rxsmiles": "[F:17][C:18]1[CH:23]=[CH:22][C:21](B2OCC(C)(C)CO2)=[CH:20][CH:19]=1.Br[C:2]1[N:7]=[C:6]([C:8]([OH:10])=[O:9])[CH:5]=[CH:4][CH:3]=1>C1C=CC([P]([Pd]([P](C2C=CC=CC=2)(C2C=CC=CC=2)C2C=CC=CC=2)([P](C2C=CC=CC=2)(C2C=CC=CC=2)C2C=CC=CC=2)[P](C2C=CC=CC=2)(C2C=CC=CC=2)C2C=CC=CC=2)(C2C=CC=CC=2)C2C=CC=CC=2)=CC=1.[Na+].[Na+].C([O-])([O-])=O.COCCOC.CCO>[F:17][C:18]1[CH:23]=[CH:22][C:21]([C:2]2[N:7]=[C:6]([C:8]([OH:10])=[O:9])[CH:5]=[CH:4][CH:3]=2)=[CH:20][CH:19]=1 |f:3.4.5|",
+            "uuid": "reaction_f5da9fad291607109c765622d0e5ce61229a07554c981756bed220159ccfca0d",
+            "yield_empirical": 46.0,
+            "yield_predicted": 55.33000000000001,
+            "yield_score": 4.0,
+            "yield_info": {
+              "yield_predicted": 55.33000000000001,
+              "yield_score": 4.0
+            },
+            "node_id": 2369057
+          },
+          {
+            "node_label": "XURXQNUIGWHWHU-UHFFFAOYSA-N",
+            "canonical_smiles": "O=C(O)c1cccc(Br)n1",
+            "inchikey": "XURXQNUIGWHWHU-UHFFFAOYSA-N",
+            "is_in_aicp": false,
+            "is_in_savi_130k": false,
+            "is_in_uspto_full": false,
+            "node_type": "substance",
+            "uuid": "substance_d4f3ad40ee5d6ea376ccbf61a7fd2a1ab1423c7f326b5b720b024fdd263e86ea",
+            "node_id": 3011342,
+            "is_in_inventory": true,
+            "srole": "sm"
+          },
+          {
+            "node_label": "ASPIRE-4281193131444595318",
+            "is_balanced": false,
+            "is_in_aicp": false,
+            "is_in_savi_130k": false,
+            "is_in_uspto_full": false,
+            "node_type": "Reaction",
+            "rxid": "ASPIRE-4281193131444595318",
+            "rxsmiles": "Br[C:2]1[N:7]=[C:6]([C:8]([OH:10])=[O:9])[CH:5]=[CH:4][CH:3]=1.[F:11][C:12]1[CH:17]=[CH:16][C:15](B(O)O)=[CH:14][CH:13]=1>>[F:11][C:12]1[CH:17]=[CH:16][C:15]([C:2]2[N:7]=[C:6]([C:8]([OH:10])=[O:9])[CH:5]=[CH:4][CH:3]=2)=[CH:14][CH:13]=1",
+            "uuid": "reaction_c2730a5e7d01d7315dc46d38623487c9674f062de3fd3235d03d59a1e5e75c5c",
+            "yield_predicted": 63.55620000000001,
+            "yield_score": 3.0,
+            "yield_info": {
+              "yield_predicted": 63.55620000000001,
+              "yield_score": 3.0
+            },
+            "node_id": 2018720
+          },
+          {
+            "node_label": "LBUNNMJLXWQQBY-UHFFFAOYSA-N",
+            "canonical_smiles": "OB(O)c1ccc(F)cc1",
+            "inchikey": "LBUNNMJLXWQQBY-UHFFFAOYSA-N",
+            "is_in_aicp": false,
+            "is_in_savi_130k": false,
+            "is_in_uspto_full": false,
+            "node_type": "substance",
+            "uuid": "substance_5c655cfb82ec32ca3cc47f825622f753d7d56c9ed025b61c54439d7cf4d2afb6",
+            "node_id": 3318926,
+            "is_in_inventory": true,
+            "srole": "sm"
+          }
+        ],
+        "edges": [
+          {
+            "start_node": "LFQSCWFLJHTTHZ-UHFFFAOYSA-N",
+            "end_node": "ASPIRE-7430789756912665551",
+            "edge_label": "LFQSCWFLJHTTHZ-UHFFFAOYSA-N|ASPIRE-7430789756912665551",
+            "edge_type": "reagent_of",
+            "is_in_aicp": false,
+            "is_in_savi_130k": false,
+            "is_in_uspto_full": false,
+            "uuid": "reagent_of_48832924873f0af82e9aaafbed45d11bfa4708e44ca8b3fea9a56cccb613602d",
+            "start_node_id": 3727219,
+            "end_node_id": 1909384,
+            "inchikey": "LFQSCWFLJHTTHZ-UHFFFAOYSA-N",
+            "rxid": "ASPIRE-7430789756912665551"
+          },
+          {
+            "start_node": "LFQSCWFLJHTTHZ-UHFFFAOYSA-N",
+            "end_node": "ASPIRE-3764465736884414097",
+            "edge_label": "LFQSCWFLJHTTHZ-UHFFFAOYSA-N|ASPIRE-3764465736884414097",
+            "edge_type": "reagent_of",
+            "is_in_aicp": false,
+            "is_in_savi_130k": false,
+            "is_in_uspto_full": false,
+            "uuid": "reagent_of_f8bcfecfa1624b64dd62a2dd86da8248438f9f90d697a8a57d69d51f2167953c",
+            "start_node_id": 3727219,
+            "end_node_id": 2369057,
+            "inchikey": "LFQSCWFLJHTTHZ-UHFFFAOYSA-N",
+            "rxid": "ASPIRE-3764465736884414097"
+          },
+          {
+            "start_node": "NFHFRUOZVGFOOS-UHFFFAOYSA-N",
+            "end_node": "ASPIRE-7430789756912665551",
+            "edge_label": "NFHFRUOZVGFOOS-UHFFFAOYSA-N|ASPIRE-7430789756912665551",
+            "edge_type": "reagent_of",
+            "is_in_aicp": false,
+            "is_in_savi_130k": false,
+            "is_in_uspto_full": false,
+            "uuid": "reagent_of_79fff3d41206fb93000bc54f6ba7e2385a784e1c778782e6ccd8330828328848",
+            "start_node_id": 4116894,
+            "end_node_id": 1909384,
+            "inchikey": "NFHFRUOZVGFOOS-UHFFFAOYSA-N",
+            "rxid": "ASPIRE-7430789756912665551"
+          },
+          {
+            "start_node": "NFHFRUOZVGFOOS-UHFFFAOYSA-N",
+            "end_node": "ASPIRE-3764465736884414097",
+            "edge_label": "NFHFRUOZVGFOOS-UHFFFAOYSA-N|ASPIRE-3764465736884414097",
+            "edge_type": "reagent_of",
+            "is_in_aicp": false,
+            "is_in_savi_130k": false,
+            "is_in_uspto_full": false,
+            "uuid": "reagent_of_b60f83518b6db8f9de3afd1c5ae45494b089772d8a841f31d53b3c7956ec72fb",
+            "start_node_id": 4116894,
+            "end_node_id": 2369057,
+            "inchikey": "NFHFRUOZVGFOOS-UHFFFAOYSA-N",
+            "rxid": "ASPIRE-3764465736884414097"
+          },
+          {
+            "start_node": "CDBYLPFSWZWCQE-UHFFFAOYSA-L",
+            "end_node": "ASPIRE-7430789756912665551",
+            "edge_label": "CDBYLPFSWZWCQE-UHFFFAOYSA-L|ASPIRE-7430789756912665551",
+            "edge_type": "reagent_of",
+            "is_in_aicp": false,
+            "is_in_savi_130k": false,
+            "is_in_uspto_full": false,
+            "uuid": "reagent_of_280c53d747a75c5a217b2a306db2bb710524c3d275501f8f162943be82567572",
+            "start_node_id": 2843182,
+            "end_node_id": 1909384,
+            "inchikey": "CDBYLPFSWZWCQE-UHFFFAOYSA-L",
+            "rxid": "ASPIRE-7430789756912665551"
+          },
+          {
+            "start_node": "CDBYLPFSWZWCQE-UHFFFAOYSA-L",
+            "end_node": "ASPIRE-3764465736884414097",
+            "edge_label": "CDBYLPFSWZWCQE-UHFFFAOYSA-L|ASPIRE-3764465736884414097",
+            "edge_type": "reagent_of",
+            "is_in_aicp": false,
+            "is_in_savi_130k": false,
+            "is_in_uspto_full": false,
+            "uuid": "reagent_of_948955a926a43fca8fbfbd1896e9c6aa3be0a63be4ecd7c970713387a72b9b1e",
+            "start_node_id": 2843182,
+            "end_node_id": 2369057,
+            "inchikey": "CDBYLPFSWZWCQE-UHFFFAOYSA-L",
+            "rxid": "ASPIRE-3764465736884414097"
+          },
+          {
+            "start_node": "XTHFKEDIFFGKHM-UHFFFAOYSA-N",
+            "end_node": "ASPIRE-7430789756912665551",
+            "edge_label": "XTHFKEDIFFGKHM-UHFFFAOYSA-N|ASPIRE-7430789756912665551",
+            "edge_type": "reagent_of",
+            "is_in_aicp": false,
+            "is_in_savi_130k": false,
+            "is_in_uspto_full": false,
+            "uuid": "reagent_of_82df2a6b5241154173d88e6d4dd9bc5dab1057eea8b6f1c591b5331453900567",
+            "start_node_id": 3010900,
+            "end_node_id": 1909384,
+            "inchikey": "XTHFKEDIFFGKHM-UHFFFAOYSA-N",
+            "rxid": "ASPIRE-7430789756912665551"
+          },
+          {
+            "start_node": "XTHFKEDIFFGKHM-UHFFFAOYSA-N",
+            "end_node": "ASPIRE-3764465736884414097",
+            "edge_label": "XTHFKEDIFFGKHM-UHFFFAOYSA-N|ASPIRE-3764465736884414097",
+            "edge_type": "reagent_of",
+            "is_in_aicp": false,
+            "is_in_savi_130k": false,
+            "is_in_uspto_full": false,
+            "uuid": "reagent_of_ea2a3b3ffa7e8de06be85fc38163ced1b13874983f504d50fe446b9b2a27fa33",
+            "start_node_id": 3010900,
+            "end_node_id": 2369057,
+            "inchikey": "XTHFKEDIFFGKHM-UHFFFAOYSA-N",
+            "rxid": "ASPIRE-3764465736884414097"
+          },
+          {
+            "start_node": "GWWSSPCPSWVJRZ-UHFFFAOYSA-N",
+            "end_node": "ASPIRE-7430789756912665551",
+            "edge_label": "GWWSSPCPSWVJRZ-UHFFFAOYSA-N|ASPIRE-7430789756912665551",
+            "edge_type": "reactant_of",
+            "is_in_aicp": false,
+            "is_in_savi_130k": false,
+            "is_in_uspto_full": false,
+            "uuid": "reactant_of_e82c85e48dc1045dd4a8c72f20fe3cf28bd776cd712b23823344e3e889bf0337",
+            "start_node_id": 3894017,
+            "end_node_id": 1909384,
+            "inchikey": "GWWSSPCPSWVJRZ-UHFFFAOYSA-N",
+            "rxid": "ASPIRE-7430789756912665551"
+          },
+          {
+            "start_node": "GWWSSPCPSWVJRZ-UHFFFAOYSA-N",
+            "end_node": "ASPIRE-3764465736884414097",
+            "edge_label": "GWWSSPCPSWVJRZ-UHFFFAOYSA-N|ASPIRE-3764465736884414097",
+            "edge_type": "reactant_of",
+            "is_in_aicp": false,
+            "is_in_savi_130k": false,
+            "is_in_uspto_full": false,
+            "uuid": "reactant_of_47ea967a45c83a96d477db276ad3319d395cdb249bbf76089b41c5bcc06a35ec",
+            "start_node_id": 3894017,
+            "end_node_id": 2369057,
+            "inchikey": "GWWSSPCPSWVJRZ-UHFFFAOYSA-N",
+            "rxid": "ASPIRE-3764465736884414097"
+          },
+          {
+            "start_node": "HXQPWFAIYBVPTK-UHFFFAOYSA-N",
+            "end_node": "ASPIRE-7430789756912665551",
+            "edge_label": "HXQPWFAIYBVPTK-UHFFFAOYSA-N|ASPIRE-7430789756912665551",
+            "edge_type": "reactant_of",
+            "is_in_aicp": false,
+            "is_in_savi_130k": false,
+            "is_in_uspto_full": false,
+            "uuid": "reactant_of_75c11d2dfb798c05c55e216d9705b9b0a9527aea5acc55eaf9e03705da797eae",
+            "start_node_id": 4086767,
+            "end_node_id": 1909384,
+            "inchikey": "HXQPWFAIYBVPTK-UHFFFAOYSA-N",
+            "rxid": "ASPIRE-7430789756912665551"
+          },
+          {
+            "start_node": "ASPIRE-3764465736884414097",
+            "end_node": "WEEVXEKXCIBZMB-UHFFFAOYSA-N",
+            "edge_label": "ASPIRE-3764465736884414097|WEEVXEKXCIBZMB-UHFFFAOYSA-N",
+            "edge_type": "product_of",
+            "is_in_aicp": false,
+            "is_in_savi_130k": false,
+            "is_in_uspto_full": false,
+            "uuid": "product_of_b52ed96d68ca0585f27f3bf9f5ba82813cfdb48e3d484891e82b8fe4151c92e4",
+            "start_node_id": 2369057,
+            "end_node_id": 3609733,
+            "inchikey": "WEEVXEKXCIBZMB-UHFFFAOYSA-N",
+            "rxid": "ASPIRE-3764465736884414097"
+          },
+          {
+            "start_node": "XURXQNUIGWHWHU-UHFFFAOYSA-N",
+            "end_node": "ASPIRE-3764465736884414097",
+            "edge_label": "XURXQNUIGWHWHU-UHFFFAOYSA-N|ASPIRE-3764465736884414097",
+            "edge_type": "reactant_of",
+            "is_in_aicp": false,
+            "is_in_savi_130k": false,
+            "is_in_uspto_full": false,
+            "uuid": "reactant_of_c33a2fdf8d5b25044bacb538399f024301813107458e4d6e2d3343a33ebf8e04",
+            "start_node_id": 3011342,
+            "end_node_id": 2369057,
+            "inchikey": "XURXQNUIGWHWHU-UHFFFAOYSA-N",
+            "rxid": "ASPIRE-3764465736884414097"
+          },
+          {
+            "start_node": "XURXQNUIGWHWHU-UHFFFAOYSA-N",
+            "end_node": "ASPIRE-4281193131444595318",
+            "edge_label": "XURXQNUIGWHWHU-UHFFFAOYSA-N|ASPIRE-4281193131444595318",
+            "edge_type": "reactant_of",
+            "is_in_aicp": false,
+            "is_in_savi_130k": false,
+            "is_in_uspto_full": false,
+            "uuid": "reactant_of_c2097b50ec8b29bb5e63dfa650359d8378b69ce9fdf744a54e4496cc47b98eb3",
+            "start_node_id": 3011342,
+            "end_node_id": 2018720,
+            "inchikey": "XURXQNUIGWHWHU-UHFFFAOYSA-N",
+            "rxid": "ASPIRE-4281193131444595318"
+          },
+          {
+            "start_node": "LBUNNMJLXWQQBY-UHFFFAOYSA-N",
+            "end_node": "ASPIRE-4281193131444595318",
+            "edge_label": "LBUNNMJLXWQQBY-UHFFFAOYSA-N|ASPIRE-4281193131444595318",
+            "edge_type": "reactant_of",
+            "is_in_aicp": false,
+            "is_in_savi_130k": false,
+            "is_in_uspto_full": false,
+            "uuid": "reactant_of_3fa201e7711c090e88cc00918e1d51595819defdb08dfbb0fb9c1493165ac65e",
+            "start_node_id": 3318926,
+            "end_node_id": 2018720,
+            "inchikey": "LBUNNMJLXWQQBY-UHFFFAOYSA-N",
+            "rxid": "ASPIRE-4281193131444595318"
+          }
+        ]
+      }
+    },
+    {
+      "route_index": 3,
+      "route_candidate_json": {
+        "nodes": [
+          {
+            "node_label": "ASPIRE-7430789756912665551",
+            "is_balanced": false,
+            "is_in_aicp": false,
+            "is_in_savi_130k": false,
+            "is_in_uspto_full": false,
+            "node_type": "Reaction",
+            "rxid": "ASPIRE-7430789756912665551",
+            "rxsmiles": "[F:17][C:18]1[CH:23]=[CH:22][C:21](B2OCC(C)(C)CO2)=[CH:20][CH:19]=1.Br[C:2]1([C:8]([OH:10])=[O:9])[CH:7]=[CH:6][CH:5]=[CH:4][NH:3]1>C1C=CC([P]([Pd]([P](C2C=CC=CC=2)(C2C=CC=CC=2)C2C=CC=CC=2)([P](C2C=CC=CC=2)(C2C=CC=CC=2)C2C=CC=CC=2)[P](C2C=CC=CC=2)(C2C=CC=CC=2)C2C=CC=CC=2)(C2C=CC=CC=2)C2C=CC=CC=2)=CC=1.[Na+].[Na+].C([O-])([O-])=O.COCCOC.CCO>[F:17][C:18]1[CH:23]=[CH:22][C:21]([C:4]2[N:3]=[C:2]([C:8]([OH:10])=[O:9])[CH:7]=[CH:6][CH:5]=2)=[CH:20][CH:19]=1 |f:3.4.5|",
+            "uuid": "reaction_6f993a50cfc6f2a2c87048fc9acaffb5626c617a1bef4cb4109a6630478ba9fb",
+            "yield_empirical": 46.0,
+            "yield_predicted": 59.888000000000005,
+            "yield_score": 4.0,
+            "yield_info": {
+              "yield_predicted": 59.888000000000005,
+              "yield_score": 4.0
+            },
+            "node_id": 1909384
+          },
+          {
+            "node_label": "LFQSCWFLJHTTHZ-UHFFFAOYSA-N",
+            "canonical_smiles": "CCO",
+            "inchikey": "LFQSCWFLJHTTHZ-UHFFFAOYSA-N",
+            "is_in_aicp": false,
+            "is_in_savi_130k": false,
+            "is_in_uspto_full": false,
+            "node_type": "substance",
+            "uuid": "substance_e4487bfe0598c87622cdf6c9a03a1c4c60cdbc6eef5b7bbc54fb47843d8dcc1a",
+            "node_id": 3727219,
+            "is_in_inventory": true,
+            "srole": "sm"
+          },
+          {
+            "node_label": "NFHFRUOZVGFOOS-UHFFFAOYSA-N",
+            "canonical_smiles": "c1ccc([P](c2ccccc2)(c2ccccc2)[Pd]([P](c2ccccc2)(c2ccccc2)c2ccccc2)([P](c2ccccc2)(c2ccccc2)c2ccccc2)[P](c2ccccc2)(c2ccccc2)c2ccccc2)cc1",
+            "inchikey": "NFHFRUOZVGFOOS-UHFFFAOYSA-N",
+            "is_in_aicp": false,
+            "is_in_savi_130k": false,
+            "is_in_uspto_full": false,
+            "node_type": "substance",
+            "uuid": "substance_1b478ad1142d1ef1c1094a9528c8a55d36e12adcdc31d57b23348445a35a5529",
+            "node_id": 4116894,
+            "is_in_inventory": true,
+            "srole": "sm"
+          },
+          {
+            "node_label": "CDBYLPFSWZWCQE-UHFFFAOYSA-L",
+            "canonical_smiles": "O=C([O-])[O-].[Na+].[Na+]",
+            "inchikey": "CDBYLPFSWZWCQE-UHFFFAOYSA-L",
+            "is_in_aicp": false,
+            "is_in_savi_130k": false,
+            "is_in_uspto_full": false,
+            "node_type": "substance",
+            "uuid": "substance_9264ed6a25ff015d0aee802e5aa38332ffe3f5e158262eabb839297bcdba9ff1",
+            "node_id": 2843182,
+            "srole": "im"
+          },
+          {
+            "node_label": "XTHFKEDIFFGKHM-UHFFFAOYSA-N",
+            "canonical_smiles": "COCCOC",
+            "inchikey": "XTHFKEDIFFGKHM-UHFFFAOYSA-N",
+            "is_in_aicp": false,
+            "is_in_savi_130k": false,
+            "is_in_uspto_full": false,
+            "node_type": "substance",
+            "uuid": "substance_2155120f56239585af99934bbeacda09ebd2c0410c5600937637fa61b443a433",
+            "node_id": 3010900,
+            "is_in_inventory": true,
+            "srole": "sm"
+          },
+          {
+            "node_label": "GWWSSPCPSWVJRZ-UHFFFAOYSA-N",
+            "canonical_smiles": "CC1(C)COB(c2ccc(F)cc2)OC1",
+            "inchikey": "GWWSSPCPSWVJRZ-UHFFFAOYSA-N",
+            "is_in_aicp": false,
+            "is_in_savi_130k": false,
+            "is_in_uspto_full": false,
+            "node_type": "substance",
+            "uuid": "substance_bc240dbff9a7dc20dc25cf62b06890df7ab038a3fce04a0c5e07766e68c013cf",
+            "node_id": 3894017,
+            "is_in_inventory": true,
+            "srole": "sm"
+          },
+          {
+            "node_label": "HXQPWFAIYBVPTK-UHFFFAOYSA-N",
+            "canonical_smiles": "O=C(O)C1(Br)C=CC=CN1",
+            "inchikey": "HXQPWFAIYBVPTK-UHFFFAOYSA-N",
+            "is_in_aicp": false,
+            "is_in_savi_130k": false,
+            "is_in_uspto_full": false,
+            "node_type": "substance",
+            "uuid": "substance_91a6ff8116f84143dbb2e2cba1b11e522e0edaaef998d9302aa9c2158bbeb2d0",
+            "node_id": 4086767,
+            "srole": "im"
+          },
+          {
+            "node_label": "WEEVXEKXCIBZMB-UHFFFAOYSA-N",
+            "canonical_smiles": "O=C(O)c1cccc(-c2ccc(F)cc2)n1",
+            "inchikey": "WEEVXEKXCIBZMB-UHFFFAOYSA-N",
+            "is_in_aicp": false,
+            "is_in_savi_130k": false,
+            "is_in_uspto_full": false,
+            "node_type": "substance",
+            "uuid": "substance_c5e916c7ce6053639c692aba70b09033a8be986ee1fc0a81f956449176a29bd8",
+            "node_id": 3609733,
+            "srole": "tm"
+          },
+          {
+            "node_label": "ASPIRE-3764465736884414097",
+            "is_balanced": false,
+            "is_in_aicp": false,
+            "is_in_savi_130k": false,
+            "is_in_uspto_full": false,
+            "node_type": "Reaction",
+            "rxid": "ASPIRE-3764465736884414097",
+            "rxsmiles": "[F:17][C:18]1[CH:23]=[CH:22][C:21](B2OCC(C)(C)CO2)=[CH:20][CH:19]=1.Br[C:2]1[N:7]=[C:6]([C:8]([OH:10])=[O:9])[CH:5]=[CH:4][CH:3]=1>C1C=CC([P]([Pd]([P](C2C=CC=CC=2)(C2C=CC=CC=2)C2C=CC=CC=2)([P](C2C=CC=CC=2)(C2C=CC=CC=2)C2C=CC=CC=2)[P](C2C=CC=CC=2)(C2C=CC=CC=2)C2C=CC=CC=2)(C2C=CC=CC=2)C2C=CC=CC=2)=CC=1.[Na+].[Na+].C([O-])([O-])=O.COCCOC.CCO>[F:17][C:18]1[CH:23]=[CH:22][C:21]([C:2]2[N:7]=[C:6]([C:8]([OH:10])=[O:9])[CH:5]=[CH:4][CH:3]=2)=[CH:20][CH:19]=1 |f:3.4.5|",
+            "uuid": "reaction_f5da9fad291607109c765622d0e5ce61229a07554c981756bed220159ccfca0d",
+            "yield_empirical": 46.0,
+            "yield_predicted": 55.33000000000001,
+            "yield_score": 4.0,
+            "yield_info": {
+              "yield_predicted": 55.33000000000001,
+              "yield_score": 4.0
+            },
+            "node_id": 2369057
+          },
+          {
+            "node_label": "XURXQNUIGWHWHU-UHFFFAOYSA-N",
+            "canonical_smiles": "O=C(O)c1cccc(Br)n1",
+            "inchikey": "XURXQNUIGWHWHU-UHFFFAOYSA-N",
+            "is_in_aicp": false,
+            "is_in_savi_130k": false,
+            "is_in_uspto_full": false,
+            "node_type": "substance",
+            "uuid": "substance_d4f3ad40ee5d6ea376ccbf61a7fd2a1ab1423c7f326b5b720b024fdd263e86ea",
+            "node_id": 3011342,
+            "is_in_inventory": true,
+            "srole": "sm"
+          },
+          {
+            "node_label": "ASPIRE-4281193131444595318",
+            "is_balanced": false,
+            "is_in_aicp": false,
+            "is_in_savi_130k": false,
+            "is_in_uspto_full": false,
+            "node_type": "Reaction",
+            "rxid": "ASPIRE-4281193131444595318",
+            "rxsmiles": "Br[C:2]1[N:7]=[C:6]([C:8]([OH:10])=[O:9])[CH:5]=[CH:4][CH:3]=1.[F:11][C:12]1[CH:17]=[CH:16][C:15](B(O)O)=[CH:14][CH:13]=1>>[F:11][C:12]1[CH:17]=[CH:16][C:15]([C:2]2[N:7]=[C:6]([C:8]([OH:10])=[O:9])[CH:5]=[CH:4][CH:3]=2)=[CH:14][CH:13]=1",
+            "uuid": "reaction_c2730a5e7d01d7315dc46d38623487c9674f062de3fd3235d03d59a1e5e75c5c",
+            "yield_predicted": 63.55620000000001,
+            "yield_score": 3.0,
+            "yield_info": {
+              "yield_predicted": 63.55620000000001,
+              "yield_score": 3.0
+            },
+            "node_id": 2018720
+          },
+          {
+            "node_label": "LBUNNMJLXWQQBY-UHFFFAOYSA-N",
+            "canonical_smiles": "OB(O)c1ccc(F)cc1",
+            "inchikey": "LBUNNMJLXWQQBY-UHFFFAOYSA-N",
+            "is_in_aicp": false,
+            "is_in_savi_130k": false,
+            "is_in_uspto_full": false,
+            "node_type": "substance",
+            "uuid": "substance_5c655cfb82ec32ca3cc47f825622f753d7d56c9ed025b61c54439d7cf4d2afb6",
+            "node_id": 3318926,
+            "is_in_inventory": true,
+            "srole": "sm"
+          }
+        ],
+        "edges": [
+          {
+            "start_node": "LFQSCWFLJHTTHZ-UHFFFAOYSA-N",
+            "end_node": "ASPIRE-7430789756912665551",
+            "edge_label": "LFQSCWFLJHTTHZ-UHFFFAOYSA-N|ASPIRE-7430789756912665551",
+            "edge_type": "reagent_of",
+            "is_in_aicp": false,
+            "is_in_savi_130k": false,
+            "is_in_uspto_full": false,
+            "uuid": "reagent_of_48832924873f0af82e9aaafbed45d11bfa4708e44ca8b3fea9a56cccb613602d",
+            "start_node_id": 3727219,
+            "end_node_id": 1909384,
+            "inchikey": "LFQSCWFLJHTTHZ-UHFFFAOYSA-N",
+            "rxid": "ASPIRE-7430789756912665551"
+          },
+          {
+            "start_node": "LFQSCWFLJHTTHZ-UHFFFAOYSA-N",
+            "end_node": "ASPIRE-3764465736884414097",
+            "edge_label": "LFQSCWFLJHTTHZ-UHFFFAOYSA-N|ASPIRE-3764465736884414097",
+            "edge_type": "reagent_of",
+            "is_in_aicp": false,
+            "is_in_savi_130k": false,
+            "is_in_uspto_full": false,
+            "uuid": "reagent_of_f8bcfecfa1624b64dd62a2dd86da8248438f9f90d697a8a57d69d51f2167953c",
+            "start_node_id": 3727219,
+            "end_node_id": 2369057,
+            "inchikey": "LFQSCWFLJHTTHZ-UHFFFAOYSA-N",
+            "rxid": "ASPIRE-3764465736884414097"
+          },
+          {
+            "start_node": "NFHFRUOZVGFOOS-UHFFFAOYSA-N",
+            "end_node": "ASPIRE-7430789756912665551",
+            "edge_label": "NFHFRUOZVGFOOS-UHFFFAOYSA-N|ASPIRE-7430789756912665551",
+            "edge_type": "reagent_of",
+            "is_in_aicp": false,
+            "is_in_savi_130k": false,
+            "is_in_uspto_full": false,
+            "uuid": "reagent_of_79fff3d41206fb93000bc54f6ba7e2385a784e1c778782e6ccd8330828328848",
+            "start_node_id": 4116894,
+            "end_node_id": 1909384,
+            "inchikey": "NFHFRUOZVGFOOS-UHFFFAOYSA-N",
+            "rxid": "ASPIRE-7430789756912665551"
+          },
+          {
+            "start_node": "NFHFRUOZVGFOOS-UHFFFAOYSA-N",
+            "end_node": "ASPIRE-3764465736884414097",
+            "edge_label": "NFHFRUOZVGFOOS-UHFFFAOYSA-N|ASPIRE-3764465736884414097",
+            "edge_type": "reagent_of",
+            "is_in_aicp": false,
+            "is_in_savi_130k": false,
+            "is_in_uspto_full": false,
+            "uuid": "reagent_of_b60f83518b6db8f9de3afd1c5ae45494b089772d8a841f31d53b3c7956ec72fb",
+            "start_node_id": 4116894,
+            "end_node_id": 2369057,
+            "inchikey": "NFHFRUOZVGFOOS-UHFFFAOYSA-N",
+            "rxid": "ASPIRE-3764465736884414097"
+          },
+          {
+            "start_node": "CDBYLPFSWZWCQE-UHFFFAOYSA-L",
+            "end_node": "ASPIRE-7430789756912665551",
+            "edge_label": "CDBYLPFSWZWCQE-UHFFFAOYSA-L|ASPIRE-7430789756912665551",
+            "edge_type": "reagent_of",
+            "is_in_aicp": false,
+            "is_in_savi_130k": false,
+            "is_in_uspto_full": false,
+            "uuid": "reagent_of_280c53d747a75c5a217b2a306db2bb710524c3d275501f8f162943be82567572",
+            "start_node_id": 2843182,
+            "end_node_id": 1909384,
+            "inchikey": "CDBYLPFSWZWCQE-UHFFFAOYSA-L",
+            "rxid": "ASPIRE-7430789756912665551"
+          },
+          {
+            "start_node": "CDBYLPFSWZWCQE-UHFFFAOYSA-L",
+            "end_node": "ASPIRE-3764465736884414097",
+            "edge_label": "CDBYLPFSWZWCQE-UHFFFAOYSA-L|ASPIRE-3764465736884414097",
+            "edge_type": "reagent_of",
+            "is_in_aicp": false,
+            "is_in_savi_130k": false,
+            "is_in_uspto_full": false,
+            "uuid": "reagent_of_948955a926a43fca8fbfbd1896e9c6aa3be0a63be4ecd7c970713387a72b9b1e",
+            "start_node_id": 2843182,
+            "end_node_id": 2369057,
+            "inchikey": "CDBYLPFSWZWCQE-UHFFFAOYSA-L",
+            "rxid": "ASPIRE-3764465736884414097"
+          },
+          {
+            "start_node": "XTHFKEDIFFGKHM-UHFFFAOYSA-N",
+            "end_node": "ASPIRE-7430789756912665551",
+            "edge_label": "XTHFKEDIFFGKHM-UHFFFAOYSA-N|ASPIRE-7430789756912665551",
+            "edge_type": "reagent_of",
+            "is_in_aicp": false,
+            "is_in_savi_130k": false,
+            "is_in_uspto_full": false,
+            "uuid": "reagent_of_82df2a6b5241154173d88e6d4dd9bc5dab1057eea8b6f1c591b5331453900567",
+            "start_node_id": 3010900,
+            "end_node_id": 1909384,
+            "inchikey": "XTHFKEDIFFGKHM-UHFFFAOYSA-N",
+            "rxid": "ASPIRE-7430789756912665551"
+          },
+          {
+            "start_node": "XTHFKEDIFFGKHM-UHFFFAOYSA-N",
+            "end_node": "ASPIRE-3764465736884414097",
+            "edge_label": "XTHFKEDIFFGKHM-UHFFFAOYSA-N|ASPIRE-3764465736884414097",
+            "edge_type": "reagent_of",
+            "is_in_aicp": false,
+            "is_in_savi_130k": false,
+            "is_in_uspto_full": false,
+            "uuid": "reagent_of_ea2a3b3ffa7e8de06be85fc38163ced1b13874983f504d50fe446b9b2a27fa33",
+            "start_node_id": 3010900,
+            "end_node_id": 2369057,
+            "inchikey": "XTHFKEDIFFGKHM-UHFFFAOYSA-N",
+            "rxid": "ASPIRE-3764465736884414097"
+          },
+          {
+            "start_node": "GWWSSPCPSWVJRZ-UHFFFAOYSA-N",
+            "end_node": "ASPIRE-7430789756912665551",
+            "edge_label": "GWWSSPCPSWVJRZ-UHFFFAOYSA-N|ASPIRE-7430789756912665551",
+            "edge_type": "reactant_of",
+            "is_in_aicp": false,
+            "is_in_savi_130k": false,
+            "is_in_uspto_full": false,
+            "uuid": "reactant_of_e82c85e48dc1045dd4a8c72f20fe3cf28bd776cd712b23823344e3e889bf0337",
+            "start_node_id": 3894017,
+            "end_node_id": 1909384,
+            "inchikey": "GWWSSPCPSWVJRZ-UHFFFAOYSA-N",
+            "rxid": "ASPIRE-7430789756912665551"
+          },
+          {
+            "start_node": "GWWSSPCPSWVJRZ-UHFFFAOYSA-N",
+            "end_node": "ASPIRE-3764465736884414097",
+            "edge_label": "GWWSSPCPSWVJRZ-UHFFFAOYSA-N|ASPIRE-3764465736884414097",
+            "edge_type": "reactant_of",
+            "is_in_aicp": false,
+            "is_in_savi_130k": false,
+            "is_in_uspto_full": false,
+            "uuid": "reactant_of_47ea967a45c83a96d477db276ad3319d395cdb249bbf76089b41c5bcc06a35ec",
+            "start_node_id": 3894017,
+            "end_node_id": 2369057,
+            "inchikey": "GWWSSPCPSWVJRZ-UHFFFAOYSA-N",
+            "rxid": "ASPIRE-3764465736884414097"
+          },
+          {
+            "start_node": "HXQPWFAIYBVPTK-UHFFFAOYSA-N",
+            "end_node": "ASPIRE-7430789756912665551",
+            "edge_label": "HXQPWFAIYBVPTK-UHFFFAOYSA-N|ASPIRE-7430789756912665551",
+            "edge_type": "reactant_of",
+            "is_in_aicp": false,
+            "is_in_savi_130k": false,
+            "is_in_uspto_full": false,
+            "uuid": "reactant_of_75c11d2dfb798c05c55e216d9705b9b0a9527aea5acc55eaf9e03705da797eae",
+            "start_node_id": 4086767,
+            "end_node_id": 1909384,
+            "inchikey": "HXQPWFAIYBVPTK-UHFFFAOYSA-N",
+            "rxid": "ASPIRE-7430789756912665551"
+          },
+          {
+            "start_node": "XURXQNUIGWHWHU-UHFFFAOYSA-N",
+            "end_node": "ASPIRE-3764465736884414097",
+            "edge_label": "XURXQNUIGWHWHU-UHFFFAOYSA-N|ASPIRE-3764465736884414097",
+            "edge_type": "reactant_of",
+            "is_in_aicp": false,
+            "is_in_savi_130k": false,
+            "is_in_uspto_full": false,
+            "uuid": "reactant_of_c33a2fdf8d5b25044bacb538399f024301813107458e4d6e2d3343a33ebf8e04",
+            "start_node_id": 3011342,
+            "end_node_id": 2369057,
+            "inchikey": "XURXQNUIGWHWHU-UHFFFAOYSA-N",
+            "rxid": "ASPIRE-3764465736884414097"
+          },
+          {
+            "start_node": "XURXQNUIGWHWHU-UHFFFAOYSA-N",
+            "end_node": "ASPIRE-4281193131444595318",
+            "edge_label": "XURXQNUIGWHWHU-UHFFFAOYSA-N|ASPIRE-4281193131444595318",
+            "edge_type": "reactant_of",
+            "is_in_aicp": false,
+            "is_in_savi_130k": false,
+            "is_in_uspto_full": false,
+            "uuid": "reactant_of_c2097b50ec8b29bb5e63dfa650359d8378b69ce9fdf744a54e4496cc47b98eb3",
+            "start_node_id": 3011342,
+            "end_node_id": 2018720,
+            "inchikey": "XURXQNUIGWHWHU-UHFFFAOYSA-N",
+            "rxid": "ASPIRE-4281193131444595318"
+          },
+          {
+            "start_node": "ASPIRE-4281193131444595318",
+            "end_node": "WEEVXEKXCIBZMB-UHFFFAOYSA-N",
+            "edge_label": "ASPIRE-4281193131444595318|WEEVXEKXCIBZMB-UHFFFAOYSA-N",
+            "edge_type": "product_of",
+            "is_in_aicp": false,
+            "is_in_savi_130k": false,
+            "is_in_uspto_full": false,
+            "uuid": "product_of_ada9ad552aa9137c6948144fcb5f7ace29e627a42e6338b914a30a0b1ca05f9c",
+            "start_node_id": 2018720,
+            "end_node_id": 3609733,
+            "inchikey": "WEEVXEKXCIBZMB-UHFFFAOYSA-N",
+            "rxid": "ASPIRE-4281193131444595318"
+          },
+          {
+            "start_node": "LBUNNMJLXWQQBY-UHFFFAOYSA-N",
+            "end_node": "ASPIRE-4281193131444595318",
+            "edge_label": "LBUNNMJLXWQQBY-UHFFFAOYSA-N|ASPIRE-4281193131444595318",
+            "edge_type": "reactant_of",
+            "is_in_aicp": false,
+            "is_in_savi_130k": false,
+            "is_in_uspto_full": false,
+            "uuid": "reactant_of_3fa201e7711c090e88cc00918e1d51595819defdb08dfbb0fb9c1493165ac65e",
+            "start_node_id": 3318926,
+            "end_node_id": 2018720,
+            "inchikey": "LBUNNMJLXWQQBY-UHFFFAOYSA-N",
+            "rxid": "ASPIRE-4281193131444595318"
+          }
+        ]
+      }
+    }
+  ],
+  "route_candidates": {
+    "subgraphs": [
+      {
+        "route_index": 1,
+        "route_status": "Route Candidate Only Contains Target Molecule",
+        "method": "AICP",
+        "route_node_labels": [
+          "WEEVXEKXCIBZMB-UHFFFAOYSA-N"
+        ]
+      },
+      {
+        "route_index": 2,
+        "route_status": "Route Candidate Only Contains Target Molecule",
+        "method": "AICP",
+        "route_node_labels": [
+          "WEEVXEKXCIBZMB-UHFFFAOYSA-N"
+        ]
+      },
+      {
+        "route_index": 3,
+        "route_status": "Viable Synthesis Route",
+        "method": "AICP",
+        "route_node_labels": [
+          "ASPIRE-4281193131444595318",
+          "WEEVXEKXCIBZMB-UHFFFAOYSA-N",
+          "LBUNNMJLXWQQBY-UHFFFAOYSA-N",
+          "XURXQNUIGWHWHU-UHFFFAOYSA-N"
+        ]
+      }
+    ],
+    "num_subgraphs": 3
+  },
+  "routes": [
+    {
+      "aggregated_yield": 63.56,
+      "route_index": 3,
+      "route_status": "Viable Synthesis Route",
+      "method": "AICP",
+      "route_node_labels": [
+        "ASPIRE-4281193131444595318",
+        "WEEVXEKXCIBZMB-UHFFFAOYSA-N",
+        "LBUNNMJLXWQQBY-UHFFFAOYSA-N",
+        "XURXQNUIGWHWHU-UHFFFAOYSA-N"
+      ]
+    }
+  ],
+  "time_info": {
+    "synth_graph_time": 0.053992271423339844,
+    "enumerate_routes_time": 0.0049626827239990234,
+    "aggregated_yield_time": 0.00036644935607910156,
+    "rank_routes_time": 2.86102294921875e-06
+  },
+  "summary": {
+    "num_routes": 1,
+    "num_combination_graphs": 3,
+    "num_route_candidates": 3
+  }
+}
