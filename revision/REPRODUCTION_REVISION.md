@@ -20,6 +20,8 @@ Conda Python environment manager:
 
 - [Git](https://git-scm.com/)
 
+- [Git LFS](https://git-lfs.com/) — required to download the MongoDB dump and Memgraph snapshot (large binary files stored via LFS)
+
 ## Installation
 
 
@@ -30,7 +32,6 @@ Conda Python environment manager:
 git clone https://github.com/ncats/syngps
 ```
 
-
 Enter into the subdirectory containing the source code.
 
 ```bash
@@ -40,6 +41,20 @@ cd syngps
 ```bash
 git checkout publication
 ```
+
+### Download Large Database Artifacts (Git LFS)
+
+The MongoDB dump and Memgraph snapshot are stored in Git LFS. After cloning, pull them with:
+
+```bash
+git lfs install
+git lfs pull
+```
+
+This will populate:
+
+- `revision/data/input/mongo_dump/syngps-mongo.gz`
+- `revision/data/input/memgraph_snapshot/`
 
 
 
