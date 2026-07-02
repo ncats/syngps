@@ -12,7 +12,6 @@ import logging
 logger = logging.getLogger(__name__)
 
 
-
 class RxnSvgDepictionMode(Enum):
     SIMPLE = "simple"
     ATOM_MAP = "atom_map"

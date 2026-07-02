@@ -68,6 +68,6 @@ from .decomposition_utils import (
     parse_reaction_smiles
 )
 from .role_assigner_utils import (
-    compute_rxn_balance_indices, 
+    compute_rxn_balance_indices,
     normalize_roles
 )

@@ -16,7 +16,6 @@ import logging
 logger = logging.getLogger(__name__)
 
 
-
 def generate_combination_graphs(G: DiGraph, method: str = "ebc", max_nr: int = 0) -> List[DiGraph]:
     """
     Generate combination graphs from a directed graph.

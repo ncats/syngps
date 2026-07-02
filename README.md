@@ -46,7 +46,7 @@ Enter into the subdirectory containing the source code.
 cd syngps
 ```
 
-If you want to utilize the publication branch of this repository, you can check out the publication branch using the following commands:
+If you want to utilize the `publication` branch of this repository, which is **necessary for reproducing the case studies in the paper**, you can check it using the following commands:
 
 ```bash
 git fetch origin
