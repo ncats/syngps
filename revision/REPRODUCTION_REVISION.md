@@ -56,6 +56,12 @@ This will populate:
 - `revision/data/input/mongo_dump/syngps-mongo.gz`
 - `revision/data/input/memgraph_snapshot/`
 
+> **Note (Linux only):** Git only preserves the executable bit for tracked files; the "read" permission for other users at checkout time depends on your OS's umask. On macOS the default umask (022) leaves these files world-readable, but on some Linux distributions a stricter default umask (e.g. 027) can strip that permission. Since the Memgraph snapshot is bind-mounted read-only into the `memgraph` container, which runs as a different (non-root) user, a missing "read" bit for others will prevent Memgraph from loading the snapshot. If you hit this, restore read access with:
+>
+> ```bash
+> chmod -R a+rX revision/data/input/memgraph_snapshot revision/data/input/mongo_dump
+> ```
+
 
 
 ### Download Required Input Files
